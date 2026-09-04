@@ -14,7 +14,7 @@ This repository is the code release accompanying the MASc thesis *Language-Model
 
 ## Data
 
-The evaluation datasets (benchmark definitions and golden references, the full run corpora and blind-review labels for gpt-5.4, Qwen3.6-27B, and Nemotron-3-Ultra-550B, agent traces, review instruments, and an export of the knowledge graph) are archived at the University of Toronto Dataverse (Borealis); see the thesis's Statement of Contributions for the DOI.
+The evaluation datasets (benchmark definitions and golden references, the full run corpora and blind-review labels for gpt-5.4, Qwen3.6-27B, and Nemotron-3-Ultra-550B, agent traces, review instruments, and an export of the knowledge graph) are archived at the University of Toronto Dataverse (Borealis); see the thesis's Statement of Contributions for the DOI. `tools/import_kg.py` rebuilds the archived knowledge-graph export into an empty Neo4j 5.x database (round-trip verified).
 
 ## Setup
 
