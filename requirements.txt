@@ -51,7 +51,7 @@ gitpython>=3.1.0
 h5py>=3.8.0
 h5netcdf>=1.0.0
 pyaml
-jsonpickle>=3.0.0
+jsonpickle>=4.1.2
 
 # Visualization
 plotly>=5.0.0
