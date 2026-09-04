@@ -1,0 +1,249 @@
+{
+  "annotator_id": "poon",
+  "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum",
+  "n_available": 113,
+  "n_shown": 40,
+  "n_no_evidence_excluded": 0,
+  "items": {
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:573": {
+      "confidence": 0.7648183703422546,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:576": {
+      "confidence": 0.7239187479019165,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:509": {
+      "confidence": 0.7595360368490219,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:520": {
+      "confidence": 0.8765398770570755,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:512": {
+      "confidence": 0.7157969117164611,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:551": {
+      "confidence": 0.7033656716346741,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:531": {
+      "confidence": 0.8908237665891647,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:529": {
+      "confidence": 0.7876973986625672,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:587": {
+      "confidence": 0.8714812964200973,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:539": {
+      "confidence": 0.7056926339864731,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:549": {
+      "confidence": 0.7220711827278137,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:360": {
+      "confidence": 0.8934096038341522,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:536": {
+      "confidence": 0.8565109014511109,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:566": {
+      "confidence": 0.6125290215015411,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:597": {
+      "confidence": 0.8018628150224686,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:547": {
+      "confidence": 0.7105406939983367,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:583": {
+      "confidence": 0.8811939984560013,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:508": {
+      "confidence": 0.7438765883445739,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:521": {
+      "confidence": 0.8461581319570541,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:352": {
+      "confidence": 0.7323023349046707,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:499": {
+      "confidence": 0.95,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:500": {
+      "confidence": 0.95,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:527": {
+      "confidence": 0.5906880168275697,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:497": {
+      "confidence": 1.0,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:601": {
+      "confidence": 0.8205194294452668,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:595": {
+      "confidence": 0.7834948718547821,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:550": {
+      "confidence": 0.6991233348846435,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:572": {
+      "confidence": 0.7174894332885742,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:544": {
+      "confidence": 0.6848255515098571,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:546": {
+      "confidence": 0.7292006552219391,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:565": {
+      "confidence": 0.8297538191080094,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:570": {
+      "confidence": 0.7175582915544509,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:511": {
+      "confidence": 0.7134196758270264,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:603": {
+      "confidence": 0.8136929929256439,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:538": {
+      "confidence": 0.7088290214538574,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:548": {
+      "confidence": 0.7099051982164384,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:507": {
+      "confidence": 0.7851192414760589,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:496": {
+      "confidence": 0.9,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:526": {
+      "confidence": 0.8431893438100815,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:590": {
+      "confidence": 0.8391036778688431,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"
+    }
+  }
+}

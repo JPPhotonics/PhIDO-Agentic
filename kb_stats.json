@@ -1,0 +1,28 @@
+{
+  "nodes": 3381,
+  "edges": 2907,
+  "design_function_nodes": 70,
+  "pdk_cells": 34,
+  "edge_types": {
+    "HAS_PROPERTY": 1065,
+    "PERFORMS_FUNCTION": 609,
+    "EXHIBITS": 370,
+    "BASED_ON_PRINCIPLE": 312,
+    "USES_COMPONENT": 174,
+    "RELATED_TO": 156,
+    "FABRICATED_WITH": 105,
+    "COMPOSED_OF": 54,
+    "IMPLEMENTS": 49,
+    "INTEGRATED_WITH": 13
+  },
+  "pdk_performs_function": {
+    "native": 73,
+    "inferred": 77
+  },
+  "related_to_total": 156,
+  "review_items": {
+    "semantic_verification_rejected": 2531,
+    "generic_related_to_demoted": 143
+  },
+  "cells_with_pf": 33
+}

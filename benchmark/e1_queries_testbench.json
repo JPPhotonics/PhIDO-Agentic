@@ -1,0 +1,2531 @@
+{
+  "_about": "Expanded E1 queries from Testbench prompts. Query=LLM-extracted component phrase; gold=TYPE_TO_MODULES[type] (arm-independent). DRAFT \u2014 audit the type dict + the phrase->type assignments in results/e1_testbench_extraction.json before final use.",
+  "queries": [
+    {
+      "id": "tb000_mzi_2x2_1",
+      "kind": "intent",
+      "query": "a 2x2 MZI",
+      "gold": [
+        "mzi_2x2_heater_tin_cband",
+        "mzi_2x2_pindiode_cband",
+        "mzi_2x2_pn_diode"
+      ],
+      "type": "mzi_2x2",
+      "source_prompt_index": 0
+    },
+    {
+      "id": "tb000_thermo_optic_phase_shifter_1",
+      "kind": "intent",
+      "query": "integrated thermal heaters",
+      "gold": [
+        "heater_tin_cband",
+        "heater_doped_si_cband"
+      ],
+      "type": "thermo_optic_phase_shifter",
+      "source_prompt_index": 0
+    },
+    {
+      "id": "tb000_directional_coupler_1",
+      "kind": "intent",
+      "query": "a directional coupler",
+      "gold": [
+        "_directional_coupler",
+        "_directional_coupler_adiabatic"
+      ],
+      "type": "directional_coupler",
+      "source_prompt_index": 0
+    },
+    {
+      "id": "tb001_wavelength_division_multiplexer_1",
+      "kind": "intent",
+      "query": "A 1x4 wave-division multiplexer",
+      "gold": [
+        "wdm_mzi1x4"
+      ],
+      "type": "wavelength_division_multiplexer",
+      "source_prompt_index": 1
+    },
+    {
+      "id": "tb001_mach_zehnder_modulator_1",
+      "kind": "intent",
+      "query": "four amplitude modulators (each having 1 input, 1 output and an electro-optic bandwidth >1 GHz)",
+      "gold": [
+        "tw_mzm",
+        "mzi_2x2_pn_diode",
+        "mzi_2x2_pindiode_cband",
+        "mzi_1x2_pindiode_cband",
+        "mzi_1x1_pindiode_cband"
+      ],
+      "type": "mach_zehnder_modulator",
+      "source_prompt_index": 1
+    },
+    {
+      "id": "tb002_mach_zehnder_modulator_2",
+      "kind": "intent",
+      "query": "2x2 MZI with a modulation bandwidth up to 10 GHz",
+      "gold": [
+        "tw_mzm",
+        "mzi_2x2_pn_diode",
+        "mzi_2x2_pindiode_cband",
+        "mzi_1x2_pindiode_cband",
+        "mzi_1x1_pindiode_cband"
+      ],
+      "type": "mach_zehnder_modulator",
+      "source_prompt_index": 2
+    },
+    {
+      "id": "tb003_mmi_1x2_1",
+      "kind": "intent",
+      "query": "a low loss 1x2 power splitter",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 3
+    },
+    {
+      "id": "tb004_mmi_1x2_2",
+      "kind": "intent",
+      "query": "1x2 MMIs",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 4
+    },
+    {
+      "id": "tb005_mzi_2x2_2",
+      "kind": "intent",
+      "query": "A 2x2 MZI",
+      "gold": [
+        "mzi_2x2_heater_tin_cband",
+        "mzi_2x2_pindiode_cband",
+        "mzi_2x2_pn_diode"
+      ],
+      "type": "mzi_2x2",
+      "source_prompt_index": 5
+    },
+    {
+      "id": "tb005_phase_shifter_1",
+      "kind": "intent",
+      "query": "a phase shifter for 1 GHz modulation",
+      "gold": [
+        "heater_tin_cband",
+        "heater_doped_si_cband",
+        "pndiode",
+        "pindiode_cband"
+      ],
+      "type": "phase_shifter",
+      "source_prompt_index": 5
+    },
+    {
+      "id": "tb006_mzi_2x2_3",
+      "kind": "intent",
+      "query": "2x2 MZIs",
+      "gold": [
+        "mzi_2x2_heater_tin_cband",
+        "mzi_2x2_pindiode_cband",
+        "mzi_2x2_pn_diode"
+      ],
+      "type": "mzi_2x2",
+      "source_prompt_index": 6
+    },
+    {
+      "id": "tb006_straight_waveguide_1",
+      "kind": "intent",
+      "query": "waveguides to cascade components",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 6
+    },
+    {
+      "id": "tb006_waveguide_bend_1",
+      "kind": "intent",
+      "query": "bends for the switch tree network",
+      "gold": [
+        "bend_euler",
+        "_bend_s",
+        "_bezier_curve"
+      ],
+      "type": "waveguide_bend",
+      "source_prompt_index": 6
+    },
+    {
+      "id": "tb007_thermo_optic_phase_shifter_2",
+      "kind": "intent",
+      "query": "thermo optic phase shifter",
+      "gold": [
+        "heater_tin_cband",
+        "heater_doped_si_cband"
+      ],
+      "type": "thermo_optic_phase_shifter",
+      "source_prompt_index": 7
+    },
+    {
+      "id": "tb008_phase_shifter_2",
+      "kind": "intent",
+      "query": "a high-speed phase shifter",
+      "gold": [
+        "heater_tin_cband",
+        "heater_doped_si_cband",
+        "pndiode",
+        "pindiode_cband"
+      ],
+      "type": "phase_shifter",
+      "source_prompt_index": 8
+    },
+    {
+      "id": "tb008_variable_optical_attenuator_1",
+      "kind": "intent",
+      "query": "a VOA",
+      "gold": [
+        "pindiode_cband"
+      ],
+      "type": "variable_optical_attenuator",
+      "source_prompt_index": 8
+    },
+    {
+      "id": "tb009_mzi_1x2_1",
+      "kind": "intent",
+      "query": "1\u00d72 Mach-Zehnder Interferometer",
+      "gold": [
+        "mzi_1x2_pindiode_cband"
+      ],
+      "type": "mzi_1x2",
+      "source_prompt_index": 9
+    },
+    {
+      "id": "tb010_directional_coupler_2",
+      "kind": "intent",
+      "query": "2x2 directional coupler",
+      "gold": [
+        "_directional_coupler",
+        "_directional_coupler_adiabatic"
+      ],
+      "type": "directional_coupler",
+      "source_prompt_index": 10
+    },
+    {
+      "id": "tb010_phase_shifter_3",
+      "kind": "intent",
+      "query": "high-speed phase shifter",
+      "gold": [
+        "heater_tin_cband",
+        "heater_doped_si_cband",
+        "pndiode",
+        "pindiode_cband"
+      ],
+      "type": "phase_shifter",
+      "source_prompt_index": 10
+    },
+    {
+      "id": "tb010_variable_optical_attenuator_2",
+      "kind": "intent",
+      "query": "pin-diode VOA",
+      "gold": [
+        "pindiode_cband"
+      ],
+      "type": "variable_optical_attenuator",
+      "source_prompt_index": 10
+    },
+    {
+      "id": "tb011_mzi_2x2_4",
+      "kind": "intent",
+      "query": "an MZI",
+      "gold": [
+        "mzi_2x2_heater_tin_cband",
+        "mzi_2x2_pindiode_cband",
+        "mzi_2x2_pn_diode"
+      ],
+      "type": "mzi_2x2",
+      "source_prompt_index": 11
+    },
+    {
+      "id": "tb011_thermo_optic_phase_shifter_3",
+      "kind": "intent",
+      "query": "thermo-optic phase shifters",
+      "gold": [
+        "heater_tin_cband",
+        "heater_doped_si_cband"
+      ],
+      "type": "thermo_optic_phase_shifter",
+      "source_prompt_index": 11
+    },
+    {
+      "id": "tb012_mach_zehnder_modulator_3",
+      "kind": "intent",
+      "query": "four amplitude modulators",
+      "gold": [
+        "tw_mzm",
+        "mzi_2x2_pn_diode",
+        "mzi_2x2_pindiode_cband",
+        "mzi_1x2_pindiode_cband",
+        "mzi_1x1_pindiode_cband"
+      ],
+      "type": "mach_zehnder_modulator",
+      "source_prompt_index": 12
+    },
+    {
+      "id": "tb012_wavelength_division_multiplexer_2",
+      "kind": "intent",
+      "query": "a 4x1 wavelength-division multiplexer",
+      "gold": [
+        "wdm_mzi1x4"
+      ],
+      "type": "wavelength_division_multiplexer",
+      "source_prompt_index": 12
+    },
+    {
+      "id": "tb013_mzi_2x2_5",
+      "kind": "intent",
+      "query": "mzi_2x2_heater_tin_cband",
+      "gold": [
+        "mzi_2x2_heater_tin_cband",
+        "mzi_2x2_pindiode_cband",
+        "mzi_2x2_pn_diode"
+      ],
+      "type": "mzi_2x2",
+      "source_prompt_index": 13
+    },
+    {
+      "id": "tb014_mmi_1x2_3",
+      "kind": "intent",
+      "query": "1\u00d72 MMI couplers",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 14
+    },
+    {
+      "id": "tb015_mzi_2x2_6",
+      "kind": "intent",
+      "query": "A 4 port MZI",
+      "gold": [
+        "mzi_2x2_heater_tin_cband",
+        "mzi_2x2_pindiode_cband",
+        "mzi_2x2_pn_diode"
+      ],
+      "type": "mzi_2x2",
+      "source_prompt_index": 15
+    },
+    {
+      "id": "tb016_mach_zehnder_modulator_4",
+      "kind": "intent",
+      "query": "MZI",
+      "gold": [
+        "tw_mzm",
+        "mzi_2x2_pn_diode",
+        "mzi_2x2_pindiode_cband",
+        "mzi_1x2_pindiode_cband",
+        "mzi_1x1_pindiode_cband"
+      ],
+      "type": "mach_zehnder_modulator",
+      "source_prompt_index": 16
+    },
+    {
+      "id": "tb017_waveguide_bend_2",
+      "kind": "intent",
+      "query": "A 90 degree waveguide bend",
+      "gold": [
+        "bend_euler",
+        "_bend_s",
+        "_bezier_curve"
+      ],
+      "type": "waveguide_bend",
+      "source_prompt_index": 17
+    },
+    {
+      "id": "tb018_mmi_2x2_1",
+      "kind": "intent",
+      "query": "a 2x2 MMI",
+      "gold": [
+        "_mmi2x2"
+      ],
+      "type": "mmi_2x2",
+      "source_prompt_index": 18
+    },
+    {
+      "id": "tb020_mmi_1x2_4",
+      "kind": "intent",
+      "query": "1x2 MMI",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 20
+    },
+    {
+      "id": "tb021_mzi_2x2_7",
+      "kind": "intent",
+      "query": "a 2x2 MZI",
+      "gold": [
+        "mzi_2x2_heater_tin_cband",
+        "mzi_2x2_pindiode_cband",
+        "mzi_2x2_pn_diode"
+      ],
+      "type": "mzi_2x2",
+      "source_prompt_index": 21
+    },
+    {
+      "id": "tb021_phase_shifter_4",
+      "kind": "intent",
+      "query": "two 2 mm long PIN-diodes for phase modulation",
+      "gold": [
+        "heater_tin_cband",
+        "heater_doped_si_cband",
+        "pndiode",
+        "pindiode_cband"
+      ],
+      "type": "phase_shifter",
+      "source_prompt_index": 21
+    },
+    {
+      "id": "tb022_mach_zehnder_modulator_5",
+      "kind": "intent",
+      "query": "an MZI",
+      "gold": [
+        "tw_mzm",
+        "mzi_2x2_pn_diode",
+        "mzi_2x2_pindiode_cband",
+        "mzi_1x2_pindiode_cband",
+        "mzi_1x1_pindiode_cband"
+      ],
+      "type": "mach_zehnder_modulator",
+      "source_prompt_index": 22
+    },
+    {
+      "id": "tb022_phase_shifter_5",
+      "kind": "intent",
+      "query": "2mm long PIN-diodes",
+      "gold": [
+        "heater_tin_cband",
+        "heater_doped_si_cband",
+        "pndiode",
+        "pindiode_cband"
+      ],
+      "type": "phase_shifter",
+      "source_prompt_index": 22
+    },
+    {
+      "id": "tb023_directional_coupler_3",
+      "kind": "intent",
+      "query": "Directional coupler",
+      "gold": [
+        "_directional_coupler",
+        "_directional_coupler_adiabatic"
+      ],
+      "type": "directional_coupler",
+      "source_prompt_index": 23
+    },
+    {
+      "id": "tb025_directional_coupler_4",
+      "kind": "intent",
+      "query": "a directional coupler",
+      "gold": [
+        "_directional_coupler",
+        "_directional_coupler_adiabatic"
+      ],
+      "type": "directional_coupler",
+      "source_prompt_index": 25
+    },
+    {
+      "id": "tb025_waveguide_bend_3",
+      "kind": "intent",
+      "query": "a connection from an output to an input",
+      "gold": [
+        "bend_euler",
+        "_bend_s",
+        "_bezier_curve"
+      ],
+      "type": "waveguide_bend",
+      "source_prompt_index": 25
+    },
+    {
+      "id": "tb026_mmi_1x2_5",
+      "kind": "intent",
+      "query": "1x2 MMI",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 26
+    },
+    {
+      "id": "tb026_thermo_optic_phase_shifter_4",
+      "kind": "intent",
+      "query": "thermo-optic phase shifters",
+      "gold": [
+        "heater_tin_cband",
+        "heater_doped_si_cband"
+      ],
+      "type": "thermo_optic_phase_shifter",
+      "source_prompt_index": 26
+    },
+    {
+      "id": "tb027_mzi_2x2_8",
+      "kind": "intent",
+      "query": "2x2 MZI",
+      "gold": [
+        "mzi_2x2_heater_tin_cband",
+        "mzi_2x2_pindiode_cband",
+        "mzi_2x2_pn_diode"
+      ],
+      "type": "mzi_2x2",
+      "source_prompt_index": 27
+    },
+    {
+      "id": "tb027_thermo_optic_phase_shifter_5",
+      "kind": "intent",
+      "query": "integrated heaters",
+      "gold": [
+        "heater_tin_cband",
+        "heater_doped_si_cband"
+      ],
+      "type": "thermo_optic_phase_shifter",
+      "source_prompt_index": 27
+    },
+    {
+      "id": "tb028_mmi_1x2_6",
+      "kind": "intent",
+      "query": "1x2 MMI",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 28
+    },
+    {
+      "id": "tb028_mmi_1x2_7",
+      "kind": "intent",
+      "query": "1x2 MMI",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 28
+    },
+    {
+      "id": "tb028_mmi_1x2_8",
+      "kind": "intent",
+      "query": "1x2 MMI",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 28
+    },
+    {
+      "id": "tb029_directional_coupler_5",
+      "kind": "intent",
+      "query": "an adiabatic directional coupler",
+      "gold": [
+        "_directional_coupler",
+        "_directional_coupler_adiabatic"
+      ],
+      "type": "directional_coupler",
+      "source_prompt_index": 29
+    },
+    {
+      "id": "tb029_straight_waveguide_2",
+      "kind": "intent",
+      "query": "two straight waveguides",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 29
+    },
+    {
+      "id": "tb030_mmi_1x2_9",
+      "kind": "intent",
+      "query": "1x2 MMI coupler",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 30
+    },
+    {
+      "id": "tb030_straight_waveguide_3",
+      "kind": "intent",
+      "query": "connecting waveguides",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 30
+    },
+    {
+      "id": "tb030_thermo_optic_phase_shifter_6",
+      "kind": "intent",
+      "query": "thermo-optic phase shifter",
+      "gold": [
+        "heater_tin_cband",
+        "heater_doped_si_cband"
+      ],
+      "type": "thermo_optic_phase_shifter",
+      "source_prompt_index": 30
+    },
+    {
+      "id": "tb031_mmi_1x2_10",
+      "kind": "intent",
+      "query": "1x2 MMI",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 31
+    },
+    {
+      "id": "tb032_mmi_1x2_11",
+      "kind": "intent",
+      "query": "a 1x2 MMI that splits the input",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 32
+    },
+    {
+      "id": "tb032_mzi_1x2_2",
+      "kind": "intent",
+      "query": "a first-stage 1x2 MZI",
+      "gold": [
+        "mzi_1x2_pindiode_cband"
+      ],
+      "type": "mzi_1x2",
+      "source_prompt_index": 32
+    },
+    {
+      "id": "tb032_mzi_1x2_3",
+      "kind": "intent",
+      "query": "a second-stage 1x2 MZI with a path length difference",
+      "gold": [
+        "mzi_1x2_pindiode_cband"
+      ],
+      "type": "mzi_1x2",
+      "source_prompt_index": 32
+    },
+    {
+      "id": "tb032_mmi_2x2_2",
+      "kind": "intent",
+      "query": "a 2x2 MMI that recombines outputs",
+      "gold": [
+        "_mmi2x2"
+      ],
+      "type": "mmi_2x2",
+      "source_prompt_index": 32
+    },
+    {
+      "id": "tb033_mmi_1x2_12",
+      "kind": "intent",
+      "query": "a 1x2 MMI",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 33
+    },
+    {
+      "id": "tb033_mmi_2x2_3",
+      "kind": "intent",
+      "query": "a 2x2 MMI",
+      "gold": [
+        "_mmi2x2"
+      ],
+      "type": "mmi_2x2",
+      "source_prompt_index": 33
+    },
+    {
+      "id": "tb034_mmi_1x2_13",
+      "kind": "intent",
+      "query": "a 1x2 MMI",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 34
+    },
+    {
+      "id": "tb034_straight_waveguide_4",
+      "kind": "intent",
+      "query": "straight waveguides",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 34
+    },
+    {
+      "id": "tb034_mmi_2x2_4",
+      "kind": "intent",
+      "query": "a 2x2 MMI",
+      "gold": [
+        "_mmi2x2"
+      ],
+      "type": "mmi_2x2",
+      "source_prompt_index": 34
+    },
+    {
+      "id": "tb035_mmi_1x2_14",
+      "kind": "intent",
+      "query": "a 1x2 MMI",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 35
+    },
+    {
+      "id": "tb035_straight_waveguide_5",
+      "kind": "intent",
+      "query": "straight waveguides",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 35
+    },
+    {
+      "id": "tb035_mmi_2x2_5",
+      "kind": "intent",
+      "query": "a 2x2 MMI",
+      "gold": [
+        "_mmi2x2"
+      ],
+      "type": "mmi_2x2",
+      "source_prompt_index": 35
+    },
+    {
+      "id": "tb036_mzi_2x2_9",
+      "kind": "intent",
+      "query": "A 2x2 MZI",
+      "gold": [
+        "mzi_2x2_heater_tin_cband",
+        "mzi_2x2_pindiode_cband",
+        "mzi_2x2_pn_diode"
+      ],
+      "type": "mzi_2x2",
+      "source_prompt_index": 36
+    },
+    {
+      "id": "tb037_mmi_1x2_15",
+      "kind": "intent",
+      "query": "1x2 MMI",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 37
+    },
+    {
+      "id": "tb037_variable_optical_attenuator_3",
+      "kind": "intent",
+      "query": "variable optical attenuator",
+      "gold": [
+        "pindiode_cband"
+      ],
+      "type": "variable_optical_attenuator",
+      "source_prompt_index": 37
+    },
+    {
+      "id": "tb037_thermo_optic_phase_shifter_7",
+      "kind": "intent",
+      "query": "thermo-optic phase shifter",
+      "gold": [
+        "heater_tin_cband",
+        "heater_doped_si_cband"
+      ],
+      "type": "thermo_optic_phase_shifter",
+      "source_prompt_index": 37
+    },
+    {
+      "id": "tb037_grating_coupler_1",
+      "kind": "intent",
+      "query": "grating coupler",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 37
+    },
+    {
+      "id": "tb038_straight_waveguide_6",
+      "kind": "intent",
+      "query": "four separate single-mode waveguide paths",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 38
+    },
+    {
+      "id": "tb038_grating_coupler_2",
+      "kind": "intent",
+      "query": "pair of grating couplers",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 38
+    },
+    {
+      "id": "tb039_wavelength_division_multiplexer_3",
+      "kind": "intent",
+      "query": "8-channel CWDM",
+      "gold": [
+        "wdm_mzi1x4"
+      ],
+      "type": "wavelength_division_multiplexer",
+      "source_prompt_index": 39
+    },
+    {
+      "id": "tb039_microring_modulator_1",
+      "kind": "intent",
+      "query": "microring modulator with a p\u2013i\u2013n diode",
+      "gold": [
+        "mrm_1x1_pndiode"
+      ],
+      "type": "microring_modulator",
+      "source_prompt_index": 39
+    },
+    {
+      "id": "tb039_straight_waveguide_7",
+      "kind": "intent",
+      "query": "single bus waveguide",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 39
+    },
+    {
+      "id": "tb040_mzi_1x2_4",
+      "kind": "intent",
+      "query": "1x2 MZIs",
+      "gold": [
+        "mzi_1x2_pindiode_cband"
+      ],
+      "type": "mzi_1x2",
+      "source_prompt_index": 40
+    },
+    {
+      "id": "tb040_thermo_optic_phase_shifter_8",
+      "kind": "intent",
+      "query": "integrated thermo-optic phase shifters",
+      "gold": [
+        "heater_tin_cband",
+        "heater_doped_si_cband"
+      ],
+      "type": "thermo_optic_phase_shifter",
+      "source_prompt_index": 40
+    },
+    {
+      "id": "tb040_mmi_1x2_16",
+      "kind": "intent",
+      "query": "MMI couplers",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 40
+    },
+    {
+      "id": "tb040_mmi_2x2_6",
+      "kind": "intent",
+      "query": "MMI couplers",
+      "gold": [
+        "_mmi2x2"
+      ],
+      "type": "mmi_2x2",
+      "source_prompt_index": 40
+    },
+    {
+      "id": "tb040_edge_coupler_1",
+      "kind": "intent",
+      "query": "edge couplers for fiber connection",
+      "gold": [
+        "edge_coupler"
+      ],
+      "type": "edge_coupler",
+      "source_prompt_index": 40
+    },
+    {
+      "id": "tb040_waveguide_bend_4",
+      "kind": "intent",
+      "query": "a 180-degree bend",
+      "gold": [
+        "bend_euler",
+        "_bend_s",
+        "_bezier_curve"
+      ],
+      "type": "waveguide_bend",
+      "source_prompt_index": 40
+    },
+    {
+      "id": "tb040_straight_waveguide_8",
+      "kind": "intent",
+      "query": "connecting waveguides",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 40
+    },
+    {
+      "id": "tb041_directional_coupler_6",
+      "kind": "intent",
+      "query": "A directional coupler with a 50:50 split ratio",
+      "gold": [
+        "_directional_coupler",
+        "_directional_coupler_adiabatic"
+      ],
+      "type": "directional_coupler",
+      "source_prompt_index": 41
+    },
+    {
+      "id": "tb042_mmi_2x2_7",
+      "kind": "intent",
+      "query": "An MMI, with two inputs and two outputs and 50:50 split ratio",
+      "gold": [
+        "_mmi2x2"
+      ],
+      "type": "mmi_2x2",
+      "source_prompt_index": 42
+    },
+    {
+      "id": "tb043_mmi_1x2_17",
+      "kind": "intent",
+      "query": "A power splitter, with one input and two outputs",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 43
+    },
+    {
+      "id": "tb044_waveguide_bend_5",
+      "kind": "intent",
+      "query": "A circular bend with a bend angle of 90 degrees and a radius of 100 um",
+      "gold": [
+        "bend_euler",
+        "_bend_s",
+        "_bezier_curve"
+      ],
+      "type": "waveguide_bend",
+      "source_prompt_index": 44
+    },
+    {
+      "id": "tb045_straight_waveguide_9",
+      "kind": "intent",
+      "query": "A straight waveguide with a length of 253 um",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 45
+    },
+    {
+      "id": "tb046_grating_coupler_3",
+      "kind": "intent",
+      "query": "A grating coupler",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 46
+    },
+    {
+      "id": "tb047_ring_resonator_1",
+      "kind": "intent",
+      "query": "A ring resonator with a radius of 10 microns",
+      "gold": [
+        "mrr_1x1",
+        "mrr_1x1_heater_tin",
+        "mrr_2x2",
+        "coupler_ring"
+      ],
+      "type": "ring_resonator",
+      "source_prompt_index": 47
+    },
+    {
+      "id": "tb047_straight_waveguide_10",
+      "kind": "intent",
+      "query": "A single bus waveguide",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 47
+    },
+    {
+      "id": "tb048_taper_mode_converter_1",
+      "kind": "intent",
+      "query": "A tapered waveguide",
+      "gold": [
+        "mode_converter"
+      ],
+      "type": "taper_mode_converter",
+      "source_prompt_index": 48
+    },
+    {
+      "id": "tb049_mmi_1x2_18",
+      "kind": "intent",
+      "query": "a 1x2 MMI",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 49
+    },
+    {
+      "id": "tb049_mmi_1x2_19",
+      "kind": "intent",
+      "query": "another 1x2 MMI",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 49
+    },
+    {
+      "id": "tb050_grating_coupler_4",
+      "kind": "intent",
+      "query": "A grating coupler",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 50
+    },
+    {
+      "id": "tb050_thermo_optic_phase_shifter_9",
+      "kind": "intent",
+      "query": "a thermo-optic phase shifter",
+      "gold": [
+        "heater_tin_cband",
+        "heater_doped_si_cband"
+      ],
+      "type": "thermo_optic_phase_shifter",
+      "source_prompt_index": 50
+    },
+    {
+      "id": "tb051_directional_coupler_7",
+      "kind": "intent",
+      "query": "a directional coupler",
+      "gold": [
+        "_directional_coupler",
+        "_directional_coupler_adiabatic"
+      ],
+      "type": "directional_coupler",
+      "source_prompt_index": 51
+    },
+    {
+      "id": "tb051_mmi_2x2_8",
+      "kind": "intent",
+      "query": "a 2x2 MMI",
+      "gold": [
+        "_mmi2x2"
+      ],
+      "type": "mmi_2x2",
+      "source_prompt_index": 51
+    },
+    {
+      "id": "tb052_grating_coupler_5",
+      "kind": "intent",
+      "query": "2 grating couplers",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 52
+    },
+    {
+      "id": "tb052_directional_coupler_8",
+      "kind": "intent",
+      "query": "a directional coupler",
+      "gold": [
+        "_directional_coupler",
+        "_directional_coupler_adiabatic"
+      ],
+      "type": "directional_coupler",
+      "source_prompt_index": 52
+    },
+    {
+      "id": "tb053_mzi_1x1_1",
+      "kind": "intent",
+      "query": "A passive MZI with one input and one output ports",
+      "gold": [
+        "mzi_1x1_heater_doped_si_cband",
+        "mzi_1x1_pindiode_cband",
+        "mzi1"
+      ],
+      "type": "mzi_1x1",
+      "source_prompt_index": 53
+    },
+    {
+      "id": "tb053_grating_coupler_6",
+      "kind": "intent",
+      "query": "grating couplers",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 53
+    },
+    {
+      "id": "tb054_directional_coupler_9",
+      "kind": "intent",
+      "query": "a directional coupler",
+      "gold": [
+        "_directional_coupler",
+        "_directional_coupler_adiabatic"
+      ],
+      "type": "directional_coupler",
+      "source_prompt_index": 54
+    },
+    {
+      "id": "tb054_straight_waveguide_11",
+      "kind": "intent",
+      "query": "straight waveguides",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 54
+    },
+    {
+      "id": "tb055_mzi_1x2_5",
+      "kind": "intent",
+      "query": "A 1 input, 2 output MZI",
+      "gold": [
+        "mzi_1x2_pindiode_cband"
+      ],
+      "type": "mzi_1x2",
+      "source_prompt_index": 55
+    },
+    {
+      "id": "tb055_mmi_1x2_20",
+      "kind": "intent",
+      "query": "mmi1x2",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 55
+    },
+    {
+      "id": "tb056_grating_coupler_7",
+      "kind": "intent",
+      "query": "A grating coupler",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 56
+    },
+    {
+      "id": "tb056_mmi_1x2_21",
+      "kind": "intent",
+      "query": "a 1x2 MMI",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 56
+    },
+    {
+      "id": "tb057_mmi_1x2_22",
+      "kind": "intent",
+      "query": "mmi 1x2",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 57
+    },
+    {
+      "id": "tb057_mmi_2x2_9",
+      "kind": "intent",
+      "query": "mmi 2x2",
+      "gold": [
+        "_mmi2x2"
+      ],
+      "type": "mmi_2x2",
+      "source_prompt_index": 57
+    },
+    {
+      "id": "tb058_grating_coupler_8",
+      "kind": "intent",
+      "query": "grating coupler",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 58
+    },
+    {
+      "id": "tb058_straight_waveguide_12",
+      "kind": "intent",
+      "query": "straight waveguide",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 58
+    },
+    {
+      "id": "tb059_grating_coupler_9",
+      "kind": "intent",
+      "query": "2 grating couplers",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 59
+    },
+    {
+      "id": "tb059_mmi_2x2_10",
+      "kind": "intent",
+      "query": "a 2x2 mmi splitter",
+      "gold": [
+        "_mmi2x2"
+      ],
+      "type": "mmi_2x2",
+      "source_prompt_index": 59
+    },
+    {
+      "id": "tb060_mmi_1x2_23",
+      "kind": "intent",
+      "query": "1x2 MMIs",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 60
+    },
+    {
+      "id": "tb061_mzi_1x1_2",
+      "kind": "intent",
+      "query": "A passive MZI, one input port and one output port",
+      "gold": [
+        "mzi_1x1_heater_doped_si_cband",
+        "mzi_1x1_pindiode_cband",
+        "mzi1"
+      ],
+      "type": "mzi_1x1",
+      "source_prompt_index": 61
+    },
+    {
+      "id": "tb062_ring_resonator_2",
+      "kind": "intent",
+      "query": "a single-bus ring resonator (with a radius of 28)",
+      "gold": [
+        "mrr_1x1",
+        "mrr_1x1_heater_tin",
+        "mrr_2x2",
+        "coupler_ring"
+      ],
+      "type": "ring_resonator",
+      "source_prompt_index": 62
+    },
+    {
+      "id": "tb062_grating_coupler_10",
+      "kind": "intent",
+      "query": "two grating couplers for input/output coupling",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 62
+    },
+    {
+      "id": "tb063_waveguide_bend_6",
+      "kind": "intent",
+      "query": "two Euler bends",
+      "gold": [
+        "bend_euler",
+        "_bend_s",
+        "_bezier_curve"
+      ],
+      "type": "waveguide_bend",
+      "source_prompt_index": 63
+    },
+    {
+      "id": "tb063_taper_mode_converter_2",
+      "kind": "intent",
+      "query": "a tapering section",
+      "gold": [
+        "mode_converter"
+      ],
+      "type": "taper_mode_converter",
+      "source_prompt_index": 63
+    },
+    {
+      "id": "tb064_mzi_1x1_3",
+      "kind": "intent",
+      "query": "a passive asymmetric Mach-Zehnder Interferometer",
+      "gold": [
+        "mzi_1x1_heater_doped_si_cband",
+        "mzi_1x1_pindiode_cband",
+        "mzi1"
+      ],
+      "type": "mzi_1x1",
+      "source_prompt_index": 64
+    },
+    {
+      "id": "tb064_grating_coupler_11",
+      "kind": "intent",
+      "query": "grating couplers",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 64
+    },
+    {
+      "id": "tb065_directional_coupler_10",
+      "kind": "intent",
+      "query": "50/50 directional couplers",
+      "gold": [
+        "_directional_coupler",
+        "_directional_coupler_adiabatic"
+      ],
+      "type": "directional_coupler",
+      "source_prompt_index": 65
+    },
+    {
+      "id": "tb065_ring_resonator_3",
+      "kind": "intent",
+      "query": "a ring resonator of radius 10 \u00b5m",
+      "gold": [
+        "mrr_1x1",
+        "mrr_1x1_heater_tin",
+        "mrr_2x2",
+        "coupler_ring"
+      ],
+      "type": "ring_resonator",
+      "source_prompt_index": 65
+    },
+    {
+      "id": "tb066_ring_resonator_4",
+      "kind": "intent",
+      "query": "double-bus silicon ring resonator",
+      "gold": [
+        "mrr_1x1",
+        "mrr_1x1_heater_tin",
+        "mrr_2x2",
+        "coupler_ring"
+      ],
+      "type": "ring_resonator",
+      "source_prompt_index": 66
+    },
+    {
+      "id": "tb066_straight_waveguide_13",
+      "kind": "intent",
+      "query": "bus waveguides for input/output and drop/through ports",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 66
+    },
+    {
+      "id": "tb067_ring_resonator_5",
+      "kind": "intent",
+      "query": "single-bus ring resonators",
+      "gold": [
+        "mrr_1x1",
+        "mrr_1x1_heater_tin",
+        "mrr_2x2",
+        "coupler_ring"
+      ],
+      "type": "ring_resonator",
+      "source_prompt_index": 67
+    },
+    {
+      "id": "tb067_straight_waveguide_14",
+      "kind": "intent",
+      "query": "bus waveguide",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 67
+    },
+    {
+      "id": "tb067_grating_coupler_12",
+      "kind": "intent",
+      "query": "grating couplers for input/output coupling",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 67
+    },
+    {
+      "id": "tb068_ring_resonator_6",
+      "kind": "intent",
+      "query": "four ring resonators",
+      "gold": [
+        "mrr_1x1",
+        "mrr_1x1_heater_tin",
+        "mrr_2x2",
+        "coupler_ring"
+      ],
+      "type": "ring_resonator",
+      "source_prompt_index": 68
+    },
+    {
+      "id": "tb068_straight_waveguide_15",
+      "kind": "intent",
+      "query": "a common bus waveguide",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 68
+    },
+    {
+      "id": "tb068_straight_waveguide_16",
+      "kind": "intent",
+      "query": "drop ports for each ring",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 68
+    },
+    {
+      "id": "tb069_mzi_2x2_10",
+      "kind": "intent",
+      "query": "four MZI interferometers in series",
+      "gold": [
+        "mzi_2x2_heater_tin_cband",
+        "mzi_2x2_pindiode_cband",
+        "mzi_2x2_pn_diode"
+      ],
+      "type": "mzi_2x2",
+      "source_prompt_index": 69
+    },
+    {
+      "id": "tb069_straight_waveguide_17",
+      "kind": "intent",
+      "query": "a single waveguide path",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 69
+    },
+    {
+      "id": "tb069_mmi_2x2_11",
+      "kind": "intent",
+      "query": "2x2 MMIs as 50:50 splitters/combiners",
+      "gold": [
+        "_mmi2x2"
+      ],
+      "type": "mmi_2x2",
+      "source_prompt_index": 69
+    },
+    {
+      "id": "tb070_mzi_2x2_11",
+      "kind": "intent",
+      "query": "cascaded MZIs with 30 \u00b5m and 50 \u00b5m path differences",
+      "gold": [
+        "mzi_2x2_heater_tin_cband",
+        "mzi_2x2_pindiode_cband",
+        "mzi_2x2_pn_diode"
+      ],
+      "type": "mzi_2x2",
+      "source_prompt_index": 70
+    },
+    {
+      "id": "tb070_mmi_2x2_12",
+      "kind": "intent",
+      "query": "2x2 MMIs as splitters/combiners",
+      "gold": [
+        "_mmi2x2"
+      ],
+      "type": "mmi_2x2",
+      "source_prompt_index": 70
+    },
+    {
+      "id": "tb070_straight_waveguide_18",
+      "kind": "intent",
+      "query": "waveguides to route all outputs",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 70
+    },
+    {
+      "id": "tb070_waveguide_bend_7",
+      "kind": "intent",
+      "query": "bends for routing waveguides",
+      "gold": [
+        "bend_euler",
+        "_bend_s",
+        "_bezier_curve"
+      ],
+      "type": "waveguide_bend",
+      "source_prompt_index": 70
+    },
+    {
+      "id": "tb070_grating_coupler_13",
+      "kind": "intent",
+      "query": "4 inputs and 4 outputs",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 70
+    },
+    {
+      "id": "tb071_ring_resonator_7",
+      "kind": "intent",
+      "query": "three double bus ring resonators",
+      "gold": [
+        "mrr_1x1",
+        "mrr_1x1_heater_tin",
+        "mrr_2x2",
+        "coupler_ring"
+      ],
+      "type": "ring_resonator",
+      "source_prompt_index": 71
+    },
+    {
+      "id": "tb071_straight_waveguide_19",
+      "kind": "intent",
+      "query": "a common bus waveguide",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 71
+    },
+    {
+      "id": "tb071_grating_coupler_14",
+      "kind": "intent",
+      "query": "separate grating couplers",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 71
+    },
+    {
+      "id": "tb072_directional_coupler_11",
+      "kind": "intent",
+      "query": "two 50:50 directional couplers",
+      "gold": [
+        "_directional_coupler",
+        "_directional_coupler_adiabatic"
+      ],
+      "type": "directional_coupler",
+      "source_prompt_index": 72
+    },
+    {
+      "id": "tb072_straight_waveguide_20",
+      "kind": "intent",
+      "query": "a straight waveguide for an extra 200 \u00b5m path length",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 72
+    },
+    {
+      "id": "tb072_waveguide_bend_8",
+      "kind": "intent",
+      "query": "waveguide bends for the MZI arms",
+      "gold": [
+        "bend_euler",
+        "_bend_s",
+        "_bezier_curve"
+      ],
+      "type": "waveguide_bend",
+      "source_prompt_index": 72
+    },
+    {
+      "id": "tb073_phase_shifter_6",
+      "kind": "intent",
+      "query": "a phase shifter on one of its arms",
+      "gold": [
+        "heater_tin_cband",
+        "heater_doped_si_cband",
+        "pndiode",
+        "pindiode_cband"
+      ],
+      "type": "phase_shifter",
+      "source_prompt_index": 73
+    },
+    {
+      "id": "tb073_straight_waveguide_21",
+      "kind": "intent",
+      "query": "a delay waveguide",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 73
+    },
+    {
+      "id": "tb073_mmi_2x2_13",
+      "kind": "intent",
+      "query": "MMI for splitters and combiners",
+      "gold": [
+        "_mmi2x2"
+      ],
+      "type": "mmi_2x2",
+      "source_prompt_index": 73
+    },
+    {
+      "id": "tb074_grating_coupler_15",
+      "kind": "intent",
+      "query": "input fiber grating coupler",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 74
+    },
+    {
+      "id": "tb074_mmi_1x2_24",
+      "kind": "intent",
+      "query": "1x2 mmi",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 74
+    },
+    {
+      "id": "tb074_directional_coupler_12",
+      "kind": "intent",
+      "query": "directional coupler",
+      "gold": [
+        "_directional_coupler",
+        "_directional_coupler_adiabatic"
+      ],
+      "type": "directional_coupler",
+      "source_prompt_index": 74
+    },
+    {
+      "id": "tb074_grating_coupler_16",
+      "kind": "intent",
+      "query": "output fiber grating couplers",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 74
+    },
+    {
+      "id": "tb075_mzi_2x2_12",
+      "kind": "intent",
+      "query": "a 2x2 Mach-Zehnder Interferometer",
+      "gold": [
+        "mzi_2x2_heater_tin_cband",
+        "mzi_2x2_pindiode_cband",
+        "mzi_2x2_pn_diode"
+      ],
+      "type": "mzi_2x2",
+      "source_prompt_index": 75
+    },
+    {
+      "id": "tb075_directional_coupler_13",
+      "kind": "intent",
+      "query": "directional couplers with a 50:50 split",
+      "gold": [
+        "_directional_coupler",
+        "_directional_coupler_adiabatic"
+      ],
+      "type": "directional_coupler",
+      "source_prompt_index": 75
+    },
+    {
+      "id": "tb075_ring_resonator_8",
+      "kind": "intent",
+      "query": "a ring resonator",
+      "gold": [
+        "mrr_1x1",
+        "mrr_1x1_heater_tin",
+        "mrr_2x2",
+        "coupler_ring"
+      ],
+      "type": "ring_resonator",
+      "source_prompt_index": 75
+    },
+    {
+      "id": "tb076_ring_resonator_9",
+      "kind": "intent",
+      "query": "a single-bus ring resonator",
+      "gold": [
+        "mrr_1x1",
+        "mrr_1x1_heater_tin",
+        "mrr_2x2",
+        "coupler_ring"
+      ],
+      "type": "ring_resonator",
+      "source_prompt_index": 76
+    },
+    {
+      "id": "tb076_grating_coupler_17",
+      "kind": "intent",
+      "query": "two grating couplers for input/output coupling",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 76
+    },
+    {
+      "id": "tb077_mmi_1x2_25",
+      "kind": "intent",
+      "query": "1x2 mmi splitters",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 77
+    },
+    {
+      "id": "tb078_mzi_2x2_13",
+      "kind": "intent",
+      "query": "active Mach-Zehnder Interferometers",
+      "gold": [
+        "mzi_2x2_heater_tin_cband",
+        "mzi_2x2_pindiode_cband",
+        "mzi_2x2_pn_diode"
+      ],
+      "type": "mzi_2x2",
+      "source_prompt_index": 78
+    },
+    {
+      "id": "tb078_thermo_optic_phase_shifter_10",
+      "kind": "intent",
+      "query": "thermo-optically tuned",
+      "gold": [
+        "heater_tin_cband",
+        "heater_doped_si_cband"
+      ],
+      "type": "thermo_optic_phase_shifter",
+      "source_prompt_index": 78
+    },
+    {
+      "id": "tb078_straight_waveguide_22",
+      "kind": "intent",
+      "query": "a single bus waveguide",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 78
+    },
+    {
+      "id": "tb078_directional_coupler_14",
+      "kind": "intent",
+      "query": "2x2 coupler (50:50)",
+      "gold": [
+        "_directional_coupler",
+        "_directional_coupler_adiabatic"
+      ],
+      "type": "directional_coupler",
+      "source_prompt_index": 78
+    },
+    {
+      "id": "tb078_grating_coupler_18",
+      "kind": "intent",
+      "query": "a single input port",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 78
+    },
+    {
+      "id": "tb078_grating_coupler_19",
+      "kind": "intent",
+      "query": "four distinct output ports",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 78
+    },
+    {
+      "id": "tb079_directional_coupler_15",
+      "kind": "intent",
+      "query": "50:50 directional couplers",
+      "gold": [
+        "_directional_coupler",
+        "_directional_coupler_adiabatic"
+      ],
+      "type": "directional_coupler",
+      "source_prompt_index": 79
+    },
+    {
+      "id": "tb079_straight_waveguide_23",
+      "kind": "intent",
+      "query": "straight waveguides of equal length",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 79
+    },
+    {
+      "id": "tb081_mach_zehnder_modulator_6",
+      "kind": "intent",
+      "query": "dual-drive Mach-Zehnder Modulators",
+      "gold": [
+        "tw_mzm",
+        "mzi_2x2_pn_diode",
+        "mzi_2x2_pindiode_cband",
+        "mzi_1x2_pindiode_cband",
+        "mzi_1x1_pindiode_cband"
+      ],
+      "type": "mach_zehnder_modulator",
+      "source_prompt_index": 81
+    },
+    {
+      "id": "tb081_mmi_1x2_26",
+      "kind": "intent",
+      "query": "1x2 multimode interferometer",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 81
+    },
+    {
+      "id": "tb081_mmi_1x2_27",
+      "kind": "intent",
+      "query": "2x1 MMIs",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 81
+    },
+    {
+      "id": "tb082_mach_zehnder_modulator_7",
+      "kind": "intent",
+      "query": "single-drive Mach-Zehnder Modulators",
+      "gold": [
+        "tw_mzm",
+        "mzi_2x2_pn_diode",
+        "mzi_2x2_pindiode_cband",
+        "mzi_1x2_pindiode_cband",
+        "mzi_1x1_pindiode_cband"
+      ],
+      "type": "mach_zehnder_modulator",
+      "source_prompt_index": 82
+    },
+    {
+      "id": "tb082_mmi_1x2_28",
+      "kind": "intent",
+      "query": "1x2 MMIs",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 82
+    },
+    {
+      "id": "tb082_phase_shifter_7",
+      "kind": "intent",
+      "query": "phase shifts",
+      "gold": [
+        "heater_tin_cband",
+        "heater_doped_si_cband",
+        "pndiode",
+        "pindiode_cband"
+      ],
+      "type": "phase_shifter",
+      "source_prompt_index": 82
+    },
+    {
+      "id": "tb082_mmi_1x2_29",
+      "kind": "intent",
+      "query": "2x1 MMIs",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 82
+    },
+    {
+      "id": "tb083_mzi_2x2_14",
+      "kind": "intent",
+      "query": "a 2x2 optical switching unit",
+      "gold": [
+        "mzi_2x2_heater_tin_cband",
+        "mzi_2x2_pindiode_cband",
+        "mzi_2x2_pn_diode"
+      ],
+      "type": "mzi_2x2",
+      "source_prompt_index": 83
+    },
+    {
+      "id": "tb083_crossing_1",
+      "kind": "intent",
+      "query": "waveguide crossings for the Benes architecture",
+      "gold": [
+        "crossing"
+      ],
+      "type": "crossing",
+      "source_prompt_index": 83
+    },
+    {
+      "id": "tb083_straight_waveguide_24",
+      "kind": "intent",
+      "query": "straight waveguides to connect the switching units",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 83
+    },
+    {
+      "id": "tb083_waveguide_bend_9",
+      "kind": "intent",
+      "query": "waveguide bends for routing",
+      "gold": [
+        "bend_euler",
+        "_bend_s",
+        "_bezier_curve"
+      ],
+      "type": "waveguide_bend",
+      "source_prompt_index": 83
+    },
+    {
+      "id": "tb084_mzi_2x2_15",
+      "kind": "intent",
+      "query": "2x2 optical switching unit",
+      "gold": [
+        "mzi_2x2_heater_tin_cband",
+        "mzi_2x2_pindiode_cband",
+        "mzi_2x2_pn_diode"
+      ],
+      "type": "mzi_2x2",
+      "source_prompt_index": 84
+    },
+    {
+      "id": "tb084_grating_coupler_20",
+      "kind": "intent",
+      "query": "input ports",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 84
+    },
+    {
+      "id": "tb084_grating_coupler_21",
+      "kind": "intent",
+      "query": "output ports",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 84
+    },
+    {
+      "id": "tb084_straight_waveguide_25",
+      "kind": "intent",
+      "query": "waveguides for inter-stage connectivity",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 84
+    },
+    {
+      "id": "tb084_waveguide_bend_10",
+      "kind": "intent",
+      "query": "waveguide bends for inter-stage connectivity",
+      "gold": [
+        "bend_euler",
+        "_bend_s",
+        "_bezier_curve"
+      ],
+      "type": "waveguide_bend",
+      "source_prompt_index": 84
+    },
+    {
+      "id": "tb084_crossing_2",
+      "kind": "intent",
+      "query": "waveguide crossings for the Benes network",
+      "gold": [
+        "crossing"
+      ],
+      "type": "crossing",
+      "source_prompt_index": 84
+    },
+    {
+      "id": "tb085_mzi_2x2_16",
+      "kind": "intent",
+      "query": "2x2 MZI block",
+      "gold": [
+        "mzi_2x2_heater_tin_cband",
+        "mzi_2x2_pindiode_cband",
+        "mzi_2x2_pn_diode"
+      ],
+      "type": "mzi_2x2",
+      "source_prompt_index": 85
+    },
+    {
+      "id": "tb086_mzi_2x2_17",
+      "kind": "intent",
+      "query": "a 2x2 MZI block with PN diodes",
+      "gold": [
+        "mzi_2x2_heater_tin_cband",
+        "mzi_2x2_pindiode_cband",
+        "mzi_2x2_pn_diode"
+      ],
+      "type": "mzi_2x2",
+      "source_prompt_index": 86
+    },
+    {
+      "id": "tb087_mzi_2x2_18",
+      "kind": "intent",
+      "query": "2x2 MZI switches with PN diodes",
+      "gold": [
+        "mzi_2x2_heater_tin_cband",
+        "mzi_2x2_pindiode_cband",
+        "mzi_2x2_pn_diode"
+      ],
+      "type": "mzi_2x2",
+      "source_prompt_index": 87
+    },
+    {
+      "id": "tb087_straight_waveguide_26",
+      "kind": "intent",
+      "query": "input and output waveguides",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 87
+    },
+    {
+      "id": "tb087_crossing_3",
+      "kind": "intent",
+      "query": "waveguide intersections",
+      "gold": [
+        "crossing"
+      ],
+      "type": "crossing",
+      "source_prompt_index": 87
+    },
+    {
+      "id": "tb088_mzi_2x2_19",
+      "kind": "intent",
+      "query": "mzi_2x2_pn_diode devices",
+      "gold": [
+        "mzi_2x2_heater_tin_cband",
+        "mzi_2x2_pindiode_cband",
+        "mzi_2x2_pn_diode"
+      ],
+      "type": "mzi_2x2",
+      "source_prompt_index": 88
+    },
+    {
+      "id": "tb088_straight_waveguide_27",
+      "kind": "intent",
+      "query": "input waveguides",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 88
+    },
+    {
+      "id": "tb088_straight_waveguide_28",
+      "kind": "intent",
+      "query": "output waveguides",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 88
+    },
+    {
+      "id": "tb088_crossing_4",
+      "kind": "intent",
+      "query": "waveguide intersections",
+      "gold": [
+        "crossing"
+      ],
+      "type": "crossing",
+      "source_prompt_index": 88
+    },
+    {
+      "id": "tb089_mach_zehnder_modulator_8",
+      "kind": "intent",
+      "query": "single drive Mach-Zehnder Modulators",
+      "gold": [
+        "tw_mzm",
+        "mzi_2x2_pn_diode",
+        "mzi_2x2_pindiode_cband",
+        "mzi_1x2_pindiode_cband",
+        "mzi_1x1_pindiode_cband"
+      ],
+      "type": "mach_zehnder_modulator",
+      "source_prompt_index": 89
+    },
+    {
+      "id": "tb089_grating_coupler_22",
+      "kind": "intent",
+      "query": "one input",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 89
+    },
+    {
+      "id": "tb089_grating_coupler_23",
+      "kind": "intent",
+      "query": "one output",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 89
+    },
+    {
+      "id": "tb090_mmi_1x2_30",
+      "kind": "intent",
+      "query": "multimode interferometer (MMI) component for splitting",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 90
+    },
+    {
+      "id": "tb090_mmi_1x2_31",
+      "kind": "intent",
+      "query": "multimode interferometer (MMI) component for combining",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 90
+    },
+    {
+      "id": "tb090_phase_shifter_8",
+      "kind": "intent",
+      "query": "phase shifter with a length of L",
+      "gold": [
+        "heater_tin_cband",
+        "heater_doped_si_cband",
+        "pndiode",
+        "pindiode_cband"
+      ],
+      "type": "phase_shifter",
+      "source_prompt_index": 90
+    },
+    {
+      "id": "tb090_straight_waveguide_29",
+      "kind": "intent",
+      "query": "a path length difference of \u0394L",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 90
+    },
+    {
+      "id": "tb090_waveguide_bend_11",
+      "kind": "intent",
+      "query": "waveguide bends to form the interferometer arms",
+      "gold": [
+        "bend_euler",
+        "_bend_s",
+        "_bezier_curve"
+      ],
+      "type": "waveguide_bend",
+      "source_prompt_index": 90
+    },
+    {
+      "id": "tb091_mach_zehnder_modulator_9",
+      "kind": "intent",
+      "query": "a Mach-Zehnder Modulator with a single optical input and a single optical output",
+      "gold": [
+        "tw_mzm",
+        "mzi_2x2_pn_diode",
+        "mzi_2x2_pindiode_cband",
+        "mzi_1x2_pindiode_cband",
+        "mzi_1x1_pindiode_cband"
+      ],
+      "type": "mach_zehnder_modulator",
+      "source_prompt_index": 91
+    },
+    {
+      "id": "tb091_mmi_1x2_32",
+      "kind": "intent",
+      "query": "multimode interferometer (MMI) for splitting and combining",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 91
+    },
+    {
+      "id": "tb091_phase_shifter_9",
+      "kind": "intent",
+      "query": "phase shifters with a length of 10 microns",
+      "gold": [
+        "heater_tin_cband",
+        "heater_doped_si_cband",
+        "pndiode",
+        "pindiode_cband"
+      ],
+      "type": "phase_shifter",
+      "source_prompt_index": 91
+    },
+    {
+      "id": "tb092_mmi_2x2_14",
+      "kind": "intent",
+      "query": "three 2x2 MMI couplers",
+      "gold": [
+        "_mmi2x2"
+      ],
+      "type": "mmi_2x2",
+      "source_prompt_index": 92
+    },
+    {
+      "id": "tb092_phase_shifter_10",
+      "kind": "intent",
+      "query": "a phase shifter",
+      "gold": [
+        "heater_tin_cband",
+        "heater_doped_si_cband",
+        "pndiode",
+        "pindiode_cband"
+      ],
+      "type": "phase_shifter",
+      "source_prompt_index": 92
+    },
+    {
+      "id": "tb093_mmi_2x2_15",
+      "kind": "intent",
+      "query": "multimode interferometer (MMI) components",
+      "gold": [
+        "_mmi2x2"
+      ],
+      "type": "mmi_2x2",
+      "source_prompt_index": 93
+    },
+    {
+      "id": "tb093_phase_shifter_11",
+      "kind": "intent",
+      "query": "adjustable phase shifters",
+      "gold": [
+        "heater_tin_cband",
+        "heater_doped_si_cband",
+        "pndiode",
+        "pindiode_cband"
+      ],
+      "type": "phase_shifter",
+      "source_prompt_index": 93
+    },
+    {
+      "id": "tb094_mmi_1x2_33",
+      "kind": "intent",
+      "query": "1x2 MMI components",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 94
+    },
+    {
+      "id": "tb094_phase_shifter_12",
+      "kind": "intent",
+      "query": "a 90\u00b0 phase shifter",
+      "gold": [
+        "heater_tin_cband",
+        "heater_doped_si_cband",
+        "pndiode",
+        "pindiode_cband"
+      ],
+      "type": "phase_shifter",
+      "source_prompt_index": 94
+    },
+    {
+      "id": "tb094_directional_coupler_16",
+      "kind": "intent",
+      "query": "2x2 directional couplers",
+      "gold": [
+        "_directional_coupler",
+        "_directional_coupler_adiabatic"
+      ],
+      "type": "directional_coupler",
+      "source_prompt_index": 94
+    },
+    {
+      "id": "tb095_mach_zehnder_modulator_10",
+      "kind": "intent",
+      "query": "single drive Mach-Zehnder Modulators",
+      "gold": [
+        "tw_mzm",
+        "mzi_2x2_pn_diode",
+        "mzi_2x2_pindiode_cband",
+        "mzi_1x2_pindiode_cband",
+        "mzi_1x1_pindiode_cband"
+      ],
+      "type": "mach_zehnder_modulator",
+      "source_prompt_index": 95
+    },
+    {
+      "id": "tb095_phase_shifter_13",
+      "kind": "intent",
+      "query": "90-degree phase shifter",
+      "gold": [
+        "heater_tin_cband",
+        "heater_doped_si_cband",
+        "pndiode",
+        "pindiode_cband"
+      ],
+      "type": "phase_shifter",
+      "source_prompt_index": 95
+    },
+    {
+      "id": "tb095_mmi_1x2_34",
+      "kind": "intent",
+      "query": "multimode interferometer for splitting and combining",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 95
+    },
+    {
+      "id": "tb096_mzi_2x2_20",
+      "kind": "intent",
+      "query": "MZI blocks",
+      "gold": [
+        "mzi_2x2_heater_tin_cband",
+        "mzi_2x2_pindiode_cband",
+        "mzi_2x2_pn_diode"
+      ],
+      "type": "mzi_2x2",
+      "source_prompt_index": 96
+    },
+    {
+      "id": "tb096_straight_waveguide_30",
+      "kind": "intent",
+      "query": "connecting waveguides",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 96
+    },
+    {
+      "id": "tb096_waveguide_bend_12",
+      "kind": "intent",
+      "query": "waveguide bends for diagonal connections",
+      "gold": [
+        "bend_euler",
+        "_bend_s",
+        "_bezier_curve"
+      ],
+      "type": "waveguide_bend",
+      "source_prompt_index": 96
+    },
+    {
+      "id": "tb097_mzi_2x2_21",
+      "kind": "intent",
+      "query": "28 MZI blocks",
+      "gold": [
+        "mzi_2x2_heater_tin_cband",
+        "mzi_2x2_pindiode_cband",
+        "mzi_2x2_pn_diode"
+      ],
+      "type": "mzi_2x2",
+      "source_prompt_index": 97
+    },
+    {
+      "id": "tb097_straight_waveguide_31",
+      "kind": "intent",
+      "query": "waveguides to connect the MZIs",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 97
+    },
+    {
+      "id": "tb097_waveguide_bend_13",
+      "kind": "intent",
+      "query": "diagonal connections between layers",
+      "gold": [
+        "bend_euler",
+        "_bend_s",
+        "_bezier_curve"
+      ],
+      "type": "waveguide_bend",
+      "source_prompt_index": 97
+    },
+    {
+      "id": "tb099_mmi_1x2_35",
+      "kind": "intent",
+      "query": "Multimode Interferometer (MMI) components",
+      "gold": [
+        "_mmi1x2"
+      ],
+      "type": "mmi_1x2",
+      "source_prompt_index": 99
+    },
+    {
+      "id": "tb099_grating_coupler_24",
+      "kind": "intent",
+      "query": "8 input and 8 output ports",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 99
+    },
+    {
+      "id": "tb100_thermo_optic_phase_shifter_11",
+      "kind": "intent",
+      "query": "a thermo-optic phase shifter",
+      "gold": [
+        "heater_tin_cband",
+        "heater_doped_si_cband"
+      ],
+      "type": "thermo_optic_phase_shifter",
+      "source_prompt_index": 100
+    },
+    {
+      "id": "tb100_directional_coupler_17",
+      "kind": "intent",
+      "query": "a directional coupler",
+      "gold": [
+        "_directional_coupler",
+        "_directional_coupler_adiabatic"
+      ],
+      "type": "directional_coupler",
+      "source_prompt_index": 100
+    },
+    {
+      "id": "tb100_thermo_optic_phase_shifter_12",
+      "kind": "intent",
+      "query": "a second thermo-optic phase shifter",
+      "gold": [
+        "heater_tin_cband",
+        "heater_doped_si_cband"
+      ],
+      "type": "thermo_optic_phase_shifter",
+      "source_prompt_index": 100
+    },
+    {
+      "id": "tb100_directional_coupler_18",
+      "kind": "intent",
+      "query": "another directional coupler",
+      "gold": [
+        "_directional_coupler",
+        "_directional_coupler_adiabatic"
+      ],
+      "type": "directional_coupler",
+      "source_prompt_index": 100
+    },
+    {
+      "id": "tb101_wavelength_division_multiplexer_4",
+      "kind": "intent",
+      "query": "an optical WDM demultiplexer",
+      "gold": [
+        "wdm_mzi1x4"
+      ],
+      "type": "wavelength_division_multiplexer",
+      "source_prompt_index": 101
+    },
+    {
+      "id": "tb101_ring_resonator_10",
+      "kind": "intent",
+      "query": "a series of add/drop Micro Ring Resonators",
+      "gold": [
+        "mrr_1x1",
+        "mrr_1x1_heater_tin",
+        "mrr_2x2",
+        "coupler_ring"
+      ],
+      "type": "ring_resonator",
+      "source_prompt_index": 101
+    },
+    {
+      "id": "tb101_grating_coupler_25",
+      "kind": "intent",
+      "query": "a single input fiber",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 101
+    },
+    {
+      "id": "tb101_grating_coupler_26",
+      "kind": "intent",
+      "query": "designated output port",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 101
+    },
+    {
+      "id": "tb101_straight_waveguide_32",
+      "kind": "intent",
+      "query": "optical paths",
+      "gold": [
+        "straight"
+      ],
+      "type": "straight_waveguide",
+      "source_prompt_index": 101
+    },
+    {
+      "id": "tb102_ring_resonator_11",
+      "kind": "intent",
+      "query": "a series of add/drop Micro Ring Resonators",
+      "gold": [
+        "mrr_1x1",
+        "mrr_1x1_heater_tin",
+        "mrr_2x2",
+        "coupler_ring"
+      ],
+      "type": "ring_resonator",
+      "source_prompt_index": 102
+    },
+    {
+      "id": "tb102_grating_coupler_27",
+      "kind": "intent",
+      "query": "4 inputs for each input signal",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 102
+    },
+    {
+      "id": "tb102_grating_coupler_28",
+      "kind": "intent",
+      "query": "one output into a single optical fiber",
+      "gold": [
+        "_gc"
+      ],
+      "type": "grating_coupler",
+      "source_prompt_index": 102
+    }
+  ]
+}

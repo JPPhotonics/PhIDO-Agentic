@@ -1,0 +1,149 @@
+{
+  "_comment": "E2 headline tier-stratified subset (24 prompts, 6/Level). Tiers heuristic by complexity (GETTING_STARTED L1-4 anchors); all chosen to map to DemoPDK cells so sim/DRC stages are reachable. Source: Testbench_modified.csv. Pending Poon-group tier review.",
+  "prompts": [
+    {
+      "id": "L1_1",
+      "level": 1,
+      "buildable": true,
+      "prompt": "A 90 degree waveguide bend"
+    },
+    {
+      "id": "L1_2",
+      "level": 1,
+      "buildable": true,
+      "prompt": "A straight waveguide with a length of 253 um"
+    },
+    {
+      "id": "L1_3",
+      "level": 1,
+      "buildable": true,
+      "prompt": "A ring resonator, single bus, with a radius of 10 microns and a gap of 0.2 microns."
+    },
+    {
+      "id": "L1_4",
+      "level": 1,
+      "buildable": true,
+      "prompt": "A directional coupler, with two inputs and two outputs and 50:50 split ratio"
+    },
+    {
+      "id": "L1_5",
+      "level": 1,
+      "buildable": true,
+      "prompt": "A power splitter, with one input and two outputs and 50:50 split ratio"
+    },
+    {
+      "id": "L1_6",
+      "level": 1,
+      "buildable": true,
+      "prompt": "Give me a 2x2 MMI with a gap of 500 nm between the inputs/outputs."
+    },
+    {
+      "id": "L2_1",
+      "level": 2,
+      "buildable": true,
+      "prompt": "A directional coupler connected to a 2x2 MMI."
+    },
+    {
+      "id": "L2_2",
+      "level": 2,
+      "buildable": true,
+      "prompt": "2 grating couplers connected by a straight waveguide"
+    },
+    {
+      "id": "L2_3",
+      "level": 2,
+      "buildable": true,
+      "prompt": "A grating coupler followed by a 1x2 MMI."
+    },
+    {
+      "id": "L2_4",
+      "level": 2,
+      "buildable": true,
+      "prompt": "A mmi 1x2 followed by a mmi 2x2."
+    },
+    {
+      "id": "L2_5",
+      "level": 2,
+      "buildable": true,
+      "prompt": "Connect one output port of a 1x2 MMI to an input of another 1x2 MMI"
+    },
+    {
+      "id": "L2_6",
+      "level": 2,
+      "buildable": true,
+      "prompt": "The output ports of an adiabatic directional coupler connected to two straight waveguides"
+    },
+    {
+      "id": "L3_1",
+      "level": 3,
+      "buildable": true,
+      "prompt": "A 2x2 MZI with a phase shifter in each arm for 1 GHz modulation."
+    },
+    {
+      "id": "L3_2",
+      "level": 3,
+      "buildable": true,
+      "prompt": "Design a 2×2 MZI with two 2 mm long PIN-diodes, one in each arm, for phase modulation."
+    },
+    {
+      "id": "L3_3",
+      "level": 3,
+      "buildable": true,
+      "prompt": "2x2 MZI with integrated heaters. the length of the MZI is 500um and the path length difference is 40um"
+    },
+    {
+      "id": "L3_4",
+      "level": 3,
+      "buildable": true,
+      "prompt": "Create a passive asymmetric Mach-Zehnder Interferometer at 1550 nm with a 300 µm path-length difference between arms. The MZI has one input and one output port both terminated in grating couplers."
+    },
+    {
+      "id": "L3_5",
+      "level": 3,
+      "buildable": true,
+      "prompt": "Design a single-bus ring resonator (with a radius of 28) connected to two grating couplers for input/output coupling."
+    },
+    {
+      "id": "L3_6",
+      "level": 3,
+      "buildable": true,
+      "prompt": "Connect a 2x2 MZI with integrated thermal heaters to a directional coupler with a length of 125 um, dy of 100 um, and dx of 100 um"
+    },
+    {
+      "id": "L4_1",
+      "level": 4,
+      "buildable": true,
+      "prompt": "Design a 1×16 power splitter using 4 stages of 1×2 MMI couplers such that each output port receives an equal share of the input power."
+    },
+    {
+      "id": "L4_2",
+      "level": 4,
+      "buildable": true,
+      "prompt": "Layout a 1x4 power splitter using three 1x2MMIs. Add 4 thermo-optic phase shifters, one on each output arm, for independent tuning."
+    },
+    {
+      "id": "L4_3",
+      "level": 4,
+      "buildable": true,
+      "prompt": "Cascaded 2x2 MZIs to create a switch tree network with 8 outputs."
+    },
+    {
+      "id": "L4_4",
+      "level": 4,
+      "buildable": true,
+      "prompt": "Design a 4-channel wavelength demultiplexer using four ring resonators cascaded along a common bus waveguide. Each ring should have a radius of ~10 µm, and a 200 nm coupling gap. Provide drop ports for each ring to route the separated channels.”"
+    },
+    {
+      "id": "L4_5",
+      "level": 4,
+      "buildable": true,
+      "prompt": "Connect four amplitude modulators (each 1 in/1 out, >10 GHz electro-optic bandwidth) to a 4×1 wavelength-division multiplexer."
+    },
+    {
+      "id": "L4_6",
+      "level": 4,
+      "buildable": true,
+      "prompt": "Design two cascaded double-bus silicon ring resonators, each with a 10 µm radius. In each ring, the top bus is for input/output and the bottom bus is for drop/through ports. The second ring’s input bus is connected to the drop port of the first ring, forming a serial filter chain. Each bus-to-ring gap is 200 nm."
+    }
+  ]
+}

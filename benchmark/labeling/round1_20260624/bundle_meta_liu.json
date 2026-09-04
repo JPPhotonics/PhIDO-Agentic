@@ -1,0 +1,249 @@
+{
+  "annotator_id": "liu",
+  "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025",
+  "n_available": 109,
+  "n_shown": 40,
+  "n_no_evidence_excluded": 0,
+  "items": {
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1661": {
+      "confidence": 0.8835676133632661,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1575": {
+      "confidence": 0.8,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1580": {
+      "confidence": 0.7722039997577668,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1588": {
+      "confidence": 0.9241965889930726,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1621": {
+      "confidence": 0.6750394940376282,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1627": {
+      "confidence": 0.8237201422452927,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1566": {
+      "confidence": 0.8407768666744232,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1605": {
+      "confidence": 0.9089611172676086,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1635": {
+      "confidence": 0.9064620912075043,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1616": {
+      "confidence": 0.8660862475633622,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1646": {
+      "confidence": 0.7563084542751313,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1657": {
+      "confidence": 0.8958741843700408,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1599": {
+      "confidence": 0.9205114483833313,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1594": {
+      "confidence": 0.9397712916135789,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1578": {
+      "confidence": 0.7753951579332352,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1652": {
+      "confidence": 0.771778604388237,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1585": {
+      "confidence": 0.9336556941270828,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1577": {
+      "confidence": 0.6915473461151123,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1598": {
+      "confidence": 0.9207707643508911,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1576": {
+      "confidence": 0.7021072298288344,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1581": {
+      "confidence": 0.7711158275604248,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1590": {
+      "confidence": 0.9183109641075134,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1619": {
+      "confidence": 0.6877833664417268,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1629": {
+      "confidence": 0.7735663801431656,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1643": {
+      "confidence": 0.7736488819122315,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1665": {
+      "confidence": 0.561399487047504,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1642": {
+      "confidence": 0.8029792129993438,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1568": {
+      "confidence": 0.8389906227588654,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1615": {
+      "confidence": 0.7289168894290924,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1614": {
+      "confidence": 0.7426452338695526,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1611": {
+      "confidence": 0.8897958636283875,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1612": {
+      "confidence": 0.8647035956382751,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1651": {
+      "confidence": 0.7765924453735351,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1569": {
+      "confidence": 1.0,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1655": {
+      "confidence": 0.8768488526344299,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:100": {
+      "confidence": 0.7871952891349793,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1620": {
+      "confidence": 0.6767532110214234,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1583": {
+      "confidence": 0.771788814663887,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1650": {
+      "confidence": 0.6419753998517991,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1613": {
+      "confidence": 0.725930780172348,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"
+    }
+  }
+}

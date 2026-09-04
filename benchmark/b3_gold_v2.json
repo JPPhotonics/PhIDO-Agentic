@@ -1,0 +1,5547 @@
+{
+  "_meta": {
+    "title": "B3 gold v2 (12 L3 + 12 L4, paper Table-1 axis; L1/L2 dropped)",
+    "status": "DRAFT (in-house, generator-authored) — auto-built by gold_gen.py",
+    "purpose": "Ground-truth circuit topologies for scoring schematic-generation (p300) output, INDEPENDENT of the pipeline. Replaces topology_eval.py's default gold, which is the pipeline's own 4_SG.txt tutorial output on the same 4 prompts (scoring pipeline-vs-self = contamination).",
+    "independence": "Every topology below was authored from the prompt's circuit semantics + photonics domain knowledge, NOT copied from any pipeline run. No 4_SG.txt / DSL / CS artifact was consulted for the WIRING. Only the shared PDK vocabulary (component classes + port conventions) is reused — that is the common ontology both arms target, not a pipeline decision.",
+    "what_it_measures": "TOPOLOGY correctness only: 'did the schematic wire the right KINDS of components together, with the right connectivity?' Scored node-id-agnostic (typed-edge multiset F1 + component-class F1 + approx_ged, via topology_eval.score_topology). Component SELECTION (which exact cell, e.g. mzi_2x2_pn_diode vs mzi_2x2_heater_tin_cband) is deliberately NOT penalized here — that is A5/B2's job. Both gold and prediction are normalized to component CLASSES (function+arity) via class_map before comparison.",
+    "ambiguity_policy": "Each entry carries topology_certain. Prompts that fix the wiring uniquely are true. Prompts that leave the inter-component connection COUNT open (e.g. 'a DC connected to a 2x2 MMI' — one link or a full 2-link cascade?) are false, given a documented canonical reading in 'ambiguity'; these need explicit domain sign-off and may be excluded from the headline F1 or scored with an acceptance band.",
+    "accept": "Where more than one component class is functionally correct for a node (e.g. a passive 1x2 power splitter may be an MMI_1x2 or a directional-coupler split), the node lists alternates in 'accept'; the scorer treats any listed class as a typed match for that node.",
+    "port_conventions": {
+      "1x1 (STRAIGHT, BEND, RING_1bus, HEATER, MZI_1x1, MOD_1x1, PD)": "o1 = left/input, o2 = right/output",
+      "GC (grating coupler, 1x0)": "o1 = the single on-chip optical port (the other face couples to fiber/free-space)",
+      "1x2 (MMI_1x2, MZI_1x2, PSR, splitters)": "o1 = single/common side (input), o2 & o3 = split side (outputs)",
+      "2x2 (DC_2x2, MMI_2x2, MZI_2x2, coupler_ring)": "o1,o2 = left/input side, o3,o4 = right/output side",
+      "RING_2bus (add-drop microring, 2x2)": "o1 = in (top bus), o2 = through (top bus), o3 = drop (bottom bus), o4 = add (bottom bus)",
+      "WDM (wdm_mzi1x4, 1x4)": "o1 = common/single side, o2..o5 = the four wavelength channels"
+    },
+    "class_map": {
+      "straight": "STRAIGHT",
+      "bend_euler": "BEND",
+      "_bend_s": "BEND",
+      "_bezier_curve": "BEND",
+      "_gc": "GC",
+      "edge_coupler": "GC",
+      "_directional_coupler": "DC_2x2",
+      "_directional_coupler_adiabatic": "DC_2x2",
+      "coupler_ring": "DC_2x2",
+      "_mmi1x2": "MMI_1x2",
+      "_mmi2x2": "MMI_2x2",
+      "mrr_1x1": "RING_1bus",
+      "mrr_1x1_heater_tin": "RING_1bus",
+      "mrr_2x2": "RING_2bus",
+      "mrm_1x1_pndiode": "MOD_1x1",
+      "tw_mzm": "MOD_1x1",
+      "mzi1": "MZI_1x1",
+      "mzi_1x1_heater_doped_si_cband": "MZI_1x1",
+      "mzi_1x1_pindiode_cband": "MZI_1x1",
+      "mzi_arm": "MZI_1x1",
+      "mzi_1x2_pindiode_cband": "MZI_1x2",
+      "mzi_2x2_pn_diode": "MZI_2x2",
+      "mzi_2x2_pindiode_cband": "MZI_2x2",
+      "mzi_2x2_heater_tin_cband": "MZI_2x2",
+      "heater_tin_cband": "HEATER",
+      "heater_doped_si_cband": "HEATER",
+      "photodetector": "PD",
+      "laser": "LASER",
+      "wdm_mzi1x4": "WDM",
+      "polarization_splitter_rotator": "PSR",
+      "mode_converter": "MODE_CONV",
+      "crossing": "CROSSING",
+      "pindiode_cband": "_ELECTRICAL",
+      "pndiode": "_ELECTRICAL"
+    }
+  },
+  "gold": [
+    {
+      "id": "L3_01",
+      "level": 3,
+      "topology_certain": true,
+      "prompt": "2 grating couplers connected by a straight waveguide",
+      "nodes": {
+        "N1": "GC",
+        "N2": "STRAIGHT",
+        "N3": "GC"
+      },
+      "edges": [
+        [
+          "N1.o1",
+          "N2.o1"
+        ],
+        [
+          "N2.o2",
+          "N3.o1"
+        ]
+      ],
+      "external": {},
+      "rationale": "GC -- straight -- GC; the two GCs are the fiber I/O, so no on-chip external ports.",
+      "source": "reused:L2_2"
+    },
+    {
+      "id": "L3_02",
+      "level": 3,
+      "topology_certain": true,
+      "prompt": "The output ports of an adiabatic directional coupler connected to two straight waveguides",
+      "nodes": {
+        "N1": "DC_2x2",
+        "N2": "STRAIGHT",
+        "N3": "STRAIGHT"
+      },
+      "edges": [
+        [
+          "N1.o3",
+          "N2.o1"
+        ],
+        [
+          "N1.o4",
+          "N3.o1"
+        ]
+      ],
+      "external": {
+        "o1": "N1.o1",
+        "o2": "N1.o2",
+        "o3": "N2.o2",
+        "o4": "N3.o2"
+      },
+      "rationale": "Both DC output ports each drive one straight waveguide.",
+      "source": "reused:L2_6"
+    },
+    {
+      "id": "L3_03",
+      "level": 3,
+      "topology_certain": true,
+      "prompt": "Create a passive asymmetric Mach-Zehnder Interferometer at 1550 nm with a 300 um path-length difference between arms. The MZI has one input and one output port both terminated in grating couplers.",
+      "nodes": {
+        "N1": "GC",
+        "N2": "MZI_1x1",
+        "N3": "GC"
+      },
+      "edges": [
+        [
+          "N1.o1",
+          "N2.o1"
+        ],
+        [
+          "N2.o2",
+          "N3.o1"
+        ]
+      ],
+      "external": {},
+      "rationale": "1-in/1-out passive asymmetric MZI, both ports terminated by grating couplers (fiber I/O), so no on-chip external ports.",
+      "source": "reused:L3_4"
+    },
+    {
+      "id": "L3_04",
+      "level": 3,
+      "topology_certain": true,
+      "prompt": "Design a single-bus ring resonator (with a radius of 28) connected to two grating couplers for input/output coupling.",
+      "nodes": {
+        "N1": "GC",
+        "N2": "RING_1bus",
+        "N3": "GC"
+      },
+      "edges": [
+        [
+          "N1.o1",
+          "N2.o1"
+        ],
+        [
+          "N2.o2",
+          "N3.o1"
+        ]
+      ],
+      "external": {},
+      "rationale": "GC -- single-bus ring (in/through) -- GC.",
+      "source": "reused:L3_5"
+    },
+    {
+      "id": "L3_05",
+      "level": 3,
+      "topology_certain": true,
+      "prompt": "Design a 4-channel wavelength demultiplexer using four ring resonators cascaded along a common bus waveguide. Each ring should have a radius of ~10 um, and a 200 nm coupling gap. Provide drop ports for each ring to route the separated channels.",
+      "nodes": {
+        "N1": "RING_2bus",
+        "N2": "RING_2bus",
+        "N3": "RING_2bus",
+        "N4": "RING_2bus"
+      },
+      "edges": [
+        [
+          "N1.o2",
+          "N2.o1"
+        ],
+        [
+          "N2.o2",
+          "N3.o1"
+        ],
+        [
+          "N3.o2",
+          "N4.o1"
+        ]
+      ],
+      "external": {
+        "in": "N1.o1",
+        "through": "N4.o2",
+        "drop1": "N1.o3",
+        "drop2": "N2.o3",
+        "drop3": "N3.o3",
+        "drop4": "N4.o3"
+      },
+      "rationale": "Add-drop rings serially coupled along one bus: through-port of ring i -> in-port of ring i+1; each ring's drop port is an external channel.",
+      "source": "reused:L4_4"
+    },
+    {
+      "id": "L3_06",
+      "level": 3,
+      "topology_certain": false,
+      "prompt": "Connect four amplitude modulators (each 1 in/1 out, >10 GHz electro-optic bandwidth) to a 4x1 wavelength-division multiplexer.",
+      "nodes": {
+        "N1": "MOD_1x1",
+        "N2": "MOD_1x1",
+        "N3": "MOD_1x1",
+        "N4": "MOD_1x1",
+        "N5": "WDM"
+      },
+      "edges": [
+        [
+          "N1.o2",
+          "N5.o2"
+        ],
+        [
+          "N2.o2",
+          "N5.o3"
+        ],
+        [
+          "N3.o2",
+          "N5.o4"
+        ],
+        [
+          "N4.o2",
+          "N5.o5"
+        ]
+      ],
+      "external": {
+        "o1": "N1.o1",
+        "o2": "N2.o1",
+        "o3": "N3.o1",
+        "o4": "N4.o1",
+        "out": "N5.o1"
+      },
+      "ambiguity": "Modulator class: '1-in/1-out >10 GHz amplitude modulator' maps to MOD_1x1 (microring modulator or TW-MZM); acceptable alternates in 'accept'. The 4x1 WDM mux is the wdm_mzi1x4 cell used in reverse (4 channel ports -> 1 common).",
+      "accept": {
+        "N1": [
+          "MOD_1x1",
+          "MZI_2x2"
+        ],
+        "N2": [
+          "MOD_1x1",
+          "MZI_2x2"
+        ],
+        "N3": [
+          "MOD_1x1",
+          "MZI_2x2"
+        ],
+        "N4": [
+          "MOD_1x1",
+          "MZI_2x2"
+        ]
+      },
+      "rationale": "Four 1x1 modulators each feed one channel port of the 4-channel WDM mux.",
+      "source": "reused:L4_5"
+    },
+    {
+      "id": "L3_07",
+      "level": 3,
+      "topology_certain": true,
+      "prompt": "Layout a 1x4 power splitter using three 1x2MMIs. Add 4 thermo-optic phase shifters, one on each output arm, for independent tuning.",
+      "nodes": {
+        "N1": "MMI_1x2",
+        "N2": "MMI_1x2",
+        "N3": "MMI_1x2",
+        "N4": "HEATER",
+        "N5": "HEATER",
+        "N6": "HEATER",
+        "N7": "HEATER"
+      },
+      "edges": [
+        [
+          "N1.o2",
+          "N2.o1"
+        ],
+        [
+          "N1.o3",
+          "N3.o1"
+        ],
+        [
+          "N2.o2",
+          "N4.o1"
+        ],
+        [
+          "N2.o3",
+          "N5.o1"
+        ],
+        [
+          "N3.o2",
+          "N6.o1"
+        ],
+        [
+          "N3.o3",
+          "N7.o1"
+        ]
+      ],
+      "external": {
+        "o1": "N1.o1",
+        "o2": "N4.o2",
+        "o3": "N5.o2",
+        "o4": "N6.o2",
+        "o5": "N7.o2"
+      },
+      "rationale": "Two-stage 1x4 tree (1+2 MMIs -> 4 outputs); a thermo-optic heater on each of the 4 output arms.",
+      "source": "reused:L4_2"
+    },
+    {
+      "id": "L3_08",
+      "level": 3,
+      "topology_certain": false,
+      "prompt": "Cascaded 2x2 MZIs to create a switch tree network with 8 outputs.",
+      "nodes": {
+        "N1": "MZI_2x2",
+        "N2": "MZI_2x2",
+        "N3": "MZI_2x2",
+        "N4": "MZI_2x2",
+        "N5": "MZI_2x2",
+        "N6": "MZI_2x2",
+        "N7": "MZI_2x2"
+      },
+      "edges": [
+        [
+          "N1.o3",
+          "N2.o1"
+        ],
+        [
+          "N1.o4",
+          "N3.o1"
+        ],
+        [
+          "N2.o3",
+          "N4.o1"
+        ],
+        [
+          "N2.o4",
+          "N5.o1"
+        ],
+        [
+          "N3.o3",
+          "N6.o1"
+        ],
+        [
+          "N3.o4",
+          "N7.o1"
+        ]
+      ],
+      "external": {
+        "o1": "N1.o1",
+        "o2": "N4.o3",
+        "o3": "N4.o4",
+        "o4": "N5.o3",
+        "o5": "N5.o4",
+        "o6": "N6.o3",
+        "o7": "N6.o4",
+        "o8": "N7.o3",
+        "o9": "N7.o4"
+      },
+      "ambiguity": "1x8 switch tree = 7 2x2-MZIs (1+2+4), 6 inter-stage links, 8 leaf outputs. Each 2x2 MZI has 2 inputs; the tree uses one input per node (the other is an unused/monitor port) — which input/output indices are used is a layout choice, but the node/edge MULTISET (the scored quantity) is invariant. Marked uncertain only for the unused-port convention.",
+      "rationale": "Binary switch tree of 2x2 MZIs to 8 outputs.",
+      "source": "reused:L4_3"
+    },
+    {
+      "id": "L3_09",
+      "level": 3,
+      "topology_certain": true,
+      "prompt": "Design a 1x16 power splitter using 4 stages of 1x2 MMI couplers such that each output port receives an equal share of the input power.",
+      "nodes": {
+        "N1": "MMI_1x2",
+        "N2": "MMI_1x2",
+        "N3": "MMI_1x2",
+        "N4": "MMI_1x2",
+        "N5": "MMI_1x2",
+        "N6": "MMI_1x2",
+        "N7": "MMI_1x2",
+        "N8": "MMI_1x2",
+        "N9": "MMI_1x2",
+        "N10": "MMI_1x2",
+        "N11": "MMI_1x2",
+        "N12": "MMI_1x2",
+        "N13": "MMI_1x2",
+        "N14": "MMI_1x2",
+        "N15": "MMI_1x2"
+      },
+      "edges": [
+        [
+          "N1.o2",
+          "N2.o1"
+        ],
+        [
+          "N1.o3",
+          "N3.o1"
+        ],
+        [
+          "N2.o2",
+          "N4.o1"
+        ],
+        [
+          "N2.o3",
+          "N5.o1"
+        ],
+        [
+          "N3.o2",
+          "N6.o1"
+        ],
+        [
+          "N3.o3",
+          "N7.o1"
+        ],
+        [
+          "N4.o2",
+          "N8.o1"
+        ],
+        [
+          "N4.o3",
+          "N9.o1"
+        ],
+        [
+          "N5.o2",
+          "N10.o1"
+        ],
+        [
+          "N5.o3",
+          "N11.o1"
+        ],
+        [
+          "N6.o2",
+          "N12.o1"
+        ],
+        [
+          "N6.o3",
+          "N13.o1"
+        ],
+        [
+          "N7.o2",
+          "N14.o1"
+        ],
+        [
+          "N7.o3",
+          "N15.o1"
+        ]
+      ],
+      "external": {
+        "o1": "N1.o1",
+        "o2": "N8.o2",
+        "o3": "N8.o3",
+        "o4": "N9.o2",
+        "o5": "N9.o3",
+        "o6": "N10.o2",
+        "o7": "N10.o3",
+        "o8": "N11.o2",
+        "o9": "N11.o3",
+        "o10": "N12.o2",
+        "o11": "N12.o3",
+        "o12": "N13.o2",
+        "o13": "N13.o3",
+        "o14": "N14.o2",
+        "o15": "N14.o3",
+        "o16": "N15.o2",
+        "o17": "N15.o3"
+      },
+      "rationale": "Balanced binary tree, 4 stages (1+2+4+8 = 15 splitters), 14 inter-stage links, 16 leaf outputs. Fully determined.",
+      "source": "reused:L4_1"
+    },
+    {
+      "id": "L3_10",
+      "level": 3,
+      "topology_certain": true,
+      "prompt": "Layout a 1×4 power splitter using three 1×2 MMI couplers in a two-stage cascade. Place 2 phase shifters on the waveguides connecting the first and second stage, and 4 phase shifters on the final output arms, for a total of 6. All phase shifters should be thermo-optic",
+      "nodes": {
+        "S1": "MMI_1x2",
+        "S2": "MMI_1x2",
+        "S3": "MMI_1x2",
+        "H1": "HEATER",
+        "H2": "HEATER",
+        "H3": "HEATER",
+        "H4": "HEATER",
+        "H5": "HEATER",
+        "H6": "HEATER"
+      },
+      "edges": [
+        [
+          "S1.o2",
+          "H1.o1"
+        ],
+        [
+          "H1.o2",
+          "S2.o1"
+        ],
+        [
+          "S1.o3",
+          "H2.o1"
+        ],
+        [
+          "H2.o2",
+          "S3.o1"
+        ],
+        [
+          "S2.o2",
+          "H3.o1"
+        ],
+        [
+          "S2.o3",
+          "H4.o1"
+        ],
+        [
+          "S3.o2",
+          "H5.o1"
+        ],
+        [
+          "S3.o3",
+          "H6.o1"
+        ]
+      ],
+      "external": {
+        "o1": "S1.o1",
+        "o2": "H3.o2",
+        "o3": "H4.o2",
+        "o4": "H5.o2",
+        "o5": "H6.o2"
+      },
+      "source": "TB030",
+      "rationale": "Two-stage 1x4 MMI tree; 2 inter-stage + 4 output thermo-optic phase shifters (9 comp)."
+    },
+    {
+      "id": "L3_11",
+      "level": 3,
+      "topology_certain": true,
+      "prompt": "Design an add-drop filter with three double bus ring resonators (10 µm, 15 µm, 20 µm radii) connected along a common bus waveguide. Provide separate grating couplers at the bus waveguide input/output and at each drop port to measure the drop response.",
+      "nodes": {
+        "R1": "RING_2bus",
+        "R2": "RING_2bus",
+        "R3": "RING_2bus",
+        "GIN": "GC",
+        "GOUT": "GC",
+        "GD1": "GC",
+        "GD2": "GC",
+        "GD3": "GC"
+      },
+      "edges": [
+        [
+          "GIN.o1",
+          "R1.o1"
+        ],
+        [
+          "R1.o2",
+          "R2.o1"
+        ],
+        [
+          "R2.o2",
+          "R3.o1"
+        ],
+        [
+          "R3.o2",
+          "GOUT.o1"
+        ],
+        [
+          "R1.o3",
+          "GD1.o1"
+        ],
+        [
+          "R2.o3",
+          "GD2.o1"
+        ],
+        [
+          "R3.o3",
+          "GD3.o1"
+        ]
+      ],
+      "external": {},
+      "source": "TB071",
+      "rationale": "Three double-bus rings serially on a common bus; GC at bus in/out and each drop (8 comp)."
+    },
+    {
+      "id": "L3_12",
+      "level": 3,
+      "topology_certain": false,
+      "prompt": "Design a 4x4 optical switching network based on the Benes architecture, ensuring rearrangeably nonblocking switching between 4 input and 4 output ports. The network should use six 2x2 optical switching units and consist of 3 stages, each with two 2x2 optical switching units. Use the built-in component mzi_2x2_pn_diode to represent each 2×2 optical switching unit.",
+      "nodes": {
+        "B1": "MZI_2x2",
+        "B2": "MZI_2x2",
+        "B3": "MZI_2x2",
+        "B4": "MZI_2x2",
+        "B5": "MZI_2x2",
+        "B6": "MZI_2x2"
+      },
+      "edges": [
+        [
+          "B1.o3",
+          "B3.o1"
+        ],
+        [
+          "B2.o3",
+          "B3.o2"
+        ],
+        [
+          "B1.o4",
+          "B4.o1"
+        ],
+        [
+          "B2.o4",
+          "B4.o2"
+        ],
+        [
+          "B3.o3",
+          "B5.o1"
+        ],
+        [
+          "B4.o3",
+          "B5.o2"
+        ],
+        [
+          "B3.o4",
+          "B6.o1"
+        ],
+        [
+          "B4.o4",
+          "B6.o2"
+        ]
+      ],
+      "external": {
+        "in1": "B1.o1",
+        "in3": "B1.o2",
+        "in2": "B2.o1",
+        "in4": "B2.o2",
+        "out1": "B5.o3",
+        "out2": "B5.o4",
+        "out3": "B6.o3",
+        "out4": "B6.o4"
+      },
+      "source": "TB083",
+      "rationale": "4x4 Benes = 6 2x2 switches in 3 stages of 2 (paper-L3).",
+      "ambiguity": "Benes inter-stage shuffle is canonical; exact port indexing is a convention. Node/typed-edge multiset invariant."
+    },
+    {
+      "id": "L4_01",
+      "level": 4,
+      "topology_certain": true,
+      "prompt": "Design a 1×64 Mach-Zehnder tree using six stages of 1x2 MZIs. Each MZI has integrated thermo-optic phase shifters and MMI couplers. Use edge couplers at the single input and at each of the 64 outputs for fiber connection. Additionally, include a separate waveguide loopback structure, containing two edge couplers, connected to a 180-degree bend.",
+      "nodes": {
+        "M1": "MZI_1x2",
+        "M2": "MZI_1x2",
+        "M3": "MZI_1x2",
+        "M4": "MZI_1x2",
+        "M5": "MZI_1x2",
+        "M6": "MZI_1x2",
+        "M7": "MZI_1x2",
+        "M8": "MZI_1x2",
+        "M9": "MZI_1x2",
+        "M10": "MZI_1x2",
+        "M11": "MZI_1x2",
+        "M12": "MZI_1x2",
+        "M13": "MZI_1x2",
+        "M14": "MZI_1x2",
+        "M15": "MZI_1x2",
+        "M16": "MZI_1x2",
+        "M17": "MZI_1x2",
+        "M18": "MZI_1x2",
+        "M19": "MZI_1x2",
+        "M20": "MZI_1x2",
+        "M21": "MZI_1x2",
+        "M22": "MZI_1x2",
+        "M23": "MZI_1x2",
+        "M24": "MZI_1x2",
+        "M25": "MZI_1x2",
+        "M26": "MZI_1x2",
+        "M27": "MZI_1x2",
+        "M28": "MZI_1x2",
+        "M29": "MZI_1x2",
+        "M30": "MZI_1x2",
+        "M31": "MZI_1x2",
+        "M32": "MZI_1x2",
+        "M33": "MZI_1x2",
+        "M34": "MZI_1x2",
+        "M35": "MZI_1x2",
+        "M36": "MZI_1x2",
+        "M37": "MZI_1x2",
+        "M38": "MZI_1x2",
+        "M39": "MZI_1x2",
+        "M40": "MZI_1x2",
+        "M41": "MZI_1x2",
+        "M42": "MZI_1x2",
+        "M43": "MZI_1x2",
+        "M44": "MZI_1x2",
+        "M45": "MZI_1x2",
+        "M46": "MZI_1x2",
+        "M47": "MZI_1x2",
+        "M48": "MZI_1x2",
+        "M49": "MZI_1x2",
+        "M50": "MZI_1x2",
+        "M51": "MZI_1x2",
+        "M52": "MZI_1x2",
+        "M53": "MZI_1x2",
+        "M54": "MZI_1x2",
+        "M55": "MZI_1x2",
+        "M56": "MZI_1x2",
+        "M57": "MZI_1x2",
+        "M58": "MZI_1x2",
+        "M59": "MZI_1x2",
+        "M60": "MZI_1x2",
+        "M61": "MZI_1x2",
+        "M62": "MZI_1x2",
+        "M63": "MZI_1x2",
+        "GIN": "GC",
+        "GO1": "GC",
+        "GO2": "GC",
+        "GO3": "GC",
+        "GO4": "GC",
+        "GO5": "GC",
+        "GO6": "GC",
+        "GO7": "GC",
+        "GO8": "GC",
+        "GO9": "GC",
+        "GO10": "GC",
+        "GO11": "GC",
+        "GO12": "GC",
+        "GO13": "GC",
+        "GO14": "GC",
+        "GO15": "GC",
+        "GO16": "GC",
+        "GO17": "GC",
+        "GO18": "GC",
+        "GO19": "GC",
+        "GO20": "GC",
+        "GO21": "GC",
+        "GO22": "GC",
+        "GO23": "GC",
+        "GO24": "GC",
+        "GO25": "GC",
+        "GO26": "GC",
+        "GO27": "GC",
+        "GO28": "GC",
+        "GO29": "GC",
+        "GO30": "GC",
+        "GO31": "GC",
+        "GO32": "GC",
+        "GO33": "GC",
+        "GO34": "GC",
+        "GO35": "GC",
+        "GO36": "GC",
+        "GO37": "GC",
+        "GO38": "GC",
+        "GO39": "GC",
+        "GO40": "GC",
+        "GO41": "GC",
+        "GO42": "GC",
+        "GO43": "GC",
+        "GO44": "GC",
+        "GO45": "GC",
+        "GO46": "GC",
+        "GO47": "GC",
+        "GO48": "GC",
+        "GO49": "GC",
+        "GO50": "GC",
+        "GO51": "GC",
+        "GO52": "GC",
+        "GO53": "GC",
+        "GO54": "GC",
+        "GO55": "GC",
+        "GO56": "GC",
+        "GO57": "GC",
+        "GO58": "GC",
+        "GO59": "GC",
+        "GO60": "GC",
+        "GO61": "GC",
+        "GO62": "GC",
+        "GO63": "GC",
+        "GO64": "GC",
+        "LGC1": "GC",
+        "LB": "BEND",
+        "LGC2": "GC"
+      },
+      "edges": [
+        [
+          "M1.o2",
+          "M2.o1"
+        ],
+        [
+          "M1.o3",
+          "M3.o1"
+        ],
+        [
+          "M2.o2",
+          "M4.o1"
+        ],
+        [
+          "M2.o3",
+          "M5.o1"
+        ],
+        [
+          "M3.o2",
+          "M6.o1"
+        ],
+        [
+          "M3.o3",
+          "M7.o1"
+        ],
+        [
+          "M4.o2",
+          "M8.o1"
+        ],
+        [
+          "M4.o3",
+          "M9.o1"
+        ],
+        [
+          "M5.o2",
+          "M10.o1"
+        ],
+        [
+          "M5.o3",
+          "M11.o1"
+        ],
+        [
+          "M6.o2",
+          "M12.o1"
+        ],
+        [
+          "M6.o3",
+          "M13.o1"
+        ],
+        [
+          "M7.o2",
+          "M14.o1"
+        ],
+        [
+          "M7.o3",
+          "M15.o1"
+        ],
+        [
+          "M8.o2",
+          "M16.o1"
+        ],
+        [
+          "M8.o3",
+          "M17.o1"
+        ],
+        [
+          "M9.o2",
+          "M18.o1"
+        ],
+        [
+          "M9.o3",
+          "M19.o1"
+        ],
+        [
+          "M10.o2",
+          "M20.o1"
+        ],
+        [
+          "M10.o3",
+          "M21.o1"
+        ],
+        [
+          "M11.o2",
+          "M22.o1"
+        ],
+        [
+          "M11.o3",
+          "M23.o1"
+        ],
+        [
+          "M12.o2",
+          "M24.o1"
+        ],
+        [
+          "M12.o3",
+          "M25.o1"
+        ],
+        [
+          "M13.o2",
+          "M26.o1"
+        ],
+        [
+          "M13.o3",
+          "M27.o1"
+        ],
+        [
+          "M14.o2",
+          "M28.o1"
+        ],
+        [
+          "M14.o3",
+          "M29.o1"
+        ],
+        [
+          "M15.o2",
+          "M30.o1"
+        ],
+        [
+          "M15.o3",
+          "M31.o1"
+        ],
+        [
+          "M16.o2",
+          "M32.o1"
+        ],
+        [
+          "M16.o3",
+          "M33.o1"
+        ],
+        [
+          "M17.o2",
+          "M34.o1"
+        ],
+        [
+          "M17.o3",
+          "M35.o1"
+        ],
+        [
+          "M18.o2",
+          "M36.o1"
+        ],
+        [
+          "M18.o3",
+          "M37.o1"
+        ],
+        [
+          "M19.o2",
+          "M38.o1"
+        ],
+        [
+          "M19.o3",
+          "M39.o1"
+        ],
+        [
+          "M20.o2",
+          "M40.o1"
+        ],
+        [
+          "M20.o3",
+          "M41.o1"
+        ],
+        [
+          "M21.o2",
+          "M42.o1"
+        ],
+        [
+          "M21.o3",
+          "M43.o1"
+        ],
+        [
+          "M22.o2",
+          "M44.o1"
+        ],
+        [
+          "M22.o3",
+          "M45.o1"
+        ],
+        [
+          "M23.o2",
+          "M46.o1"
+        ],
+        [
+          "M23.o3",
+          "M47.o1"
+        ],
+        [
+          "M24.o2",
+          "M48.o1"
+        ],
+        [
+          "M24.o3",
+          "M49.o1"
+        ],
+        [
+          "M25.o2",
+          "M50.o1"
+        ],
+        [
+          "M25.o3",
+          "M51.o1"
+        ],
+        [
+          "M26.o2",
+          "M52.o1"
+        ],
+        [
+          "M26.o3",
+          "M53.o1"
+        ],
+        [
+          "M27.o2",
+          "M54.o1"
+        ],
+        [
+          "M27.o3",
+          "M55.o1"
+        ],
+        [
+          "M28.o2",
+          "M56.o1"
+        ],
+        [
+          "M28.o3",
+          "M57.o1"
+        ],
+        [
+          "M29.o2",
+          "M58.o1"
+        ],
+        [
+          "M29.o3",
+          "M59.o1"
+        ],
+        [
+          "M30.o2",
+          "M60.o1"
+        ],
+        [
+          "M30.o3",
+          "M61.o1"
+        ],
+        [
+          "M31.o2",
+          "M62.o1"
+        ],
+        [
+          "M31.o3",
+          "M63.o1"
+        ],
+        [
+          "GIN.o1",
+          "M1.o1"
+        ],
+        [
+          "M32.o2",
+          "GO1.o1"
+        ],
+        [
+          "M32.o3",
+          "GO2.o1"
+        ],
+        [
+          "M33.o2",
+          "GO3.o1"
+        ],
+        [
+          "M33.o3",
+          "GO4.o1"
+        ],
+        [
+          "M34.o2",
+          "GO5.o1"
+        ],
+        [
+          "M34.o3",
+          "GO6.o1"
+        ],
+        [
+          "M35.o2",
+          "GO7.o1"
+        ],
+        [
+          "M35.o3",
+          "GO8.o1"
+        ],
+        [
+          "M36.o2",
+          "GO9.o1"
+        ],
+        [
+          "M36.o3",
+          "GO10.o1"
+        ],
+        [
+          "M37.o2",
+          "GO11.o1"
+        ],
+        [
+          "M37.o3",
+          "GO12.o1"
+        ],
+        [
+          "M38.o2",
+          "GO13.o1"
+        ],
+        [
+          "M38.o3",
+          "GO14.o1"
+        ],
+        [
+          "M39.o2",
+          "GO15.o1"
+        ],
+        [
+          "M39.o3",
+          "GO16.o1"
+        ],
+        [
+          "M40.o2",
+          "GO17.o1"
+        ],
+        [
+          "M40.o3",
+          "GO18.o1"
+        ],
+        [
+          "M41.o2",
+          "GO19.o1"
+        ],
+        [
+          "M41.o3",
+          "GO20.o1"
+        ],
+        [
+          "M42.o2",
+          "GO21.o1"
+        ],
+        [
+          "M42.o3",
+          "GO22.o1"
+        ],
+        [
+          "M43.o2",
+          "GO23.o1"
+        ],
+        [
+          "M43.o3",
+          "GO24.o1"
+        ],
+        [
+          "M44.o2",
+          "GO25.o1"
+        ],
+        [
+          "M44.o3",
+          "GO26.o1"
+        ],
+        [
+          "M45.o2",
+          "GO27.o1"
+        ],
+        [
+          "M45.o3",
+          "GO28.o1"
+        ],
+        [
+          "M46.o2",
+          "GO29.o1"
+        ],
+        [
+          "M46.o3",
+          "GO30.o1"
+        ],
+        [
+          "M47.o2",
+          "GO31.o1"
+        ],
+        [
+          "M47.o3",
+          "GO32.o1"
+        ],
+        [
+          "M48.o2",
+          "GO33.o1"
+        ],
+        [
+          "M48.o3",
+          "GO34.o1"
+        ],
+        [
+          "M49.o2",
+          "GO35.o1"
+        ],
+        [
+          "M49.o3",
+          "GO36.o1"
+        ],
+        [
+          "M50.o2",
+          "GO37.o1"
+        ],
+        [
+          "M50.o3",
+          "GO38.o1"
+        ],
+        [
+          "M51.o2",
+          "GO39.o1"
+        ],
+        [
+          "M51.o3",
+          "GO40.o1"
+        ],
+        [
+          "M52.o2",
+          "GO41.o1"
+        ],
+        [
+          "M52.o3",
+          "GO42.o1"
+        ],
+        [
+          "M53.o2",
+          "GO43.o1"
+        ],
+        [
+          "M53.o3",
+          "GO44.o1"
+        ],
+        [
+          "M54.o2",
+          "GO45.o1"
+        ],
+        [
+          "M54.o3",
+          "GO46.o1"
+        ],
+        [
+          "M55.o2",
+          "GO47.o1"
+        ],
+        [
+          "M55.o3",
+          "GO48.o1"
+        ],
+        [
+          "M56.o2",
+          "GO49.o1"
+        ],
+        [
+          "M56.o3",
+          "GO50.o1"
+        ],
+        [
+          "M57.o2",
+          "GO51.o1"
+        ],
+        [
+          "M57.o3",
+          "GO52.o1"
+        ],
+        [
+          "M58.o2",
+          "GO53.o1"
+        ],
+        [
+          "M58.o3",
+          "GO54.o1"
+        ],
+        [
+          "M59.o2",
+          "GO55.o1"
+        ],
+        [
+          "M59.o3",
+          "GO56.o1"
+        ],
+        [
+          "M60.o2",
+          "GO57.o1"
+        ],
+        [
+          "M60.o3",
+          "GO58.o1"
+        ],
+        [
+          "M61.o2",
+          "GO59.o1"
+        ],
+        [
+          "M61.o3",
+          "GO60.o1"
+        ],
+        [
+          "M62.o2",
+          "GO61.o1"
+        ],
+        [
+          "M62.o3",
+          "GO62.o1"
+        ],
+        [
+          "M63.o2",
+          "GO63.o1"
+        ],
+        [
+          "M63.o3",
+          "GO64.o1"
+        ],
+        [
+          "LGC1.o1",
+          "LB.o1"
+        ],
+        [
+          "LB.o2",
+          "LGC2.o1"
+        ]
+      ],
+      "external": {},
+      "source": "TB040",
+      "rationale": "1x64 binary tree of 63 1x2 MZIs; GC at input + all 64 outputs; separate GC-BEND-GC loopback (131 comp)."
+    },
+    {
+      "id": "L4_02",
+      "level": 4,
+      "topology_certain": false,
+      "prompt": "Design an 8x8 optical switching network based on the Spanke architecture, ensuring strict-sense non-blocking switching between 8 input and 8 output ports. The network should use 112 built-in Multimode Interferometer (MMI) components and consist of a combination of 8 1x8 switches and 8 8x1 switches.",
+      "nodes": {
+        "I0_1": "MMI_1x2",
+        "I0_2": "MMI_1x2",
+        "I0_3": "MMI_1x2",
+        "I0_4": "MMI_1x2",
+        "I0_5": "MMI_1x2",
+        "I0_6": "MMI_1x2",
+        "I0_7": "MMI_1x2",
+        "I1_1": "MMI_1x2",
+        "I1_2": "MMI_1x2",
+        "I1_3": "MMI_1x2",
+        "I1_4": "MMI_1x2",
+        "I1_5": "MMI_1x2",
+        "I1_6": "MMI_1x2",
+        "I1_7": "MMI_1x2",
+        "I2_1": "MMI_1x2",
+        "I2_2": "MMI_1x2",
+        "I2_3": "MMI_1x2",
+        "I2_4": "MMI_1x2",
+        "I2_5": "MMI_1x2",
+        "I2_6": "MMI_1x2",
+        "I2_7": "MMI_1x2",
+        "I3_1": "MMI_1x2",
+        "I3_2": "MMI_1x2",
+        "I3_3": "MMI_1x2",
+        "I3_4": "MMI_1x2",
+        "I3_5": "MMI_1x2",
+        "I3_6": "MMI_1x2",
+        "I3_7": "MMI_1x2",
+        "I4_1": "MMI_1x2",
+        "I4_2": "MMI_1x2",
+        "I4_3": "MMI_1x2",
+        "I4_4": "MMI_1x2",
+        "I4_5": "MMI_1x2",
+        "I4_6": "MMI_1x2",
+        "I4_7": "MMI_1x2",
+        "I5_1": "MMI_1x2",
+        "I5_2": "MMI_1x2",
+        "I5_3": "MMI_1x2",
+        "I5_4": "MMI_1x2",
+        "I5_5": "MMI_1x2",
+        "I5_6": "MMI_1x2",
+        "I5_7": "MMI_1x2",
+        "I6_1": "MMI_1x2",
+        "I6_2": "MMI_1x2",
+        "I6_3": "MMI_1x2",
+        "I6_4": "MMI_1x2",
+        "I6_5": "MMI_1x2",
+        "I6_6": "MMI_1x2",
+        "I6_7": "MMI_1x2",
+        "I7_1": "MMI_1x2",
+        "I7_2": "MMI_1x2",
+        "I7_3": "MMI_1x2",
+        "I7_4": "MMI_1x2",
+        "I7_5": "MMI_1x2",
+        "I7_6": "MMI_1x2",
+        "I7_7": "MMI_1x2",
+        "O0_1": "MMI_1x2",
+        "O0_2": "MMI_1x2",
+        "O0_3": "MMI_1x2",
+        "O0_4": "MMI_1x2",
+        "O0_5": "MMI_1x2",
+        "O0_6": "MMI_1x2",
+        "O0_7": "MMI_1x2",
+        "O1_1": "MMI_1x2",
+        "O1_2": "MMI_1x2",
+        "O1_3": "MMI_1x2",
+        "O1_4": "MMI_1x2",
+        "O1_5": "MMI_1x2",
+        "O1_6": "MMI_1x2",
+        "O1_7": "MMI_1x2",
+        "O2_1": "MMI_1x2",
+        "O2_2": "MMI_1x2",
+        "O2_3": "MMI_1x2",
+        "O2_4": "MMI_1x2",
+        "O2_5": "MMI_1x2",
+        "O2_6": "MMI_1x2",
+        "O2_7": "MMI_1x2",
+        "O3_1": "MMI_1x2",
+        "O3_2": "MMI_1x2",
+        "O3_3": "MMI_1x2",
+        "O3_4": "MMI_1x2",
+        "O3_5": "MMI_1x2",
+        "O3_6": "MMI_1x2",
+        "O3_7": "MMI_1x2",
+        "O4_1": "MMI_1x2",
+        "O4_2": "MMI_1x2",
+        "O4_3": "MMI_1x2",
+        "O4_4": "MMI_1x2",
+        "O4_5": "MMI_1x2",
+        "O4_6": "MMI_1x2",
+        "O4_7": "MMI_1x2",
+        "O5_1": "MMI_1x2",
+        "O5_2": "MMI_1x2",
+        "O5_3": "MMI_1x2",
+        "O5_4": "MMI_1x2",
+        "O5_5": "MMI_1x2",
+        "O5_6": "MMI_1x2",
+        "O5_7": "MMI_1x2",
+        "O6_1": "MMI_1x2",
+        "O6_2": "MMI_1x2",
+        "O6_3": "MMI_1x2",
+        "O6_4": "MMI_1x2",
+        "O6_5": "MMI_1x2",
+        "O6_6": "MMI_1x2",
+        "O6_7": "MMI_1x2",
+        "O7_1": "MMI_1x2",
+        "O7_2": "MMI_1x2",
+        "O7_3": "MMI_1x2",
+        "O7_4": "MMI_1x2",
+        "O7_5": "MMI_1x2",
+        "O7_6": "MMI_1x2",
+        "O7_7": "MMI_1x2"
+      },
+      "edges": [
+        [
+          "I0_1.o2",
+          "I0_2.o1"
+        ],
+        [
+          "I0_1.o3",
+          "I0_3.o1"
+        ],
+        [
+          "I0_2.o2",
+          "I0_4.o1"
+        ],
+        [
+          "I0_2.o3",
+          "I0_5.o1"
+        ],
+        [
+          "I0_3.o2",
+          "I0_6.o1"
+        ],
+        [
+          "I0_3.o3",
+          "I0_7.o1"
+        ],
+        [
+          "I1_1.o2",
+          "I1_2.o1"
+        ],
+        [
+          "I1_1.o3",
+          "I1_3.o1"
+        ],
+        [
+          "I1_2.o2",
+          "I1_4.o1"
+        ],
+        [
+          "I1_2.o3",
+          "I1_5.o1"
+        ],
+        [
+          "I1_3.o2",
+          "I1_6.o1"
+        ],
+        [
+          "I1_3.o3",
+          "I1_7.o1"
+        ],
+        [
+          "I2_1.o2",
+          "I2_2.o1"
+        ],
+        [
+          "I2_1.o3",
+          "I2_3.o1"
+        ],
+        [
+          "I2_2.o2",
+          "I2_4.o1"
+        ],
+        [
+          "I2_2.o3",
+          "I2_5.o1"
+        ],
+        [
+          "I2_3.o2",
+          "I2_6.o1"
+        ],
+        [
+          "I2_3.o3",
+          "I2_7.o1"
+        ],
+        [
+          "I3_1.o2",
+          "I3_2.o1"
+        ],
+        [
+          "I3_1.o3",
+          "I3_3.o1"
+        ],
+        [
+          "I3_2.o2",
+          "I3_4.o1"
+        ],
+        [
+          "I3_2.o3",
+          "I3_5.o1"
+        ],
+        [
+          "I3_3.o2",
+          "I3_6.o1"
+        ],
+        [
+          "I3_3.o3",
+          "I3_7.o1"
+        ],
+        [
+          "I4_1.o2",
+          "I4_2.o1"
+        ],
+        [
+          "I4_1.o3",
+          "I4_3.o1"
+        ],
+        [
+          "I4_2.o2",
+          "I4_4.o1"
+        ],
+        [
+          "I4_2.o3",
+          "I4_5.o1"
+        ],
+        [
+          "I4_3.o2",
+          "I4_6.o1"
+        ],
+        [
+          "I4_3.o3",
+          "I4_7.o1"
+        ],
+        [
+          "I5_1.o2",
+          "I5_2.o1"
+        ],
+        [
+          "I5_1.o3",
+          "I5_3.o1"
+        ],
+        [
+          "I5_2.o2",
+          "I5_4.o1"
+        ],
+        [
+          "I5_2.o3",
+          "I5_5.o1"
+        ],
+        [
+          "I5_3.o2",
+          "I5_6.o1"
+        ],
+        [
+          "I5_3.o3",
+          "I5_7.o1"
+        ],
+        [
+          "I6_1.o2",
+          "I6_2.o1"
+        ],
+        [
+          "I6_1.o3",
+          "I6_3.o1"
+        ],
+        [
+          "I6_2.o2",
+          "I6_4.o1"
+        ],
+        [
+          "I6_2.o3",
+          "I6_5.o1"
+        ],
+        [
+          "I6_3.o2",
+          "I6_6.o1"
+        ],
+        [
+          "I6_3.o3",
+          "I6_7.o1"
+        ],
+        [
+          "I7_1.o2",
+          "I7_2.o1"
+        ],
+        [
+          "I7_1.o3",
+          "I7_3.o1"
+        ],
+        [
+          "I7_2.o2",
+          "I7_4.o1"
+        ],
+        [
+          "I7_2.o3",
+          "I7_5.o1"
+        ],
+        [
+          "I7_3.o2",
+          "I7_6.o1"
+        ],
+        [
+          "I7_3.o3",
+          "I7_7.o1"
+        ],
+        [
+          "O0_1.o2",
+          "O0_2.o1"
+        ],
+        [
+          "O0_1.o3",
+          "O0_3.o1"
+        ],
+        [
+          "O0_2.o2",
+          "O0_4.o1"
+        ],
+        [
+          "O0_2.o3",
+          "O0_5.o1"
+        ],
+        [
+          "O0_3.o2",
+          "O0_6.o1"
+        ],
+        [
+          "O0_3.o3",
+          "O0_7.o1"
+        ],
+        [
+          "O1_1.o2",
+          "O1_2.o1"
+        ],
+        [
+          "O1_1.o3",
+          "O1_3.o1"
+        ],
+        [
+          "O1_2.o2",
+          "O1_4.o1"
+        ],
+        [
+          "O1_2.o3",
+          "O1_5.o1"
+        ],
+        [
+          "O1_3.o2",
+          "O1_6.o1"
+        ],
+        [
+          "O1_3.o3",
+          "O1_7.o1"
+        ],
+        [
+          "O2_1.o2",
+          "O2_2.o1"
+        ],
+        [
+          "O2_1.o3",
+          "O2_3.o1"
+        ],
+        [
+          "O2_2.o2",
+          "O2_4.o1"
+        ],
+        [
+          "O2_2.o3",
+          "O2_5.o1"
+        ],
+        [
+          "O2_3.o2",
+          "O2_6.o1"
+        ],
+        [
+          "O2_3.o3",
+          "O2_7.o1"
+        ],
+        [
+          "O3_1.o2",
+          "O3_2.o1"
+        ],
+        [
+          "O3_1.o3",
+          "O3_3.o1"
+        ],
+        [
+          "O3_2.o2",
+          "O3_4.o1"
+        ],
+        [
+          "O3_2.o3",
+          "O3_5.o1"
+        ],
+        [
+          "O3_3.o2",
+          "O3_6.o1"
+        ],
+        [
+          "O3_3.o3",
+          "O3_7.o1"
+        ],
+        [
+          "O4_1.o2",
+          "O4_2.o1"
+        ],
+        [
+          "O4_1.o3",
+          "O4_3.o1"
+        ],
+        [
+          "O4_2.o2",
+          "O4_4.o1"
+        ],
+        [
+          "O4_2.o3",
+          "O4_5.o1"
+        ],
+        [
+          "O4_3.o2",
+          "O4_6.o1"
+        ],
+        [
+          "O4_3.o3",
+          "O4_7.o1"
+        ],
+        [
+          "O5_1.o2",
+          "O5_2.o1"
+        ],
+        [
+          "O5_1.o3",
+          "O5_3.o1"
+        ],
+        [
+          "O5_2.o2",
+          "O5_4.o1"
+        ],
+        [
+          "O5_2.o3",
+          "O5_5.o1"
+        ],
+        [
+          "O5_3.o2",
+          "O5_6.o1"
+        ],
+        [
+          "O5_3.o3",
+          "O5_7.o1"
+        ],
+        [
+          "O6_1.o2",
+          "O6_2.o1"
+        ],
+        [
+          "O6_1.o3",
+          "O6_3.o1"
+        ],
+        [
+          "O6_2.o2",
+          "O6_4.o1"
+        ],
+        [
+          "O6_2.o3",
+          "O6_5.o1"
+        ],
+        [
+          "O6_3.o2",
+          "O6_6.o1"
+        ],
+        [
+          "O6_3.o3",
+          "O6_7.o1"
+        ],
+        [
+          "O7_1.o2",
+          "O7_2.o1"
+        ],
+        [
+          "O7_1.o3",
+          "O7_3.o1"
+        ],
+        [
+          "O7_2.o2",
+          "O7_4.o1"
+        ],
+        [
+          "O7_2.o3",
+          "O7_5.o1"
+        ],
+        [
+          "O7_3.o2",
+          "O7_6.o1"
+        ],
+        [
+          "O7_3.o3",
+          "O7_7.o1"
+        ],
+        [
+          "I0_4.o2",
+          "O0_4.o2"
+        ],
+        [
+          "I0_4.o3",
+          "O1_4.o2"
+        ],
+        [
+          "I0_5.o2",
+          "O2_4.o2"
+        ],
+        [
+          "I0_5.o3",
+          "O3_4.o2"
+        ],
+        [
+          "I0_6.o2",
+          "O4_4.o2"
+        ],
+        [
+          "I0_6.o3",
+          "O5_4.o2"
+        ],
+        [
+          "I0_7.o2",
+          "O6_4.o2"
+        ],
+        [
+          "I0_7.o3",
+          "O7_4.o2"
+        ],
+        [
+          "I1_4.o2",
+          "O0_4.o3"
+        ],
+        [
+          "I1_4.o3",
+          "O1_4.o3"
+        ],
+        [
+          "I1_5.o2",
+          "O2_4.o3"
+        ],
+        [
+          "I1_5.o3",
+          "O3_4.o3"
+        ],
+        [
+          "I1_6.o2",
+          "O4_4.o3"
+        ],
+        [
+          "I1_6.o3",
+          "O5_4.o3"
+        ],
+        [
+          "I1_7.o2",
+          "O6_4.o3"
+        ],
+        [
+          "I1_7.o3",
+          "O7_4.o3"
+        ],
+        [
+          "I2_4.o2",
+          "O0_5.o2"
+        ],
+        [
+          "I2_4.o3",
+          "O1_5.o2"
+        ],
+        [
+          "I2_5.o2",
+          "O2_5.o2"
+        ],
+        [
+          "I2_5.o3",
+          "O3_5.o2"
+        ],
+        [
+          "I2_6.o2",
+          "O4_5.o2"
+        ],
+        [
+          "I2_6.o3",
+          "O5_5.o2"
+        ],
+        [
+          "I2_7.o2",
+          "O6_5.o2"
+        ],
+        [
+          "I2_7.o3",
+          "O7_5.o2"
+        ],
+        [
+          "I3_4.o2",
+          "O0_5.o3"
+        ],
+        [
+          "I3_4.o3",
+          "O1_5.o3"
+        ],
+        [
+          "I3_5.o2",
+          "O2_5.o3"
+        ],
+        [
+          "I3_5.o3",
+          "O3_5.o3"
+        ],
+        [
+          "I3_6.o2",
+          "O4_5.o3"
+        ],
+        [
+          "I3_6.o3",
+          "O5_5.o3"
+        ],
+        [
+          "I3_7.o2",
+          "O6_5.o3"
+        ],
+        [
+          "I3_7.o3",
+          "O7_5.o3"
+        ],
+        [
+          "I4_4.o2",
+          "O0_6.o2"
+        ],
+        [
+          "I4_4.o3",
+          "O1_6.o2"
+        ],
+        [
+          "I4_5.o2",
+          "O2_6.o2"
+        ],
+        [
+          "I4_5.o3",
+          "O3_6.o2"
+        ],
+        [
+          "I4_6.o2",
+          "O4_6.o2"
+        ],
+        [
+          "I4_6.o3",
+          "O5_6.o2"
+        ],
+        [
+          "I4_7.o2",
+          "O6_6.o2"
+        ],
+        [
+          "I4_7.o3",
+          "O7_6.o2"
+        ],
+        [
+          "I5_4.o2",
+          "O0_6.o3"
+        ],
+        [
+          "I5_4.o3",
+          "O1_6.o3"
+        ],
+        [
+          "I5_5.o2",
+          "O2_6.o3"
+        ],
+        [
+          "I5_5.o3",
+          "O3_6.o3"
+        ],
+        [
+          "I5_6.o2",
+          "O4_6.o3"
+        ],
+        [
+          "I5_6.o3",
+          "O5_6.o3"
+        ],
+        [
+          "I5_7.o2",
+          "O6_6.o3"
+        ],
+        [
+          "I5_7.o3",
+          "O7_6.o3"
+        ],
+        [
+          "I6_4.o2",
+          "O0_7.o2"
+        ],
+        [
+          "I6_4.o3",
+          "O1_7.o2"
+        ],
+        [
+          "I6_5.o2",
+          "O2_7.o2"
+        ],
+        [
+          "I6_5.o3",
+          "O3_7.o2"
+        ],
+        [
+          "I6_6.o2",
+          "O4_7.o2"
+        ],
+        [
+          "I6_6.o3",
+          "O5_7.o2"
+        ],
+        [
+          "I6_7.o2",
+          "O6_7.o2"
+        ],
+        [
+          "I6_7.o3",
+          "O7_7.o2"
+        ],
+        [
+          "I7_4.o2",
+          "O0_7.o3"
+        ],
+        [
+          "I7_4.o3",
+          "O1_7.o3"
+        ],
+        [
+          "I7_5.o2",
+          "O2_7.o3"
+        ],
+        [
+          "I7_5.o3",
+          "O3_7.o3"
+        ],
+        [
+          "I7_6.o2",
+          "O4_7.o3"
+        ],
+        [
+          "I7_6.o3",
+          "O5_7.o3"
+        ],
+        [
+          "I7_7.o2",
+          "O6_7.o3"
+        ],
+        [
+          "I7_7.o3",
+          "O7_7.o3"
+        ]
+      ],
+      "external": {
+        "in1": "I0_1.o1",
+        "in2": "I1_1.o1",
+        "in3": "I2_1.o1",
+        "in4": "I3_1.o1",
+        "in5": "I4_1.o1",
+        "in6": "I5_1.o1",
+        "in7": "I6_1.o1",
+        "in8": "I7_1.o1",
+        "out1": "O0_1.o1",
+        "out2": "O1_1.o1",
+        "out3": "O2_1.o1",
+        "out4": "O3_1.o1",
+        "out5": "O4_1.o1",
+        "out6": "O5_1.o1",
+        "out7": "O6_1.o1",
+        "out8": "O7_1.o1"
+      },
+      "source": "TB099",
+      "rationale": "8x8 Spanke: 8 input 1x8 + 8 output 8x1 switch-trees (7 elems each = 112), fully crossed.",
+      "ambiguity": "Switch element = 1 node (MMI_1x2 class); the prompt's '112 MMI' matches the element count. Crossover indexing is a convention."
+    },
+    {
+      "id": "L4_03",
+      "level": 4,
+      "topology_certain": false,
+      "prompt": "Design a 16×16 reconfigurable unitary mesh using the Clements rectangular scheme, arranging 120 MZI blocks in 16 columns; use mzi_2x2_pn_diode for each MZI block.",
+      "nodes": {
+        "M1": "MZI_2x2",
+        "M2": "MZI_2x2",
+        "M3": "MZI_2x2",
+        "M4": "MZI_2x2",
+        "M5": "MZI_2x2",
+        "M6": "MZI_2x2",
+        "M7": "MZI_2x2",
+        "M8": "MZI_2x2",
+        "M9": "MZI_2x2",
+        "M10": "MZI_2x2",
+        "M11": "MZI_2x2",
+        "M12": "MZI_2x2",
+        "M13": "MZI_2x2",
+        "M14": "MZI_2x2",
+        "M15": "MZI_2x2",
+        "M16": "MZI_2x2",
+        "M17": "MZI_2x2",
+        "M18": "MZI_2x2",
+        "M19": "MZI_2x2",
+        "M20": "MZI_2x2",
+        "M21": "MZI_2x2",
+        "M22": "MZI_2x2",
+        "M23": "MZI_2x2",
+        "M24": "MZI_2x2",
+        "M25": "MZI_2x2",
+        "M26": "MZI_2x2",
+        "M27": "MZI_2x2",
+        "M28": "MZI_2x2",
+        "M29": "MZI_2x2",
+        "M30": "MZI_2x2",
+        "M31": "MZI_2x2",
+        "M32": "MZI_2x2",
+        "M33": "MZI_2x2",
+        "M34": "MZI_2x2",
+        "M35": "MZI_2x2",
+        "M36": "MZI_2x2",
+        "M37": "MZI_2x2",
+        "M38": "MZI_2x2",
+        "M39": "MZI_2x2",
+        "M40": "MZI_2x2",
+        "M41": "MZI_2x2",
+        "M42": "MZI_2x2",
+        "M43": "MZI_2x2",
+        "M44": "MZI_2x2",
+        "M45": "MZI_2x2",
+        "M46": "MZI_2x2",
+        "M47": "MZI_2x2",
+        "M48": "MZI_2x2",
+        "M49": "MZI_2x2",
+        "M50": "MZI_2x2",
+        "M51": "MZI_2x2",
+        "M52": "MZI_2x2",
+        "M53": "MZI_2x2",
+        "M54": "MZI_2x2",
+        "M55": "MZI_2x2",
+        "M56": "MZI_2x2",
+        "M57": "MZI_2x2",
+        "M58": "MZI_2x2",
+        "M59": "MZI_2x2",
+        "M60": "MZI_2x2",
+        "M61": "MZI_2x2",
+        "M62": "MZI_2x2",
+        "M63": "MZI_2x2",
+        "M64": "MZI_2x2",
+        "M65": "MZI_2x2",
+        "M66": "MZI_2x2",
+        "M67": "MZI_2x2",
+        "M68": "MZI_2x2",
+        "M69": "MZI_2x2",
+        "M70": "MZI_2x2",
+        "M71": "MZI_2x2",
+        "M72": "MZI_2x2",
+        "M73": "MZI_2x2",
+        "M74": "MZI_2x2",
+        "M75": "MZI_2x2",
+        "M76": "MZI_2x2",
+        "M77": "MZI_2x2",
+        "M78": "MZI_2x2",
+        "M79": "MZI_2x2",
+        "M80": "MZI_2x2",
+        "M81": "MZI_2x2",
+        "M82": "MZI_2x2",
+        "M83": "MZI_2x2",
+        "M84": "MZI_2x2",
+        "M85": "MZI_2x2",
+        "M86": "MZI_2x2",
+        "M87": "MZI_2x2",
+        "M88": "MZI_2x2",
+        "M89": "MZI_2x2",
+        "M90": "MZI_2x2",
+        "M91": "MZI_2x2",
+        "M92": "MZI_2x2",
+        "M93": "MZI_2x2",
+        "M94": "MZI_2x2",
+        "M95": "MZI_2x2",
+        "M96": "MZI_2x2",
+        "M97": "MZI_2x2",
+        "M98": "MZI_2x2",
+        "M99": "MZI_2x2",
+        "M100": "MZI_2x2",
+        "M101": "MZI_2x2",
+        "M102": "MZI_2x2",
+        "M103": "MZI_2x2",
+        "M104": "MZI_2x2",
+        "M105": "MZI_2x2",
+        "M106": "MZI_2x2",
+        "M107": "MZI_2x2",
+        "M108": "MZI_2x2",
+        "M109": "MZI_2x2",
+        "M110": "MZI_2x2",
+        "M111": "MZI_2x2",
+        "M112": "MZI_2x2",
+        "M113": "MZI_2x2",
+        "M114": "MZI_2x2",
+        "M115": "MZI_2x2",
+        "M116": "MZI_2x2",
+        "M117": "MZI_2x2",
+        "M118": "MZI_2x2",
+        "M119": "MZI_2x2",
+        "M120": "MZI_2x2"
+      },
+      "edges": [
+        [
+          "M1.o3",
+          "M16.o1"
+        ],
+        [
+          "M16.o3",
+          "M31.o1"
+        ],
+        [
+          "M31.o3",
+          "M46.o1"
+        ],
+        [
+          "M46.o3",
+          "M61.o1"
+        ],
+        [
+          "M61.o3",
+          "M76.o1"
+        ],
+        [
+          "M76.o3",
+          "M91.o1"
+        ],
+        [
+          "M91.o3",
+          "M106.o1"
+        ],
+        [
+          "M1.o4",
+          "M9.o1"
+        ],
+        [
+          "M9.o3",
+          "M16.o2"
+        ],
+        [
+          "M16.o4",
+          "M24.o1"
+        ],
+        [
+          "M24.o3",
+          "M31.o2"
+        ],
+        [
+          "M31.o4",
+          "M39.o1"
+        ],
+        [
+          "M39.o3",
+          "M46.o2"
+        ],
+        [
+          "M46.o4",
+          "M54.o1"
+        ],
+        [
+          "M54.o3",
+          "M61.o2"
+        ],
+        [
+          "M61.o4",
+          "M69.o1"
+        ],
+        [
+          "M69.o3",
+          "M76.o2"
+        ],
+        [
+          "M76.o4",
+          "M84.o1"
+        ],
+        [
+          "M84.o3",
+          "M91.o2"
+        ],
+        [
+          "M91.o4",
+          "M99.o1"
+        ],
+        [
+          "M99.o3",
+          "M106.o2"
+        ],
+        [
+          "M106.o4",
+          "M114.o1"
+        ],
+        [
+          "M2.o3",
+          "M9.o2"
+        ],
+        [
+          "M9.o4",
+          "M17.o1"
+        ],
+        [
+          "M17.o3",
+          "M24.o2"
+        ],
+        [
+          "M24.o4",
+          "M32.o1"
+        ],
+        [
+          "M32.o3",
+          "M39.o2"
+        ],
+        [
+          "M39.o4",
+          "M47.o1"
+        ],
+        [
+          "M47.o3",
+          "M54.o2"
+        ],
+        [
+          "M54.o4",
+          "M62.o1"
+        ],
+        [
+          "M62.o3",
+          "M69.o2"
+        ],
+        [
+          "M69.o4",
+          "M77.o1"
+        ],
+        [
+          "M77.o3",
+          "M84.o2"
+        ],
+        [
+          "M84.o4",
+          "M92.o1"
+        ],
+        [
+          "M92.o3",
+          "M99.o2"
+        ],
+        [
+          "M99.o4",
+          "M107.o1"
+        ],
+        [
+          "M107.o3",
+          "M114.o2"
+        ],
+        [
+          "M2.o4",
+          "M10.o1"
+        ],
+        [
+          "M10.o3",
+          "M17.o2"
+        ],
+        [
+          "M17.o4",
+          "M25.o1"
+        ],
+        [
+          "M25.o3",
+          "M32.o2"
+        ],
+        [
+          "M32.o4",
+          "M40.o1"
+        ],
+        [
+          "M40.o3",
+          "M47.o2"
+        ],
+        [
+          "M47.o4",
+          "M55.o1"
+        ],
+        [
+          "M55.o3",
+          "M62.o2"
+        ],
+        [
+          "M62.o4",
+          "M70.o1"
+        ],
+        [
+          "M70.o3",
+          "M77.o2"
+        ],
+        [
+          "M77.o4",
+          "M85.o1"
+        ],
+        [
+          "M85.o3",
+          "M92.o2"
+        ],
+        [
+          "M92.o4",
+          "M100.o1"
+        ],
+        [
+          "M100.o3",
+          "M107.o2"
+        ],
+        [
+          "M107.o4",
+          "M115.o1"
+        ],
+        [
+          "M3.o3",
+          "M10.o2"
+        ],
+        [
+          "M10.o4",
+          "M18.o1"
+        ],
+        [
+          "M18.o3",
+          "M25.o2"
+        ],
+        [
+          "M25.o4",
+          "M33.o1"
+        ],
+        [
+          "M33.o3",
+          "M40.o2"
+        ],
+        [
+          "M40.o4",
+          "M48.o1"
+        ],
+        [
+          "M48.o3",
+          "M55.o2"
+        ],
+        [
+          "M55.o4",
+          "M63.o1"
+        ],
+        [
+          "M63.o3",
+          "M70.o2"
+        ],
+        [
+          "M70.o4",
+          "M78.o1"
+        ],
+        [
+          "M78.o3",
+          "M85.o2"
+        ],
+        [
+          "M85.o4",
+          "M93.o1"
+        ],
+        [
+          "M93.o3",
+          "M100.o2"
+        ],
+        [
+          "M100.o4",
+          "M108.o1"
+        ],
+        [
+          "M108.o3",
+          "M115.o2"
+        ],
+        [
+          "M3.o4",
+          "M11.o1"
+        ],
+        [
+          "M11.o3",
+          "M18.o2"
+        ],
+        [
+          "M18.o4",
+          "M26.o1"
+        ],
+        [
+          "M26.o3",
+          "M33.o2"
+        ],
+        [
+          "M33.o4",
+          "M41.o1"
+        ],
+        [
+          "M41.o3",
+          "M48.o2"
+        ],
+        [
+          "M48.o4",
+          "M56.o1"
+        ],
+        [
+          "M56.o3",
+          "M63.o2"
+        ],
+        [
+          "M63.o4",
+          "M71.o1"
+        ],
+        [
+          "M71.o3",
+          "M78.o2"
+        ],
+        [
+          "M78.o4",
+          "M86.o1"
+        ],
+        [
+          "M86.o3",
+          "M93.o2"
+        ],
+        [
+          "M93.o4",
+          "M101.o1"
+        ],
+        [
+          "M101.o3",
+          "M108.o2"
+        ],
+        [
+          "M108.o4",
+          "M116.o1"
+        ],
+        [
+          "M4.o3",
+          "M11.o2"
+        ],
+        [
+          "M11.o4",
+          "M19.o1"
+        ],
+        [
+          "M19.o3",
+          "M26.o2"
+        ],
+        [
+          "M26.o4",
+          "M34.o1"
+        ],
+        [
+          "M34.o3",
+          "M41.o2"
+        ],
+        [
+          "M41.o4",
+          "M49.o1"
+        ],
+        [
+          "M49.o3",
+          "M56.o2"
+        ],
+        [
+          "M56.o4",
+          "M64.o1"
+        ],
+        [
+          "M64.o3",
+          "M71.o2"
+        ],
+        [
+          "M71.o4",
+          "M79.o1"
+        ],
+        [
+          "M79.o3",
+          "M86.o2"
+        ],
+        [
+          "M86.o4",
+          "M94.o1"
+        ],
+        [
+          "M94.o3",
+          "M101.o2"
+        ],
+        [
+          "M101.o4",
+          "M109.o1"
+        ],
+        [
+          "M109.o3",
+          "M116.o2"
+        ],
+        [
+          "M4.o4",
+          "M12.o1"
+        ],
+        [
+          "M12.o3",
+          "M19.o2"
+        ],
+        [
+          "M19.o4",
+          "M27.o1"
+        ],
+        [
+          "M27.o3",
+          "M34.o2"
+        ],
+        [
+          "M34.o4",
+          "M42.o1"
+        ],
+        [
+          "M42.o3",
+          "M49.o2"
+        ],
+        [
+          "M49.o4",
+          "M57.o1"
+        ],
+        [
+          "M57.o3",
+          "M64.o2"
+        ],
+        [
+          "M64.o4",
+          "M72.o1"
+        ],
+        [
+          "M72.o3",
+          "M79.o2"
+        ],
+        [
+          "M79.o4",
+          "M87.o1"
+        ],
+        [
+          "M87.o3",
+          "M94.o2"
+        ],
+        [
+          "M94.o4",
+          "M102.o1"
+        ],
+        [
+          "M102.o3",
+          "M109.o2"
+        ],
+        [
+          "M109.o4",
+          "M117.o1"
+        ],
+        [
+          "M5.o3",
+          "M12.o2"
+        ],
+        [
+          "M12.o4",
+          "M20.o1"
+        ],
+        [
+          "M20.o3",
+          "M27.o2"
+        ],
+        [
+          "M27.o4",
+          "M35.o1"
+        ],
+        [
+          "M35.o3",
+          "M42.o2"
+        ],
+        [
+          "M42.o4",
+          "M50.o1"
+        ],
+        [
+          "M50.o3",
+          "M57.o2"
+        ],
+        [
+          "M57.o4",
+          "M65.o1"
+        ],
+        [
+          "M65.o3",
+          "M72.o2"
+        ],
+        [
+          "M72.o4",
+          "M80.o1"
+        ],
+        [
+          "M80.o3",
+          "M87.o2"
+        ],
+        [
+          "M87.o4",
+          "M95.o1"
+        ],
+        [
+          "M95.o3",
+          "M102.o2"
+        ],
+        [
+          "M102.o4",
+          "M110.o1"
+        ],
+        [
+          "M110.o3",
+          "M117.o2"
+        ],
+        [
+          "M5.o4",
+          "M13.o1"
+        ],
+        [
+          "M13.o3",
+          "M20.o2"
+        ],
+        [
+          "M20.o4",
+          "M28.o1"
+        ],
+        [
+          "M28.o3",
+          "M35.o2"
+        ],
+        [
+          "M35.o4",
+          "M43.o1"
+        ],
+        [
+          "M43.o3",
+          "M50.o2"
+        ],
+        [
+          "M50.o4",
+          "M58.o1"
+        ],
+        [
+          "M58.o3",
+          "M65.o2"
+        ],
+        [
+          "M65.o4",
+          "M73.o1"
+        ],
+        [
+          "M73.o3",
+          "M80.o2"
+        ],
+        [
+          "M80.o4",
+          "M88.o1"
+        ],
+        [
+          "M88.o3",
+          "M95.o2"
+        ],
+        [
+          "M95.o4",
+          "M103.o1"
+        ],
+        [
+          "M103.o3",
+          "M110.o2"
+        ],
+        [
+          "M110.o4",
+          "M118.o1"
+        ],
+        [
+          "M6.o3",
+          "M13.o2"
+        ],
+        [
+          "M13.o4",
+          "M21.o1"
+        ],
+        [
+          "M21.o3",
+          "M28.o2"
+        ],
+        [
+          "M28.o4",
+          "M36.o1"
+        ],
+        [
+          "M36.o3",
+          "M43.o2"
+        ],
+        [
+          "M43.o4",
+          "M51.o1"
+        ],
+        [
+          "M51.o3",
+          "M58.o2"
+        ],
+        [
+          "M58.o4",
+          "M66.o1"
+        ],
+        [
+          "M66.o3",
+          "M73.o2"
+        ],
+        [
+          "M73.o4",
+          "M81.o1"
+        ],
+        [
+          "M81.o3",
+          "M88.o2"
+        ],
+        [
+          "M88.o4",
+          "M96.o1"
+        ],
+        [
+          "M96.o3",
+          "M103.o2"
+        ],
+        [
+          "M103.o4",
+          "M111.o1"
+        ],
+        [
+          "M111.o3",
+          "M118.o2"
+        ],
+        [
+          "M6.o4",
+          "M14.o1"
+        ],
+        [
+          "M14.o3",
+          "M21.o2"
+        ],
+        [
+          "M21.o4",
+          "M29.o1"
+        ],
+        [
+          "M29.o3",
+          "M36.o2"
+        ],
+        [
+          "M36.o4",
+          "M44.o1"
+        ],
+        [
+          "M44.o3",
+          "M51.o2"
+        ],
+        [
+          "M51.o4",
+          "M59.o1"
+        ],
+        [
+          "M59.o3",
+          "M66.o2"
+        ],
+        [
+          "M66.o4",
+          "M74.o1"
+        ],
+        [
+          "M74.o3",
+          "M81.o2"
+        ],
+        [
+          "M81.o4",
+          "M89.o1"
+        ],
+        [
+          "M89.o3",
+          "M96.o2"
+        ],
+        [
+          "M96.o4",
+          "M104.o1"
+        ],
+        [
+          "M104.o3",
+          "M111.o2"
+        ],
+        [
+          "M111.o4",
+          "M119.o1"
+        ],
+        [
+          "M7.o3",
+          "M14.o2"
+        ],
+        [
+          "M14.o4",
+          "M22.o1"
+        ],
+        [
+          "M22.o3",
+          "M29.o2"
+        ],
+        [
+          "M29.o4",
+          "M37.o1"
+        ],
+        [
+          "M37.o3",
+          "M44.o2"
+        ],
+        [
+          "M44.o4",
+          "M52.o1"
+        ],
+        [
+          "M52.o3",
+          "M59.o2"
+        ],
+        [
+          "M59.o4",
+          "M67.o1"
+        ],
+        [
+          "M67.o3",
+          "M74.o2"
+        ],
+        [
+          "M74.o4",
+          "M82.o1"
+        ],
+        [
+          "M82.o3",
+          "M89.o2"
+        ],
+        [
+          "M89.o4",
+          "M97.o1"
+        ],
+        [
+          "M97.o3",
+          "M104.o2"
+        ],
+        [
+          "M104.o4",
+          "M112.o1"
+        ],
+        [
+          "M112.o3",
+          "M119.o2"
+        ],
+        [
+          "M7.o4",
+          "M15.o1"
+        ],
+        [
+          "M15.o3",
+          "M22.o2"
+        ],
+        [
+          "M22.o4",
+          "M30.o1"
+        ],
+        [
+          "M30.o3",
+          "M37.o2"
+        ],
+        [
+          "M37.o4",
+          "M45.o1"
+        ],
+        [
+          "M45.o3",
+          "M52.o2"
+        ],
+        [
+          "M52.o4",
+          "M60.o1"
+        ],
+        [
+          "M60.o3",
+          "M67.o2"
+        ],
+        [
+          "M67.o4",
+          "M75.o1"
+        ],
+        [
+          "M75.o3",
+          "M82.o2"
+        ],
+        [
+          "M82.o4",
+          "M90.o1"
+        ],
+        [
+          "M90.o3",
+          "M97.o2"
+        ],
+        [
+          "M97.o4",
+          "M105.o1"
+        ],
+        [
+          "M105.o3",
+          "M112.o2"
+        ],
+        [
+          "M112.o4",
+          "M120.o1"
+        ],
+        [
+          "M8.o3",
+          "M15.o2"
+        ],
+        [
+          "M15.o4",
+          "M23.o1"
+        ],
+        [
+          "M23.o3",
+          "M30.o2"
+        ],
+        [
+          "M30.o4",
+          "M38.o1"
+        ],
+        [
+          "M38.o3",
+          "M45.o2"
+        ],
+        [
+          "M45.o4",
+          "M53.o1"
+        ],
+        [
+          "M53.o3",
+          "M60.o2"
+        ],
+        [
+          "M60.o4",
+          "M68.o1"
+        ],
+        [
+          "M68.o3",
+          "M75.o2"
+        ],
+        [
+          "M75.o4",
+          "M83.o1"
+        ],
+        [
+          "M83.o3",
+          "M90.o2"
+        ],
+        [
+          "M90.o4",
+          "M98.o1"
+        ],
+        [
+          "M98.o3",
+          "M105.o2"
+        ],
+        [
+          "M105.o4",
+          "M113.o1"
+        ],
+        [
+          "M113.o3",
+          "M120.o2"
+        ],
+        [
+          "M8.o4",
+          "M23.o2"
+        ],
+        [
+          "M23.o4",
+          "M38.o2"
+        ],
+        [
+          "M38.o4",
+          "M53.o2"
+        ],
+        [
+          "M53.o4",
+          "M68.o2"
+        ],
+        [
+          "M68.o4",
+          "M83.o2"
+        ],
+        [
+          "M83.o4",
+          "M98.o2"
+        ],
+        [
+          "M98.o4",
+          "M113.o2"
+        ]
+      ],
+      "external": {
+        "in1": "M1.o1",
+        "out1": "M106.o3",
+        "in2": "M1.o2",
+        "out2": "M114.o3",
+        "in3": "M2.o1",
+        "out3": "M114.o4",
+        "in4": "M2.o2",
+        "out4": "M115.o3",
+        "in5": "M3.o1",
+        "out5": "M115.o4",
+        "in6": "M3.o2",
+        "out6": "M116.o3",
+        "in7": "M4.o1",
+        "out7": "M116.o4",
+        "in8": "M4.o2",
+        "out8": "M117.o3",
+        "in9": "M5.o1",
+        "out9": "M117.o4",
+        "in10": "M5.o2",
+        "out10": "M118.o3",
+        "in11": "M6.o1",
+        "out11": "M118.o4",
+        "in12": "M6.o2",
+        "out12": "M119.o3",
+        "in13": "M7.o1",
+        "out13": "M119.o4",
+        "in14": "M7.o2",
+        "out14": "M120.o3",
+        "in15": "M8.o1",
+        "out15": "M120.o4",
+        "in16": "M8.o2",
+        "out16": "M113.o4"
+      },
+      "source": "NEW_CLEMENTS16",
+      "rationale": "16x16 Clements rectangular mesh = 120 MZI_2x2 blocks (120 comp).",
+      "ambiguity": "Rectangular nearest-neighbor mesh; exact port indexing per Clements diagram is a convention. Multiset invariant."
+    },
+    {
+      "id": "L4_04",
+      "level": 4,
+      "topology_certain": false,
+      "prompt": "Design a 8×8 optical switching network using a crossbar architecture with mzi_2x2_pn_diode devices. Arrange 64 of these 2×2 switches in a grid such that each of the 8 input waveguides intersects with each of the 8 output waveguides exactly once.",
+      "nodes": {
+        "X0_0": "MZI_2x2",
+        "X0_1": "MZI_2x2",
+        "X0_2": "MZI_2x2",
+        "X0_3": "MZI_2x2",
+        "X0_4": "MZI_2x2",
+        "X0_5": "MZI_2x2",
+        "X0_6": "MZI_2x2",
+        "X0_7": "MZI_2x2",
+        "X1_0": "MZI_2x2",
+        "X1_1": "MZI_2x2",
+        "X1_2": "MZI_2x2",
+        "X1_3": "MZI_2x2",
+        "X1_4": "MZI_2x2",
+        "X1_5": "MZI_2x2",
+        "X1_6": "MZI_2x2",
+        "X1_7": "MZI_2x2",
+        "X2_0": "MZI_2x2",
+        "X2_1": "MZI_2x2",
+        "X2_2": "MZI_2x2",
+        "X2_3": "MZI_2x2",
+        "X2_4": "MZI_2x2",
+        "X2_5": "MZI_2x2",
+        "X2_6": "MZI_2x2",
+        "X2_7": "MZI_2x2",
+        "X3_0": "MZI_2x2",
+        "X3_1": "MZI_2x2",
+        "X3_2": "MZI_2x2",
+        "X3_3": "MZI_2x2",
+        "X3_4": "MZI_2x2",
+        "X3_5": "MZI_2x2",
+        "X3_6": "MZI_2x2",
+        "X3_7": "MZI_2x2",
+        "X4_0": "MZI_2x2",
+        "X4_1": "MZI_2x2",
+        "X4_2": "MZI_2x2",
+        "X4_3": "MZI_2x2",
+        "X4_4": "MZI_2x2",
+        "X4_5": "MZI_2x2",
+        "X4_6": "MZI_2x2",
+        "X4_7": "MZI_2x2",
+        "X5_0": "MZI_2x2",
+        "X5_1": "MZI_2x2",
+        "X5_2": "MZI_2x2",
+        "X5_3": "MZI_2x2",
+        "X5_4": "MZI_2x2",
+        "X5_5": "MZI_2x2",
+        "X5_6": "MZI_2x2",
+        "X5_7": "MZI_2x2",
+        "X6_0": "MZI_2x2",
+        "X6_1": "MZI_2x2",
+        "X6_2": "MZI_2x2",
+        "X6_3": "MZI_2x2",
+        "X6_4": "MZI_2x2",
+        "X6_5": "MZI_2x2",
+        "X6_6": "MZI_2x2",
+        "X6_7": "MZI_2x2",
+        "X7_0": "MZI_2x2",
+        "X7_1": "MZI_2x2",
+        "X7_2": "MZI_2x2",
+        "X7_3": "MZI_2x2",
+        "X7_4": "MZI_2x2",
+        "X7_5": "MZI_2x2",
+        "X7_6": "MZI_2x2",
+        "X7_7": "MZI_2x2"
+      },
+      "edges": [
+        [
+          "X0_0.o3",
+          "X0_1.o2"
+        ],
+        [
+          "X0_0.o4",
+          "X1_0.o1"
+        ],
+        [
+          "X0_1.o3",
+          "X0_2.o2"
+        ],
+        [
+          "X0_1.o4",
+          "X1_1.o1"
+        ],
+        [
+          "X0_2.o3",
+          "X0_3.o2"
+        ],
+        [
+          "X0_2.o4",
+          "X1_2.o1"
+        ],
+        [
+          "X0_3.o3",
+          "X0_4.o2"
+        ],
+        [
+          "X0_3.o4",
+          "X1_3.o1"
+        ],
+        [
+          "X0_4.o3",
+          "X0_5.o2"
+        ],
+        [
+          "X0_4.o4",
+          "X1_4.o1"
+        ],
+        [
+          "X0_5.o3",
+          "X0_6.o2"
+        ],
+        [
+          "X0_5.o4",
+          "X1_5.o1"
+        ],
+        [
+          "X0_6.o3",
+          "X0_7.o2"
+        ],
+        [
+          "X0_6.o4",
+          "X1_6.o1"
+        ],
+        [
+          "X0_7.o4",
+          "X1_7.o1"
+        ],
+        [
+          "X1_0.o3",
+          "X1_1.o2"
+        ],
+        [
+          "X1_0.o4",
+          "X2_0.o1"
+        ],
+        [
+          "X1_1.o3",
+          "X1_2.o2"
+        ],
+        [
+          "X1_1.o4",
+          "X2_1.o1"
+        ],
+        [
+          "X1_2.o3",
+          "X1_3.o2"
+        ],
+        [
+          "X1_2.o4",
+          "X2_2.o1"
+        ],
+        [
+          "X1_3.o3",
+          "X1_4.o2"
+        ],
+        [
+          "X1_3.o4",
+          "X2_3.o1"
+        ],
+        [
+          "X1_4.o3",
+          "X1_5.o2"
+        ],
+        [
+          "X1_4.o4",
+          "X2_4.o1"
+        ],
+        [
+          "X1_5.o3",
+          "X1_6.o2"
+        ],
+        [
+          "X1_5.o4",
+          "X2_5.o1"
+        ],
+        [
+          "X1_6.o3",
+          "X1_7.o2"
+        ],
+        [
+          "X1_6.o4",
+          "X2_6.o1"
+        ],
+        [
+          "X1_7.o4",
+          "X2_7.o1"
+        ],
+        [
+          "X2_0.o3",
+          "X2_1.o2"
+        ],
+        [
+          "X2_0.o4",
+          "X3_0.o1"
+        ],
+        [
+          "X2_1.o3",
+          "X2_2.o2"
+        ],
+        [
+          "X2_1.o4",
+          "X3_1.o1"
+        ],
+        [
+          "X2_2.o3",
+          "X2_3.o2"
+        ],
+        [
+          "X2_2.o4",
+          "X3_2.o1"
+        ],
+        [
+          "X2_3.o3",
+          "X2_4.o2"
+        ],
+        [
+          "X2_3.o4",
+          "X3_3.o1"
+        ],
+        [
+          "X2_4.o3",
+          "X2_5.o2"
+        ],
+        [
+          "X2_4.o4",
+          "X3_4.o1"
+        ],
+        [
+          "X2_5.o3",
+          "X2_6.o2"
+        ],
+        [
+          "X2_5.o4",
+          "X3_5.o1"
+        ],
+        [
+          "X2_6.o3",
+          "X2_7.o2"
+        ],
+        [
+          "X2_6.o4",
+          "X3_6.o1"
+        ],
+        [
+          "X2_7.o4",
+          "X3_7.o1"
+        ],
+        [
+          "X3_0.o3",
+          "X3_1.o2"
+        ],
+        [
+          "X3_0.o4",
+          "X4_0.o1"
+        ],
+        [
+          "X3_1.o3",
+          "X3_2.o2"
+        ],
+        [
+          "X3_1.o4",
+          "X4_1.o1"
+        ],
+        [
+          "X3_2.o3",
+          "X3_3.o2"
+        ],
+        [
+          "X3_2.o4",
+          "X4_2.o1"
+        ],
+        [
+          "X3_3.o3",
+          "X3_4.o2"
+        ],
+        [
+          "X3_3.o4",
+          "X4_3.o1"
+        ],
+        [
+          "X3_4.o3",
+          "X3_5.o2"
+        ],
+        [
+          "X3_4.o4",
+          "X4_4.o1"
+        ],
+        [
+          "X3_5.o3",
+          "X3_6.o2"
+        ],
+        [
+          "X3_5.o4",
+          "X4_5.o1"
+        ],
+        [
+          "X3_6.o3",
+          "X3_7.o2"
+        ],
+        [
+          "X3_6.o4",
+          "X4_6.o1"
+        ],
+        [
+          "X3_7.o4",
+          "X4_7.o1"
+        ],
+        [
+          "X4_0.o3",
+          "X4_1.o2"
+        ],
+        [
+          "X4_0.o4",
+          "X5_0.o1"
+        ],
+        [
+          "X4_1.o3",
+          "X4_2.o2"
+        ],
+        [
+          "X4_1.o4",
+          "X5_1.o1"
+        ],
+        [
+          "X4_2.o3",
+          "X4_3.o2"
+        ],
+        [
+          "X4_2.o4",
+          "X5_2.o1"
+        ],
+        [
+          "X4_3.o3",
+          "X4_4.o2"
+        ],
+        [
+          "X4_3.o4",
+          "X5_3.o1"
+        ],
+        [
+          "X4_4.o3",
+          "X4_5.o2"
+        ],
+        [
+          "X4_4.o4",
+          "X5_4.o1"
+        ],
+        [
+          "X4_5.o3",
+          "X4_6.o2"
+        ],
+        [
+          "X4_5.o4",
+          "X5_5.o1"
+        ],
+        [
+          "X4_6.o3",
+          "X4_7.o2"
+        ],
+        [
+          "X4_6.o4",
+          "X5_6.o1"
+        ],
+        [
+          "X4_7.o4",
+          "X5_7.o1"
+        ],
+        [
+          "X5_0.o3",
+          "X5_1.o2"
+        ],
+        [
+          "X5_0.o4",
+          "X6_0.o1"
+        ],
+        [
+          "X5_1.o3",
+          "X5_2.o2"
+        ],
+        [
+          "X5_1.o4",
+          "X6_1.o1"
+        ],
+        [
+          "X5_2.o3",
+          "X5_3.o2"
+        ],
+        [
+          "X5_2.o4",
+          "X6_2.o1"
+        ],
+        [
+          "X5_3.o3",
+          "X5_4.o2"
+        ],
+        [
+          "X5_3.o4",
+          "X6_3.o1"
+        ],
+        [
+          "X5_4.o3",
+          "X5_5.o2"
+        ],
+        [
+          "X5_4.o4",
+          "X6_4.o1"
+        ],
+        [
+          "X5_5.o3",
+          "X5_6.o2"
+        ],
+        [
+          "X5_5.o4",
+          "X6_5.o1"
+        ],
+        [
+          "X5_6.o3",
+          "X5_7.o2"
+        ],
+        [
+          "X5_6.o4",
+          "X6_6.o1"
+        ],
+        [
+          "X5_7.o4",
+          "X6_7.o1"
+        ],
+        [
+          "X6_0.o3",
+          "X6_1.o2"
+        ],
+        [
+          "X6_0.o4",
+          "X7_0.o1"
+        ],
+        [
+          "X6_1.o3",
+          "X6_2.o2"
+        ],
+        [
+          "X6_1.o4",
+          "X7_1.o1"
+        ],
+        [
+          "X6_2.o3",
+          "X6_3.o2"
+        ],
+        [
+          "X6_2.o4",
+          "X7_2.o1"
+        ],
+        [
+          "X6_3.o3",
+          "X6_4.o2"
+        ],
+        [
+          "X6_3.o4",
+          "X7_3.o1"
+        ],
+        [
+          "X6_4.o3",
+          "X6_5.o2"
+        ],
+        [
+          "X6_4.o4",
+          "X7_4.o1"
+        ],
+        [
+          "X6_5.o3",
+          "X6_6.o2"
+        ],
+        [
+          "X6_5.o4",
+          "X7_5.o1"
+        ],
+        [
+          "X6_6.o3",
+          "X6_7.o2"
+        ],
+        [
+          "X6_6.o4",
+          "X7_6.o1"
+        ],
+        [
+          "X6_7.o4",
+          "X7_7.o1"
+        ],
+        [
+          "X7_0.o3",
+          "X7_1.o2"
+        ],
+        [
+          "X7_1.o3",
+          "X7_2.o2"
+        ],
+        [
+          "X7_2.o3",
+          "X7_3.o2"
+        ],
+        [
+          "X7_3.o3",
+          "X7_4.o2"
+        ],
+        [
+          "X7_4.o3",
+          "X7_5.o2"
+        ],
+        [
+          "X7_5.o3",
+          "X7_6.o2"
+        ],
+        [
+          "X7_6.o3",
+          "X7_7.o2"
+        ]
+      ],
+      "external": {
+        "in1": "X0_0.o2",
+        "in2": "X1_0.o2",
+        "in3": "X2_0.o2",
+        "in4": "X3_0.o2",
+        "in5": "X4_0.o2",
+        "in6": "X5_0.o2",
+        "in7": "X6_0.o2",
+        "in8": "X7_0.o2",
+        "out1": "X7_0.o4",
+        "out2": "X7_1.o4",
+        "out3": "X7_2.o4",
+        "out4": "X7_3.o4",
+        "out5": "X7_4.o4",
+        "out6": "X7_5.o4",
+        "out7": "X7_6.o4",
+        "out8": "X7_7.o4",
+        "thru1": "X0_7.o3",
+        "thru2": "X1_7.o3",
+        "thru3": "X2_7.o3",
+        "thru4": "X3_7.o3",
+        "thru5": "X4_7.o3",
+        "thru6": "X5_7.o3",
+        "thru7": "X6_7.o3",
+        "thru8": "X7_7.o3",
+        "cin1": "X0_0.o1",
+        "cin2": "X0_1.o1",
+        "cin3": "X0_2.o1",
+        "cin4": "X0_3.o1",
+        "cin5": "X0_4.o1",
+        "cin6": "X0_5.o1",
+        "cin7": "X0_6.o1",
+        "cin8": "X0_7.o1"
+      },
+      "source": "TB088",
+      "rationale": "8x8 crossbar = 64 MZI_2x2 switches; each links its right (through) and down (cross) neighbor. [2026-07-30 planarity fix: row links enter o2 (o3->o2) and column links enter o1 (o4->o1), so the row and column buses do not cross at any junction; external in*/cin* ports swapped o1<->o2 to match.]",
+      "ambiguity": "Crossbar grid adjacency is determinate; the external input/output/through port convention varies."
+    },
+    {
+      "id": "L4_05",
+      "level": 4,
+      "topology_certain": false,
+      "prompt": "Design an 8 × 8 reconfigurable unitary mesh using the Clements scheme. Arrange 28 MZI blocks in a rectangular topology of 8 columns and 4 rows. Use a built-in components called mzi_2x2_pn_diode for the MZI block.",
+      "nodes": {
+        "M1": "MZI_2x2",
+        "M2": "MZI_2x2",
+        "M3": "MZI_2x2",
+        "M4": "MZI_2x2",
+        "M5": "MZI_2x2",
+        "M6": "MZI_2x2",
+        "M7": "MZI_2x2",
+        "M8": "MZI_2x2",
+        "M9": "MZI_2x2",
+        "M10": "MZI_2x2",
+        "M11": "MZI_2x2",
+        "M12": "MZI_2x2",
+        "M13": "MZI_2x2",
+        "M14": "MZI_2x2",
+        "M15": "MZI_2x2",
+        "M16": "MZI_2x2",
+        "M17": "MZI_2x2",
+        "M18": "MZI_2x2",
+        "M19": "MZI_2x2",
+        "M20": "MZI_2x2",
+        "M21": "MZI_2x2",
+        "M22": "MZI_2x2",
+        "M23": "MZI_2x2",
+        "M24": "MZI_2x2",
+        "M25": "MZI_2x2",
+        "M26": "MZI_2x2",
+        "M27": "MZI_2x2",
+        "M28": "MZI_2x2"
+      },
+      "edges": [
+        [
+          "M1.o3",
+          "M8.o1"
+        ],
+        [
+          "M8.o3",
+          "M15.o1"
+        ],
+        [
+          "M15.o3",
+          "M22.o1"
+        ],
+        [
+          "M1.o4",
+          "M5.o1"
+        ],
+        [
+          "M5.o3",
+          "M8.o2"
+        ],
+        [
+          "M8.o4",
+          "M12.o1"
+        ],
+        [
+          "M12.o3",
+          "M15.o2"
+        ],
+        [
+          "M15.o4",
+          "M19.o1"
+        ],
+        [
+          "M19.o3",
+          "M22.o2"
+        ],
+        [
+          "M22.o4",
+          "M26.o1"
+        ],
+        [
+          "M2.o3",
+          "M5.o2"
+        ],
+        [
+          "M5.o4",
+          "M9.o1"
+        ],
+        [
+          "M9.o3",
+          "M12.o2"
+        ],
+        [
+          "M12.o4",
+          "M16.o1"
+        ],
+        [
+          "M16.o3",
+          "M19.o2"
+        ],
+        [
+          "M19.o4",
+          "M23.o1"
+        ],
+        [
+          "M23.o3",
+          "M26.o2"
+        ],
+        [
+          "M2.o4",
+          "M6.o1"
+        ],
+        [
+          "M6.o3",
+          "M9.o2"
+        ],
+        [
+          "M9.o4",
+          "M13.o1"
+        ],
+        [
+          "M13.o3",
+          "M16.o2"
+        ],
+        [
+          "M16.o4",
+          "M20.o1"
+        ],
+        [
+          "M20.o3",
+          "M23.o2"
+        ],
+        [
+          "M23.o4",
+          "M27.o1"
+        ],
+        [
+          "M3.o3",
+          "M6.o2"
+        ],
+        [
+          "M6.o4",
+          "M10.o1"
+        ],
+        [
+          "M10.o3",
+          "M13.o2"
+        ],
+        [
+          "M13.o4",
+          "M17.o1"
+        ],
+        [
+          "M17.o3",
+          "M20.o2"
+        ],
+        [
+          "M20.o4",
+          "M24.o1"
+        ],
+        [
+          "M24.o3",
+          "M27.o2"
+        ],
+        [
+          "M3.o4",
+          "M7.o1"
+        ],
+        [
+          "M7.o3",
+          "M10.o2"
+        ],
+        [
+          "M10.o4",
+          "M14.o1"
+        ],
+        [
+          "M14.o3",
+          "M17.o2"
+        ],
+        [
+          "M17.o4",
+          "M21.o1"
+        ],
+        [
+          "M21.o3",
+          "M24.o2"
+        ],
+        [
+          "M24.o4",
+          "M28.o1"
+        ],
+        [
+          "M4.o3",
+          "M7.o2"
+        ],
+        [
+          "M7.o4",
+          "M11.o1"
+        ],
+        [
+          "M11.o3",
+          "M14.o2"
+        ],
+        [
+          "M14.o4",
+          "M18.o1"
+        ],
+        [
+          "M18.o3",
+          "M21.o2"
+        ],
+        [
+          "M21.o4",
+          "M25.o1"
+        ],
+        [
+          "M25.o3",
+          "M28.o2"
+        ],
+        [
+          "M4.o4",
+          "M11.o2"
+        ],
+        [
+          "M11.o4",
+          "M18.o2"
+        ],
+        [
+          "M18.o4",
+          "M25.o2"
+        ]
+      ],
+      "external": {
+        "in1": "M1.o1",
+        "out1": "M22.o3",
+        "in2": "M1.o2",
+        "out2": "M26.o3",
+        "in3": "M2.o1",
+        "out3": "M26.o4",
+        "in4": "M2.o2",
+        "out4": "M27.o3",
+        "in5": "M3.o1",
+        "out5": "M27.o4",
+        "in6": "M3.o2",
+        "out6": "M28.o3",
+        "in7": "M4.o1",
+        "out7": "M28.o4",
+        "in8": "M4.o2",
+        "out8": "M25.o4"
+      },
+      "source": "TB086",
+      "rationale": "8x8 Clements rectangular mesh = 28 MZI_2x2 blocks (28 comp).",
+      "ambiguity": "See L4_03 convention note."
+    },
+    {
+      "id": "L4_06",
+      "level": 4,
+      "topology_certain": false,
+      "prompt": "Implement an 8×8 unitary mesh in the Reck triangular topology using 28 MZI blocks. Stack seven layers: layer 1 has seven MZIs, layer 2 six, layer 3 five, layer 4 four, layer 5 three, layer 6 two, and layer 7 one. Connect the waveguides so that each MZI’s lower output port feeds the appropriate input of the next layer diagonally, following Reck’s canonical diagram. Use the built-in component mzi_2x2_pn_diode for every MZI block",
+      "nodes": {
+        "M1": "MZI_2x2",
+        "M2": "MZI_2x2",
+        "M3": "MZI_2x2",
+        "M4": "MZI_2x2",
+        "M5": "MZI_2x2",
+        "M6": "MZI_2x2",
+        "M7": "MZI_2x2",
+        "M8": "MZI_2x2",
+        "M9": "MZI_2x2",
+        "M10": "MZI_2x2",
+        "M11": "MZI_2x2",
+        "M12": "MZI_2x2",
+        "M13": "MZI_2x2",
+        "M14": "MZI_2x2",
+        "M15": "MZI_2x2",
+        "M16": "MZI_2x2",
+        "M17": "MZI_2x2",
+        "M18": "MZI_2x2",
+        "M19": "MZI_2x2",
+        "M20": "MZI_2x2",
+        "M21": "MZI_2x2",
+        "M22": "MZI_2x2",
+        "M23": "MZI_2x2",
+        "M24": "MZI_2x2",
+        "M25": "MZI_2x2",
+        "M26": "MZI_2x2",
+        "M27": "MZI_2x2",
+        "M28": "MZI_2x2"
+      },
+      "edges": [
+        [
+          "M6.o3",
+          "M7.o2"
+        ],
+        [
+          "M7.o4",
+          "M13.o1"
+        ],
+        [
+          "M5.o3",
+          "M6.o2"
+        ],
+        [
+          "M6.o4",
+          "M12.o1"
+        ],
+        [
+          "M12.o3",
+          "M13.o2"
+        ],
+        [
+          "M13.o4",
+          "M18.o1"
+        ],
+        [
+          "M4.o3",
+          "M5.o2"
+        ],
+        [
+          "M5.o4",
+          "M11.o1"
+        ],
+        [
+          "M11.o3",
+          "M12.o2"
+        ],
+        [
+          "M12.o4",
+          "M17.o1"
+        ],
+        [
+          "M17.o3",
+          "M18.o2"
+        ],
+        [
+          "M18.o4",
+          "M22.o1"
+        ],
+        [
+          "M3.o3",
+          "M4.o2"
+        ],
+        [
+          "M4.o4",
+          "M10.o1"
+        ],
+        [
+          "M10.o3",
+          "M11.o2"
+        ],
+        [
+          "M11.o4",
+          "M16.o1"
+        ],
+        [
+          "M16.o3",
+          "M17.o2"
+        ],
+        [
+          "M17.o4",
+          "M21.o1"
+        ],
+        [
+          "M21.o3",
+          "M22.o2"
+        ],
+        [
+          "M22.o4",
+          "M25.o1"
+        ],
+        [
+          "M2.o3",
+          "M3.o2"
+        ],
+        [
+          "M3.o4",
+          "M9.o1"
+        ],
+        [
+          "M9.o3",
+          "M10.o2"
+        ],
+        [
+          "M10.o4",
+          "M15.o1"
+        ],
+        [
+          "M15.o3",
+          "M16.o2"
+        ],
+        [
+          "M16.o4",
+          "M20.o1"
+        ],
+        [
+          "M20.o3",
+          "M21.o2"
+        ],
+        [
+          "M21.o4",
+          "M24.o1"
+        ],
+        [
+          "M24.o3",
+          "M25.o2"
+        ],
+        [
+          "M25.o4",
+          "M27.o1"
+        ],
+        [
+          "M1.o3",
+          "M2.o2"
+        ],
+        [
+          "M2.o4",
+          "M8.o1"
+        ],
+        [
+          "M8.o3",
+          "M9.o2"
+        ],
+        [
+          "M9.o4",
+          "M14.o1"
+        ],
+        [
+          "M14.o3",
+          "M15.o2"
+        ],
+        [
+          "M15.o4",
+          "M19.o1"
+        ],
+        [
+          "M19.o3",
+          "M20.o2"
+        ],
+        [
+          "M20.o4",
+          "M23.o1"
+        ],
+        [
+          "M23.o3",
+          "M24.o2"
+        ],
+        [
+          "M24.o4",
+          "M26.o1"
+        ],
+        [
+          "M26.o3",
+          "M27.o2"
+        ],
+        [
+          "M27.o4",
+          "M28.o1"
+        ],
+        [
+          "M1.o4",
+          "M8.o2"
+        ],
+        [
+          "M8.o4",
+          "M14.o2"
+        ],
+        [
+          "M14.o4",
+          "M19.o2"
+        ],
+        [
+          "M19.o4",
+          "M23.o2"
+        ],
+        [
+          "M23.o4",
+          "M26.o2"
+        ],
+        [
+          "M26.o4",
+          "M28.o2"
+        ]
+      ],
+      "external": {
+        "in1": "M7.o1",
+        "out1": "M7.o3",
+        "in2": "M6.o1",
+        "out2": "M13.o3",
+        "in3": "M5.o1",
+        "out3": "M18.o3",
+        "in4": "M4.o1",
+        "out4": "M22.o3",
+        "in5": "M3.o1",
+        "out5": "M25.o3",
+        "in6": "M2.o1",
+        "out6": "M27.o3",
+        "in7": "M1.o1",
+        "out7": "M28.o3",
+        "in8": "M1.o2",
+        "out8": "M28.o4"
+      },
+      "source": "TB097",
+      "rationale": "8x8 Reck triangular mesh = 28 MZI_2x2 in 7 layers (7..1).",
+      "ambiguity": "Reck triangular layout; canonical port indexing per Reck's diagram is a convention. Multiset invariant."
+    },
+    {
+      "id": "L4_07",
+      "level": 4,
+      "topology_certain": false,
+      "prompt": "Design an 4x4 optical switching network based on the Spanke architecture, ensuring strict-sense non-blocking switching between 4 input and 4 output ports. The network should use 56 built-in Multimode Interferometer (MMI) components and consist of a combination of 4 1x4 switches and 4 4x1 switches.",
+      "nodes": {
+        "I0_1": "MMI_1x2",
+        "I0_2": "MMI_1x2",
+        "I0_3": "MMI_1x2",
+        "I1_1": "MMI_1x2",
+        "I1_2": "MMI_1x2",
+        "I1_3": "MMI_1x2",
+        "I2_1": "MMI_1x2",
+        "I2_2": "MMI_1x2",
+        "I2_3": "MMI_1x2",
+        "I3_1": "MMI_1x2",
+        "I3_2": "MMI_1x2",
+        "I3_3": "MMI_1x2",
+        "O0_1": "MMI_1x2",
+        "O0_2": "MMI_1x2",
+        "O0_3": "MMI_1x2",
+        "O1_1": "MMI_1x2",
+        "O1_2": "MMI_1x2",
+        "O1_3": "MMI_1x2",
+        "O2_1": "MMI_1x2",
+        "O2_2": "MMI_1x2",
+        "O2_3": "MMI_1x2",
+        "O3_1": "MMI_1x2",
+        "O3_2": "MMI_1x2",
+        "O3_3": "MMI_1x2"
+      },
+      "edges": [
+        [
+          "I0_1.o2",
+          "I0_2.o1"
+        ],
+        [
+          "I0_1.o3",
+          "I0_3.o1"
+        ],
+        [
+          "I1_1.o2",
+          "I1_2.o1"
+        ],
+        [
+          "I1_1.o3",
+          "I1_3.o1"
+        ],
+        [
+          "I2_1.o2",
+          "I2_2.o1"
+        ],
+        [
+          "I2_1.o3",
+          "I2_3.o1"
+        ],
+        [
+          "I3_1.o2",
+          "I3_2.o1"
+        ],
+        [
+          "I3_1.o3",
+          "I3_3.o1"
+        ],
+        [
+          "O0_1.o2",
+          "O0_2.o1"
+        ],
+        [
+          "O0_1.o3",
+          "O0_3.o1"
+        ],
+        [
+          "O1_1.o2",
+          "O1_2.o1"
+        ],
+        [
+          "O1_1.o3",
+          "O1_3.o1"
+        ],
+        [
+          "O2_1.o2",
+          "O2_2.o1"
+        ],
+        [
+          "O2_1.o3",
+          "O2_3.o1"
+        ],
+        [
+          "O3_1.o2",
+          "O3_2.o1"
+        ],
+        [
+          "O3_1.o3",
+          "O3_3.o1"
+        ],
+        [
+          "I0_2.o2",
+          "O0_2.o2"
+        ],
+        [
+          "I0_2.o3",
+          "O1_2.o2"
+        ],
+        [
+          "I0_3.o2",
+          "O2_2.o2"
+        ],
+        [
+          "I0_3.o3",
+          "O3_2.o2"
+        ],
+        [
+          "I1_2.o2",
+          "O0_2.o3"
+        ],
+        [
+          "I1_2.o3",
+          "O1_2.o3"
+        ],
+        [
+          "I1_3.o2",
+          "O2_2.o3"
+        ],
+        [
+          "I1_3.o3",
+          "O3_2.o3"
+        ],
+        [
+          "I2_2.o2",
+          "O0_3.o2"
+        ],
+        [
+          "I2_2.o3",
+          "O1_3.o2"
+        ],
+        [
+          "I2_3.o2",
+          "O2_3.o2"
+        ],
+        [
+          "I2_3.o3",
+          "O3_3.o2"
+        ],
+        [
+          "I3_2.o2",
+          "O0_3.o3"
+        ],
+        [
+          "I3_2.o3",
+          "O1_3.o3"
+        ],
+        [
+          "I3_3.o2",
+          "O2_3.o3"
+        ],
+        [
+          "I3_3.o3",
+          "O3_3.o3"
+        ]
+      ],
+      "external": {
+        "in1": "I0_1.o1",
+        "in2": "I1_1.o1",
+        "in3": "I2_1.o1",
+        "in4": "I3_1.o1",
+        "out1": "O0_1.o1",
+        "out2": "O1_1.o1",
+        "out3": "O2_1.o1",
+        "out4": "O3_1.o1"
+      },
+      "source": "TB098",
+      "rationale": "4x4 Spanke: 4 input 1x4 + 4 output 4x1 switch-trees (3 elems each = 24), fully crossed.",
+      "ambiguity": "Element-level count = 24; the prompt's '56 MMI' counts sub-MMIs inside each switch. Crossover indexing is a convention."
+    },
+    {
+      "id": "L4_08",
+      "level": 4,
+      "topology_certain": false,
+      "prompt": "Design a 8×8 optical switching network based on the Benes architecture, ensuring rearrangeably non-blocking switching between 8 input and 8 output ports. The network should use 20 2×2 optical switching units and consist of 5 stages, each with 4 2×2 optical switching units. Use the built-in component mzi_2x2_pn_diode to represent each 2×2 optical switching unit. Ensure that the final design places all 8 input ports on one side and all 8 output ports on the other, with correct inter-stage connectivity to realize a full Benes network.",
+      "nodes": {
+        "B1": "MZI_2x2",
+        "B2": "MZI_2x2",
+        "B3": "MZI_2x2",
+        "B4": "MZI_2x2",
+        "B5": "MZI_2x2",
+        "B6": "MZI_2x2",
+        "B7": "MZI_2x2",
+        "B8": "MZI_2x2",
+        "B9": "MZI_2x2",
+        "B10": "MZI_2x2",
+        "B11": "MZI_2x2",
+        "B12": "MZI_2x2",
+        "B13": "MZI_2x2",
+        "B14": "MZI_2x2",
+        "B15": "MZI_2x2",
+        "B16": "MZI_2x2",
+        "B17": "MZI_2x2",
+        "B18": "MZI_2x2",
+        "B19": "MZI_2x2",
+        "B20": "MZI_2x2"
+      },
+      "edges": [
+        [
+          "B1.o3",
+          "B5.o1"
+        ],
+        [
+          "B2.o3",
+          "B5.o2"
+        ],
+        [
+          "B1.o4",
+          "B11.o1"
+        ],
+        [
+          "B2.o4",
+          "B11.o2"
+        ],
+        [
+          "B3.o3",
+          "B6.o1"
+        ],
+        [
+          "B4.o3",
+          "B6.o2"
+        ],
+        [
+          "B3.o4",
+          "B12.o1"
+        ],
+        [
+          "B4.o4",
+          "B12.o2"
+        ],
+        [
+          "B5.o3",
+          "B7.o1"
+        ],
+        [
+          "B6.o3",
+          "B7.o2"
+        ],
+        [
+          "B5.o4",
+          "B8.o1"
+        ],
+        [
+          "B6.o4",
+          "B8.o2"
+        ],
+        [
+          "B11.o3",
+          "B13.o1"
+        ],
+        [
+          "B12.o3",
+          "B13.o2"
+        ],
+        [
+          "B11.o4",
+          "B14.o1"
+        ],
+        [
+          "B12.o4",
+          "B14.o2"
+        ],
+        [
+          "B7.o3",
+          "B9.o1"
+        ],
+        [
+          "B8.o3",
+          "B9.o2"
+        ],
+        [
+          "B7.o4",
+          "B10.o1"
+        ],
+        [
+          "B8.o4",
+          "B10.o2"
+        ],
+        [
+          "B13.o3",
+          "B15.o1"
+        ],
+        [
+          "B14.o3",
+          "B15.o2"
+        ],
+        [
+          "B13.o4",
+          "B16.o1"
+        ],
+        [
+          "B14.o4",
+          "B16.o2"
+        ],
+        [
+          "B9.o3",
+          "B17.o1"
+        ],
+        [
+          "B15.o3",
+          "B17.o2"
+        ],
+        [
+          "B9.o4",
+          "B18.o1"
+        ],
+        [
+          "B15.o4",
+          "B18.o2"
+        ],
+        [
+          "B10.o3",
+          "B19.o1"
+        ],
+        [
+          "B16.o3",
+          "B19.o2"
+        ],
+        [
+          "B10.o4",
+          "B20.o1"
+        ],
+        [
+          "B16.o4",
+          "B20.o2"
+        ]
+      ],
+      "external": {
+        "in1": "B1.o1",
+        "in5": "B1.o2",
+        "in2": "B2.o1",
+        "in6": "B2.o2",
+        "in3": "B3.o1",
+        "in7": "B3.o2",
+        "in4": "B4.o1",
+        "in8": "B4.o2",
+        "out1": "B17.o3",
+        "out2": "B17.o4",
+        "out3": "B18.o3",
+        "out4": "B18.o4",
+        "out5": "B19.o3",
+        "out6": "B19.o4",
+        "out7": "B20.o3",
+        "out8": "B20.o4"
+      },
+      "source": "TB084",
+      "rationale": "8x8 Benes = 20 2x2 switches in 5 stages of 4 (20 comp). [2026-07-30 fix 1 (corrected): stage1-2 rewired to the adjacent-pair pattern that stage2-3 had originally (B5<-B1,B2 tops; B6<-B3,B4 tops; B11/B12 the bottoms); stage2-3 restored to its original within-half butterflies. Externals pending fix 2.]",
+      "ambiguity": "Benes inter-stage shuffle is canonical; exact port indexing is a convention."
+    },
+    {
+      "id": "L4_09",
+      "level": 4,
+      "topology_certain": false,
+      "prompt": "Design a 4×4 optical switching network using a crossbar architecture with mzi_2x2_pn_diode devices. Arrange 16 of these 2×2 switches in a grid such that each of the 4 input waveguides intersects with each of the 4 output waveguides exactly once.",
+      "nodes": {
+        "X0_0": "MZI_2x2",
+        "X0_1": "MZI_2x2",
+        "X0_2": "MZI_2x2",
+        "X0_3": "MZI_2x2",
+        "X1_0": "MZI_2x2",
+        "X1_1": "MZI_2x2",
+        "X1_2": "MZI_2x2",
+        "X1_3": "MZI_2x2",
+        "X2_0": "MZI_2x2",
+        "X2_1": "MZI_2x2",
+        "X2_2": "MZI_2x2",
+        "X2_3": "MZI_2x2",
+        "X3_0": "MZI_2x2",
+        "X3_1": "MZI_2x2",
+        "X3_2": "MZI_2x2",
+        "X3_3": "MZI_2x2"
+      },
+      "edges": [
+        [
+          "X0_0.o3",
+          "X0_1.o2"
+        ],
+        [
+          "X0_0.o4",
+          "X1_0.o1"
+        ],
+        [
+          "X0_1.o3",
+          "X0_2.o2"
+        ],
+        [
+          "X0_1.o4",
+          "X1_1.o1"
+        ],
+        [
+          "X0_2.o3",
+          "X0_3.o2"
+        ],
+        [
+          "X0_2.o4",
+          "X1_2.o1"
+        ],
+        [
+          "X0_3.o4",
+          "X1_3.o1"
+        ],
+        [
+          "X1_0.o3",
+          "X1_1.o2"
+        ],
+        [
+          "X1_0.o4",
+          "X2_0.o1"
+        ],
+        [
+          "X1_1.o3",
+          "X1_2.o2"
+        ],
+        [
+          "X1_1.o4",
+          "X2_1.o1"
+        ],
+        [
+          "X1_2.o3",
+          "X1_3.o2"
+        ],
+        [
+          "X1_2.o4",
+          "X2_2.o1"
+        ],
+        [
+          "X1_3.o4",
+          "X2_3.o1"
+        ],
+        [
+          "X2_0.o3",
+          "X2_1.o2"
+        ],
+        [
+          "X2_0.o4",
+          "X3_0.o1"
+        ],
+        [
+          "X2_1.o3",
+          "X2_2.o2"
+        ],
+        [
+          "X2_1.o4",
+          "X3_1.o1"
+        ],
+        [
+          "X2_2.o3",
+          "X2_3.o2"
+        ],
+        [
+          "X2_2.o4",
+          "X3_2.o1"
+        ],
+        [
+          "X2_3.o4",
+          "X3_3.o1"
+        ],
+        [
+          "X3_0.o3",
+          "X3_1.o2"
+        ],
+        [
+          "X3_1.o3",
+          "X3_2.o2"
+        ],
+        [
+          "X3_2.o3",
+          "X3_3.o2"
+        ]
+      ],
+      "external": {
+        "in1": "X0_0.o2",
+        "in2": "X1_0.o2",
+        "in3": "X2_0.o2",
+        "in4": "X3_0.o2",
+        "out1": "X3_0.o4",
+        "out2": "X3_1.o4",
+        "out3": "X3_2.o4",
+        "out4": "X3_3.o4",
+        "thru1": "X0_3.o3",
+        "thru2": "X1_3.o3",
+        "thru3": "X2_3.o3",
+        "thru4": "X3_3.o3",
+        "cin1": "X0_0.o1",
+        "cin2": "X0_1.o1",
+        "cin3": "X0_2.o1",
+        "cin4": "X0_3.o1"
+      },
+      "source": "TB087",
+      "rationale": "4x4 crossbar = 16 MZI_2x2 switches (16 comp). [2026-07-30 planarity fix: row links enter o2 (o3->o2) and column links enter o1 (o4->o1), so the row and column buses do not cross at any junction; external in*/cin* ports swapped o1<->o2 to match.]",
+      "ambiguity": "See L4_04 convention note."
+    },
+    {
+      "id": "L4_10",
+      "level": 4,
+      "topology_certain": true,
+      "prompt": "Design a 1×16 optical phased array: split one input into 16 waveguides through a four-stage tree of 1×2 MMI splitters, place an independent thermo-optic phase shifter on each of the 16 arms, and terminate each arm in a grating-coupler emitter.",
+      "nodes": {
+        "S1": "MMI_1x2",
+        "S2": "MMI_1x2",
+        "S3": "MMI_1x2",
+        "S4": "MMI_1x2",
+        "S5": "MMI_1x2",
+        "S6": "MMI_1x2",
+        "S7": "MMI_1x2",
+        "S8": "MMI_1x2",
+        "S9": "MMI_1x2",
+        "S10": "MMI_1x2",
+        "S11": "MMI_1x2",
+        "S12": "MMI_1x2",
+        "S13": "MMI_1x2",
+        "S14": "MMI_1x2",
+        "S15": "MMI_1x2",
+        "H1": "HEATER",
+        "E1": "GC",
+        "H2": "HEATER",
+        "E2": "GC",
+        "H3": "HEATER",
+        "E3": "GC",
+        "H4": "HEATER",
+        "E4": "GC",
+        "H5": "HEATER",
+        "E5": "GC",
+        "H6": "HEATER",
+        "E6": "GC",
+        "H7": "HEATER",
+        "E7": "GC",
+        "H8": "HEATER",
+        "E8": "GC",
+        "H9": "HEATER",
+        "E9": "GC",
+        "H10": "HEATER",
+        "E10": "GC",
+        "H11": "HEATER",
+        "E11": "GC",
+        "H12": "HEATER",
+        "E12": "GC",
+        "H13": "HEATER",
+        "E13": "GC",
+        "H14": "HEATER",
+        "E14": "GC",
+        "H15": "HEATER",
+        "E15": "GC",
+        "H16": "HEATER",
+        "E16": "GC"
+      },
+      "edges": [
+        [
+          "S1.o2",
+          "S2.o1"
+        ],
+        [
+          "S1.o3",
+          "S3.o1"
+        ],
+        [
+          "S2.o2",
+          "S4.o1"
+        ],
+        [
+          "S2.o3",
+          "S5.o1"
+        ],
+        [
+          "S3.o2",
+          "S6.o1"
+        ],
+        [
+          "S3.o3",
+          "S7.o1"
+        ],
+        [
+          "S4.o2",
+          "S8.o1"
+        ],
+        [
+          "S4.o3",
+          "S9.o1"
+        ],
+        [
+          "S5.o2",
+          "S10.o1"
+        ],
+        [
+          "S5.o3",
+          "S11.o1"
+        ],
+        [
+          "S6.o2",
+          "S12.o1"
+        ],
+        [
+          "S6.o3",
+          "S13.o1"
+        ],
+        [
+          "S7.o2",
+          "S14.o1"
+        ],
+        [
+          "S7.o3",
+          "S15.o1"
+        ],
+        [
+          "S8.o2",
+          "H1.o1"
+        ],
+        [
+          "H1.o2",
+          "E1.o1"
+        ],
+        [
+          "S8.o3",
+          "H2.o1"
+        ],
+        [
+          "H2.o2",
+          "E2.o1"
+        ],
+        [
+          "S9.o2",
+          "H3.o1"
+        ],
+        [
+          "H3.o2",
+          "E3.o1"
+        ],
+        [
+          "S9.o3",
+          "H4.o1"
+        ],
+        [
+          "H4.o2",
+          "E4.o1"
+        ],
+        [
+          "S10.o2",
+          "H5.o1"
+        ],
+        [
+          "H5.o2",
+          "E5.o1"
+        ],
+        [
+          "S10.o3",
+          "H6.o1"
+        ],
+        [
+          "H6.o2",
+          "E6.o1"
+        ],
+        [
+          "S11.o2",
+          "H7.o1"
+        ],
+        [
+          "H7.o2",
+          "E7.o1"
+        ],
+        [
+          "S11.o3",
+          "H8.o1"
+        ],
+        [
+          "H8.o2",
+          "E8.o1"
+        ],
+        [
+          "S12.o2",
+          "H9.o1"
+        ],
+        [
+          "H9.o2",
+          "E9.o1"
+        ],
+        [
+          "S12.o3",
+          "H10.o1"
+        ],
+        [
+          "H10.o2",
+          "E10.o1"
+        ],
+        [
+          "S13.o2",
+          "H11.o1"
+        ],
+        [
+          "H11.o2",
+          "E11.o1"
+        ],
+        [
+          "S13.o3",
+          "H12.o1"
+        ],
+        [
+          "H12.o2",
+          "E12.o1"
+        ],
+        [
+          "S14.o2",
+          "H13.o1"
+        ],
+        [
+          "H13.o2",
+          "E13.o1"
+        ],
+        [
+          "S14.o3",
+          "H14.o1"
+        ],
+        [
+          "H14.o2",
+          "E14.o1"
+        ],
+        [
+          "S15.o2",
+          "H15.o1"
+        ],
+        [
+          "H15.o2",
+          "E15.o1"
+        ],
+        [
+          "S15.o3",
+          "H16.o1"
+        ],
+        [
+          "H16.o2",
+          "E16.o1"
+        ]
+      ],
+      "external": {
+        "o1": "S1.o1"
+      },
+      "source": "NEW_OPA16",
+      "rationale": "1x16 optical phased array: 15 1x2 MMI splitter tree -> HEATER per arm -> GC emitter (47 comp)."
+    },
+    {
+      "id": "L4_11",
+      "level": 4,
+      "topology_certain": true,
+      "prompt": "Design a 1×32 Mach-Zehnder tree using five stages of 1×2 MZIs (31 MZI blocks) to split one input equally across 32 outputs.",
+      "nodes": {
+        "M1": "MZI_1x2",
+        "M2": "MZI_1x2",
+        "M3": "MZI_1x2",
+        "M4": "MZI_1x2",
+        "M5": "MZI_1x2",
+        "M6": "MZI_1x2",
+        "M7": "MZI_1x2",
+        "M8": "MZI_1x2",
+        "M9": "MZI_1x2",
+        "M10": "MZI_1x2",
+        "M11": "MZI_1x2",
+        "M12": "MZI_1x2",
+        "M13": "MZI_1x2",
+        "M14": "MZI_1x2",
+        "M15": "MZI_1x2",
+        "M16": "MZI_1x2",
+        "M17": "MZI_1x2",
+        "M18": "MZI_1x2",
+        "M19": "MZI_1x2",
+        "M20": "MZI_1x2",
+        "M21": "MZI_1x2",
+        "M22": "MZI_1x2",
+        "M23": "MZI_1x2",
+        "M24": "MZI_1x2",
+        "M25": "MZI_1x2",
+        "M26": "MZI_1x2",
+        "M27": "MZI_1x2",
+        "M28": "MZI_1x2",
+        "M29": "MZI_1x2",
+        "M30": "MZI_1x2",
+        "M31": "MZI_1x2"
+      },
+      "edges": [
+        [
+          "M1.o2",
+          "M2.o1"
+        ],
+        [
+          "M1.o3",
+          "M3.o1"
+        ],
+        [
+          "M2.o2",
+          "M4.o1"
+        ],
+        [
+          "M2.o3",
+          "M5.o1"
+        ],
+        [
+          "M3.o2",
+          "M6.o1"
+        ],
+        [
+          "M3.o3",
+          "M7.o1"
+        ],
+        [
+          "M4.o2",
+          "M8.o1"
+        ],
+        [
+          "M4.o3",
+          "M9.o1"
+        ],
+        [
+          "M5.o2",
+          "M10.o1"
+        ],
+        [
+          "M5.o3",
+          "M11.o1"
+        ],
+        [
+          "M6.o2",
+          "M12.o1"
+        ],
+        [
+          "M6.o3",
+          "M13.o1"
+        ],
+        [
+          "M7.o2",
+          "M14.o1"
+        ],
+        [
+          "M7.o3",
+          "M15.o1"
+        ],
+        [
+          "M8.o2",
+          "M16.o1"
+        ],
+        [
+          "M8.o3",
+          "M17.o1"
+        ],
+        [
+          "M9.o2",
+          "M18.o1"
+        ],
+        [
+          "M9.o3",
+          "M19.o1"
+        ],
+        [
+          "M10.o2",
+          "M20.o1"
+        ],
+        [
+          "M10.o3",
+          "M21.o1"
+        ],
+        [
+          "M11.o2",
+          "M22.o1"
+        ],
+        [
+          "M11.o3",
+          "M23.o1"
+        ],
+        [
+          "M12.o2",
+          "M24.o1"
+        ],
+        [
+          "M12.o3",
+          "M25.o1"
+        ],
+        [
+          "M13.o2",
+          "M26.o1"
+        ],
+        [
+          "M13.o3",
+          "M27.o1"
+        ],
+        [
+          "M14.o2",
+          "M28.o1"
+        ],
+        [
+          "M14.o3",
+          "M29.o1"
+        ],
+        [
+          "M15.o2",
+          "M30.o1"
+        ],
+        [
+          "M15.o3",
+          "M31.o1"
+        ]
+      ],
+      "external": {
+        "o1": "M1.o1",
+        "o2": "M16.o2",
+        "o3": "M16.o3",
+        "o4": "M17.o2",
+        "o5": "M17.o3",
+        "o6": "M18.o2",
+        "o7": "M18.o3",
+        "o8": "M19.o2",
+        "o9": "M19.o3",
+        "o10": "M20.o2",
+        "o11": "M20.o3",
+        "o12": "M21.o2",
+        "o13": "M21.o3",
+        "o14": "M22.o2",
+        "o15": "M22.o3",
+        "o16": "M23.o2",
+        "o17": "M23.o3",
+        "o18": "M24.o2",
+        "o19": "M24.o3",
+        "o20": "M25.o2",
+        "o21": "M25.o3",
+        "o22": "M26.o2",
+        "o23": "M26.o3",
+        "o24": "M27.o2",
+        "o25": "M27.o3",
+        "o26": "M28.o2",
+        "o27": "M28.o3",
+        "o28": "M29.o2",
+        "o29": "M29.o3",
+        "o30": "M30.o2",
+        "o31": "M30.o3",
+        "o32": "M31.o2",
+        "o33": "M31.o3"
+      },
+      "source": "NEW_MZITREE32",
+      "rationale": "1x32 binary tree of 31 1x2 MZIs (31 comp)."
+    },
+    {
+      "id": "L4_12",
+      "level": 4,
+      "topology_certain": false,
+      "prompt": "Design a 1×16 power splitter using 15 1×2 MMIs in a four-stage tree: the first stage has 1 MMI splitting into 2 outputs, the second stage has 2 MMIs splitting to 4 outputs, and so on, until 16 outputs. Each of the 16 outputs should feed a VOA (variable optical attenuator) and then a thermo-optic phase shifter, finally connecting to a grating coupler.",
+      "nodes": {
+        "S1": "MMI_1x2",
+        "S2": "MMI_1x2",
+        "S3": "MMI_1x2",
+        "S4": "MMI_1x2",
+        "S5": "MMI_1x2",
+        "S6": "MMI_1x2",
+        "S7": "MMI_1x2",
+        "S8": "MMI_1x2",
+        "S9": "MMI_1x2",
+        "S10": "MMI_1x2",
+        "S11": "MMI_1x2",
+        "S12": "MMI_1x2",
+        "S13": "MMI_1x2",
+        "S14": "MMI_1x2",
+        "S15": "MMI_1x2",
+        "V1": "MOD_1x1",
+        "H1": "HEATER",
+        "G1": "GC",
+        "V2": "MOD_1x1",
+        "H2": "HEATER",
+        "G2": "GC",
+        "V3": "MOD_1x1",
+        "H3": "HEATER",
+        "G3": "GC",
+        "V4": "MOD_1x1",
+        "H4": "HEATER",
+        "G4": "GC",
+        "V5": "MOD_1x1",
+        "H5": "HEATER",
+        "G5": "GC",
+        "V6": "MOD_1x1",
+        "H6": "HEATER",
+        "G6": "GC",
+        "V7": "MOD_1x1",
+        "H7": "HEATER",
+        "G7": "GC",
+        "V8": "MOD_1x1",
+        "H8": "HEATER",
+        "G8": "GC",
+        "V9": "MOD_1x1",
+        "H9": "HEATER",
+        "G9": "GC",
+        "V10": "MOD_1x1",
+        "H10": "HEATER",
+        "G10": "GC",
+        "V11": "MOD_1x1",
+        "H11": "HEATER",
+        "G11": "GC",
+        "V12": "MOD_1x1",
+        "H12": "HEATER",
+        "G12": "GC",
+        "V13": "MOD_1x1",
+        "H13": "HEATER",
+        "G13": "GC",
+        "V14": "MOD_1x1",
+        "H14": "HEATER",
+        "G14": "GC",
+        "V15": "MOD_1x1",
+        "H15": "HEATER",
+        "G15": "GC",
+        "V16": "MOD_1x1",
+        "H16": "HEATER",
+        "G16": "GC"
+      },
+      "edges": [
+        [
+          "S1.o2",
+          "S2.o1"
+        ],
+        [
+          "S1.o3",
+          "S3.o1"
+        ],
+        [
+          "S2.o2",
+          "S4.o1"
+        ],
+        [
+          "S2.o3",
+          "S5.o1"
+        ],
+        [
+          "S3.o2",
+          "S6.o1"
+        ],
+        [
+          "S3.o3",
+          "S7.o1"
+        ],
+        [
+          "S4.o2",
+          "S8.o1"
+        ],
+        [
+          "S4.o3",
+          "S9.o1"
+        ],
+        [
+          "S5.o2",
+          "S10.o1"
+        ],
+        [
+          "S5.o3",
+          "S11.o1"
+        ],
+        [
+          "S6.o2",
+          "S12.o1"
+        ],
+        [
+          "S6.o3",
+          "S13.o1"
+        ],
+        [
+          "S7.o2",
+          "S14.o1"
+        ],
+        [
+          "S7.o3",
+          "S15.o1"
+        ],
+        [
+          "S8.o2",
+          "V1.o1"
+        ],
+        [
+          "V1.o2",
+          "H1.o1"
+        ],
+        [
+          "H1.o2",
+          "G1.o1"
+        ],
+        [
+          "S8.o3",
+          "V2.o1"
+        ],
+        [
+          "V2.o2",
+          "H2.o1"
+        ],
+        [
+          "H2.o2",
+          "G2.o1"
+        ],
+        [
+          "S9.o2",
+          "V3.o1"
+        ],
+        [
+          "V3.o2",
+          "H3.o1"
+        ],
+        [
+          "H3.o2",
+          "G3.o1"
+        ],
+        [
+          "S9.o3",
+          "V4.o1"
+        ],
+        [
+          "V4.o2",
+          "H4.o1"
+        ],
+        [
+          "H4.o2",
+          "G4.o1"
+        ],
+        [
+          "S10.o2",
+          "V5.o1"
+        ],
+        [
+          "V5.o2",
+          "H5.o1"
+        ],
+        [
+          "H5.o2",
+          "G5.o1"
+        ],
+        [
+          "S10.o3",
+          "V6.o1"
+        ],
+        [
+          "V6.o2",
+          "H6.o1"
+        ],
+        [
+          "H6.o2",
+          "G6.o1"
+        ],
+        [
+          "S11.o2",
+          "V7.o1"
+        ],
+        [
+          "V7.o2",
+          "H7.o1"
+        ],
+        [
+          "H7.o2",
+          "G7.o1"
+        ],
+        [
+          "S11.o3",
+          "V8.o1"
+        ],
+        [
+          "V8.o2",
+          "H8.o1"
+        ],
+        [
+          "H8.o2",
+          "G8.o1"
+        ],
+        [
+          "S12.o2",
+          "V9.o1"
+        ],
+        [
+          "V9.o2",
+          "H9.o1"
+        ],
+        [
+          "H9.o2",
+          "G9.o1"
+        ],
+        [
+          "S12.o3",
+          "V10.o1"
+        ],
+        [
+          "V10.o2",
+          "H10.o1"
+        ],
+        [
+          "H10.o2",
+          "G10.o1"
+        ],
+        [
+          "S13.o2",
+          "V11.o1"
+        ],
+        [
+          "V11.o2",
+          "H11.o1"
+        ],
+        [
+          "H11.o2",
+          "G11.o1"
+        ],
+        [
+          "S13.o3",
+          "V12.o1"
+        ],
+        [
+          "V12.o2",
+          "H12.o1"
+        ],
+        [
+          "H12.o2",
+          "G12.o1"
+        ],
+        [
+          "S14.o2",
+          "V13.o1"
+        ],
+        [
+          "V13.o2",
+          "H13.o1"
+        ],
+        [
+          "H13.o2",
+          "G13.o1"
+        ],
+        [
+          "S14.o3",
+          "V14.o1"
+        ],
+        [
+          "V14.o2",
+          "H14.o1"
+        ],
+        [
+          "H14.o2",
+          "G14.o1"
+        ],
+        [
+          "S15.o2",
+          "V15.o1"
+        ],
+        [
+          "V15.o2",
+          "H15.o1"
+        ],
+        [
+          "H15.o2",
+          "G15.o1"
+        ],
+        [
+          "S15.o3",
+          "V16.o1"
+        ],
+        [
+          "V16.o2",
+          "H16.o1"
+        ],
+        [
+          "H16.o2",
+          "G16.o1"
+        ]
+      ],
+      "external": {
+        "o1": "S1.o1"
+      },
+      "source": "TB037",
+      "rationale": "1x16 MMI tree (15) -> per output: VOA (MOD_1x1) -> thermo-optic phase (HEATER) -> GC (63 comp).",
+      "accept": {
+        "V1": [
+          "MOD_1x1",
+          "MZI_1x1",
+          "_ELECTRICAL"
+        ],
+        "V2": [
+          "MOD_1x1",
+          "MZI_1x1",
+          "_ELECTRICAL"
+        ],
+        "V3": [
+          "MOD_1x1",
+          "MZI_1x1",
+          "_ELECTRICAL"
+        ],
+        "V4": [
+          "MOD_1x1",
+          "MZI_1x1",
+          "_ELECTRICAL"
+        ],
+        "V5": [
+          "MOD_1x1",
+          "MZI_1x1",
+          "_ELECTRICAL"
+        ],
+        "V6": [
+          "MOD_1x1",
+          "MZI_1x1",
+          "_ELECTRICAL"
+        ],
+        "V7": [
+          "MOD_1x1",
+          "MZI_1x1",
+          "_ELECTRICAL"
+        ],
+        "V8": [
+          "MOD_1x1",
+          "MZI_1x1",
+          "_ELECTRICAL"
+        ],
+        "V9": [
+          "MOD_1x1",
+          "MZI_1x1",
+          "_ELECTRICAL"
+        ],
+        "V10": [
+          "MOD_1x1",
+          "MZI_1x1",
+          "_ELECTRICAL"
+        ],
+        "V11": [
+          "MOD_1x1",
+          "MZI_1x1",
+          "_ELECTRICAL"
+        ],
+        "V12": [
+          "MOD_1x1",
+          "MZI_1x1",
+          "_ELECTRICAL"
+        ],
+        "V13": [
+          "MOD_1x1",
+          "MZI_1x1",
+          "_ELECTRICAL"
+        ],
+        "V14": [
+          "MOD_1x1",
+          "MZI_1x1",
+          "_ELECTRICAL"
+        ],
+        "V15": [
+          "MOD_1x1",
+          "MZI_1x1",
+          "_ELECTRICAL"
+        ],
+        "V16": [
+          "MOD_1x1",
+          "MZI_1x1",
+          "_ELECTRICAL"
+        ]
+      },
+      "ambiguity": "VOA IS in the PDK (pindiode_cband, scorer token _ELECTRICAL); gold node MOD_1x1, accept-set {MOD_1x1, MZI_1x1, _ELECTRICAL}."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+"json\n{\n  \"entities\": [\n    {\n      \"raw_name\": \"target wavelengths\",\n\
+  \      \"decision\": \"known\"\n    },\n    {\n      \"raw_name\": \"waveguide widths\"\
+  ,\n      \"decision\": \"new\"\n    },\n    {\n      \"raw_name\": \"ring radii\"\
+  ,\n      \"decision\": \"new\"\n    },\n    {\n      \"raw_name\": \"grating periods\"\
+  ,\n      \"decision\": \"known\"\n    },\n    {\n      \"raw_name\": \"bends\",\n\
+  \      \"decision\": \"new\"\n    },\n    {\n      \"raw_name\": \"directional couplers\"\
+  ,\n      \"decision\": \"known\"\n    },\n    {\n      \"raw_name\": \"modulators\"\
+  ,\n      \"decision\": \"known\"\n    },\n    {\n      \"raw_name\": \"thermo-optic\
+  \ tuning\",\n      \"decision\": \"new\"\n    },\n    {\n      \"raw_name\": \"\
+  phase shifter\",\n      \"decision\": \"known\"\n    },\n    {\n      \"raw_name\"\
+  : \"modulation\",\n      \"decision\": \"new\"\n    },\n    {\n      \"raw_name\"\
+  : \"modulation speed\",\n      \"decision\": \"known\"\n    },\n    {\n      \"\
+  raw_name\": \"1\xD72 Multimode Interferometer\",\n      \"decision\": \"known\"\n\
+  \    },\n    {\n      \"raw_name\": \"2\xD72 Multimode Interferometer\",\n     \
+  \ \"decision\": \"known\"\n    },\n    {\n      \"raw_name\": \"Mach\u2013Zehnder\
+  \ interferometers\",\n      \"decision\": \"new\"\n    },\n    {\n      \"raw_name\"\
+  : \"2x2 MMIs\",\n      \"decision\": \"new\"\n    },\n    {\n      \"raw_name\"\
+  : \"4-channel wavelength demultiplexer\",\n      \"decision\": \"new\"\n    },\n\
+  \    {\n      \"raw_name\": \"Mach\u2013Zehnder interferometers\",\n      \"decision\"\
+  : \"known\"\n    },\n    {\n      \"raw_name\": \"path-length differences\",\n \
+  \     \"decision\": \"known\"\n    },\n    {\n      \"raw_name\": \"2\xD72 multimode\
+  \ interferometer\",\n      \"decision\": \"known\"\n    },\n    {\n      \"raw_name\"\
+  : \"1x2 MZIs\",\n      \"decision\": \"new\"\n    },\n    {\n      \"raw_name\"\
+  : \"MMI couplers\",\n      \"decision\": \"known\"\n    },\n    {\n      \"raw_name\"\
+  : \"waveguide loopback structure\",\n      \"decision\": \"known\"\n    },\n   \
+  \ {\n      \"raw_name\": \"1\xD764 Mach\u2013Zehnder tree\",\n      \"decision\"\
+  : \"new\"\n    },\n    {\n      \"raw_name\": \"phase shifters\",\n      \"decision\"\
+  : \"known\"\n    },\n    {\n      \"raw_name\": \"1\xD72 mach-zehnder interferometer\"\
+  ,\n      \"decision\": \"known\"\n    },\n    {\n      \"raw_name\": \"thermo-optic\
+  \ phase shifters\",\n      \"decision\": \"known\"\n    },\n    {\n      \"raw_name\"\
+  : \"multimode interferometer couplers\",\n      \"decision\": \"known\"\n    },\n\
+  \    {\n      \"raw_name\": \"edge couplers\",\n      \"decision\": \"known\"\n\
+  \    },\n    {\n      \"raw_name\": \"waveguide loopback structure\",\n      \"\
+  decision\": \"new\"\n    },\n    {\n      \"raw_name\": \"180\xB0 bend\",\n    \
+  \  \"decision\": \"new\"\n    },\n    {\n      \"raw_name\": \"thermo-optic\",\n\
+  \      \"decision\": \"known\"\n    },\n    {\n      \"raw_name\": \"1x2 Mach-Zehnder\
+  \ Interferometers\",\n      \"decision\": \"new\"\n    },\n    {\n      \"raw_name\"\
+  : \"1\xD716 tree\",\n      \"decision\": \"new\"\n    },\n    {\n      \"raw_name\"\
+  : \"1\xD72 Mach-Zehnder Interferometers\",\n      \"decision\": \"known\"\n    },\n\
+  \    {\n      \"raw_name\": \"1x2 MMI couplers\",\n      \"decision\": \"known\"\
+  \n    },\n    {\n      \"raw_name\": \"1\xD716 power splitter\",\n      \"decision\"\
+  : \"new\"\n    },\n    {\n      \"raw_name\": \"1\xD72 multimode interferometer\
+  \ couplers\",\n      \"decision\": \"known\"\n    }\n  ]\n}\n"

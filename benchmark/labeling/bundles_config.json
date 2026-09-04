@@ -1,0 +1,14 @@
+{
+  "annotators": [
+    {"annotator_id": "poon",   "source_document": "01_Silicon_photonics_for_visible_and_near_ir_spectrum"},
+    {"annotator_id": "sharma", "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024", "supplementary_documents": ["09_Xue_single-lobe_blue_OPA_OptLett2025"]},
+    {"annotator_id": "mu",     "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"},
+    {"annotator_id": "xue",    "source_document": "12_Xue_grating_emitter_neuralprobe_arXiv2401.04525"},
+    {"annotator_id": "liu",    "source_document": "13_neuralprobe_patterned_photostim_npjBiosensing2025"}
+  ],
+  "cap": 40,
+  "ooo_fraction": 0.6,
+  "overlap_ids": [],
+  "seed": 0,
+  "out_dir": "benchmark/labeling/bundles"
+}

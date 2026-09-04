@@ -1,0 +1,249 @@
+{
+  "annotator_id": "sharma",
+  "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024",
+  "n_available": 199,
+  "n_shown": 40,
+  "n_no_evidence_excluded": 0,
+  "items": {
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1441": {
+      "confidence": 0.7793485224246979,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1429": {
+      "confidence": 0.7583795487880707,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1432": {
+      "confidence": 0.7263707160949706,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1430": {
+      "confidence": 0.7490316480398178,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1433": {
+      "confidence": 0.7319839298725128,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1480": {
+      "confidence": 0.883747348189354,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1439": {
+      "confidence": 0.7712469160556794,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1547": {
+      "confidence": 0.7932335853576661,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1526": {
+      "confidence": 0.7001042783260345,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1535": {
+      "confidence": 0.8260131031274796,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1517": {
+      "confidence": 0.30585211422803193,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1416": {
+      "confidence": 0.8827047795057297,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1476": {
+      "confidence": 0.9020175367593766,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1491": {
+      "confidence": 0.8398963510990143,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1561": {
+      "confidence": 0.8442599296569825,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1095": {
+      "confidence": 0.9294717699289322,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1444": {
+      "confidence": 0.9051035046577454,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1443": {
+      "confidence": 0.7313732087612153,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1407": {
+      "confidence": 0.3812556218570387,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1465": {
+      "confidence": 0.9304747819900513,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1405": {
+      "confidence": 0.7427845746278763,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1544": {
+      "confidence": 0.797642868757248,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1541": {
+      "confidence": 0.8086262464523316,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1490": {
+      "confidence": 0.6668326914310455,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1437": {
+      "confidence": 0.3953863341129987,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1532": {
+      "confidence": 0.8094006866216659,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1401": {
+      "confidence": 1.0,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1482": {
+      "confidence": 0.6936064332723617,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1396": {
+      "confidence": 1.0,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1436": {
+      "confidence": 0.4229292344336443,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1449": {
+      "confidence": 0.7978404015302658,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1515": {
+      "confidence": 0.8313813298940659,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1435": {
+      "confidence": 0.7036095172166825,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1413": {
+      "confidence": 0.9392171204090118,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1399": {
+      "confidence": 1.0,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1489": {
+      "confidence": 0.6584411531686782,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1527": {
+      "confidence": 0.7025606691837312,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1460": {
+      "confidence": 0.741104245185852,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1521": {
+      "confidence": 0.7642411142587662,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1431": {
+      "confidence": 0.7311071753501892,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "08_Sharma_phasedarray_neuralprobe_CommEng2024"
+    }
+  }
+}

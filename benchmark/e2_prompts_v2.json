@@ -1,0 +1,173 @@
+{
+  "_comment": "Paired run prompts for b3_gold_v2.json (12 L3 + 12 L4, paper Table-1 axis). id matches gold id 1:1. To run the v2 correctness set: set E2_GOLD=b3_gold_v2.json and read prompts from here.",
+  "prompts": [
+    {
+      "id": "L3_01",
+      "level": 3,
+      "level_paper": 3,
+      "source": "reused:L2_2",
+      "prompt": "2 grating couplers connected by a straight waveguide"
+    },
+    {
+      "id": "L3_02",
+      "level": 3,
+      "level_paper": 3,
+      "source": "reused:L2_6",
+      "prompt": "The output ports of an adiabatic directional coupler connected to two straight waveguides"
+    },
+    {
+      "id": "L3_03",
+      "level": 3,
+      "level_paper": 3,
+      "source": "reused:L3_4",
+      "prompt": "Create a passive asymmetric Mach-Zehnder Interferometer at 1550 nm with a 300 um path-length difference between arms. The MZI has one input and one output port both terminated in grating couplers."
+    },
+    {
+      "id": "L3_04",
+      "level": 3,
+      "level_paper": 3,
+      "source": "reused:L3_5",
+      "prompt": "Design a single-bus ring resonator (with a radius of 28) connected to two grating couplers for input/output coupling."
+    },
+    {
+      "id": "L3_05",
+      "level": 3,
+      "level_paper": 3,
+      "source": "reused:L4_4",
+      "prompt": "Design a 4-channel wavelength demultiplexer using four ring resonators cascaded along a common bus waveguide. Each ring should have a radius of ~10 um, and a 200 nm coupling gap. Provide drop ports for each ring to route the separated channels."
+    },
+    {
+      "id": "L3_06",
+      "level": 3,
+      "level_paper": 3,
+      "source": "reused:L4_5",
+      "prompt": "Connect four amplitude modulators (each 1 in/1 out, >10 GHz electro-optic bandwidth) to a 4x1 wavelength-division multiplexer."
+    },
+    {
+      "id": "L3_07",
+      "level": 3,
+      "level_paper": 3,
+      "source": "reused:L4_2",
+      "prompt": "Layout a 1x4 power splitter using three 1x2MMIs. Add 4 thermo-optic phase shifters, one on each output arm, for independent tuning."
+    },
+    {
+      "id": "L3_08",
+      "level": 3,
+      "level_paper": 3,
+      "source": "reused:L4_3",
+      "prompt": "Cascaded 2x2 MZIs to create a switch tree network with 8 outputs."
+    },
+    {
+      "id": "L3_09",
+      "level": 3,
+      "level_paper": 3,
+      "source": "reused:L4_1",
+      "prompt": "Design a 1x16 power splitter using 4 stages of 1x2 MMI couplers such that each output port receives an equal share of the input power."
+    },
+    {
+      "id": "L3_10",
+      "level": 3,
+      "level_paper": 3,
+      "source": "TB030",
+      "prompt": "Layout a 1×4 power splitter using three 1×2 MMI couplers in a two-stage cascade. Place 2 phase shifters on the waveguides connecting the first and second stage, and 4 phase shifters on the final output arms, for a total of 6. All phase shifters should be thermo-optic"
+    },
+    {
+      "id": "L3_11",
+      "level": 3,
+      "level_paper": 3,
+      "source": "TB071",
+      "prompt": "Design an add-drop filter with three double bus ring resonators (10 µm, 15 µm, 20 µm radii) connected along a common bus waveguide. Provide separate grating couplers at the bus waveguide input/output and at each drop port to measure the drop response."
+    },
+    {
+      "id": "L3_12",
+      "level": 3,
+      "level_paper": 3,
+      "source": "TB083",
+      "prompt": "Design a 4x4 optical switching network based on the Benes architecture, ensuring rearrangeably nonblocking switching between 4 input and 4 output ports. The network should use six 2x2 optical switching units and consist of 3 stages, each with two 2x2 optical switching units. Use the built-in component mzi_2x2_pn_diode to represent each 2×2 optical switching unit."
+    },
+    {
+      "id": "L4_01",
+      "level": 4,
+      "level_paper": 4,
+      "source": "TB040",
+      "prompt": "Design a 1×64 Mach-Zehnder tree using six stages of 1x2 MZIs. Each MZI has integrated thermo-optic phase shifters and MMI couplers. Use edge couplers at the single input and at each of the 64 outputs for fiber connection. Additionally, include a separate waveguide loopback structure, containing two edge couplers, connected to a 180-degree bend."
+    },
+    {
+      "id": "L4_02",
+      "level": 4,
+      "level_paper": 4,
+      "source": "TB099",
+      "prompt": "Design an 8x8 optical switching network based on the Spanke architecture, ensuring strict-sense non-blocking switching between 8 input and 8 output ports. The network should use 112 built-in Multimode Interferometer (MMI) components and consist of a combination of 8 1x8 switches and 8 8x1 switches."
+    },
+    {
+      "id": "L4_03",
+      "level": 4,
+      "level_paper": 4,
+      "source": "NEW_CLEMENTS16",
+      "prompt": "Design a 16×16 reconfigurable unitary mesh using the Clements rectangular scheme, arranging 120 MZI blocks in 16 columns; use mzi_2x2_pn_diode for each MZI block."
+    },
+    {
+      "id": "L4_04",
+      "level": 4,
+      "level_paper": 4,
+      "source": "TB088",
+      "prompt": "Design a 8×8 optical switching network using a crossbar architecture with mzi_2x2_pn_diode devices. Arrange 64 of these 2×2 switches in a grid such that each of the 8 input waveguides intersects with each of the 8 output waveguides exactly once."
+    },
+    {
+      "id": "L4_05",
+      "level": 4,
+      "level_paper": 4,
+      "source": "TB086",
+      "prompt": "Design an 8 × 8 reconfigurable unitary mesh using the Clements scheme. Arrange 28 MZI blocks in a rectangular topology of 8 columns and 4 rows. Use a built-in components called mzi_2x2_pn_diode for the MZI block."
+    },
+    {
+      "id": "L4_06",
+      "level": 4,
+      "level_paper": 4,
+      "source": "TB097",
+      "prompt": "Implement an 8×8 unitary mesh in the Reck triangular topology using 28 MZI blocks. Stack seven layers: layer 1 has seven MZIs, layer 2 six, layer 3 five, layer 4 four, layer 5 three, layer 6 two, and layer 7 one. Connect the waveguides so that each MZI’s lower output port feeds the appropriate input of the next layer diagonally, following Reck’s canonical diagram. Use the built-in component mzi_2x2_pn_diode for every MZI block"
+    },
+    {
+      "id": "L4_07",
+      "level": 4,
+      "level_paper": 4,
+      "source": "TB098",
+      "prompt": "Design an 4x4 optical switching network based on the Spanke architecture, ensuring strict-sense non-blocking switching between 4 input and 4 output ports. The network should use 56 built-in Multimode Interferometer (MMI) components and consist of a combination of 4 1x4 switches and 4 4x1 switches."
+    },
+    {
+      "id": "L4_08",
+      "level": 4,
+      "level_paper": 4,
+      "source": "TB084",
+      "prompt": "Design a 8×8 optical switching network based on the Benes architecture, ensuring rearrangeably non-blocking switching between 8 input and 8 output ports. The network should use 20 2×2 optical switching units and consist of 5 stages, each with 4 2×2 optical switching units. Use the built-in component mzi_2x2_pn_diode to represent each 2×2 optical switching unit. Ensure that the final design places all 8 input ports on one side and all 8 output ports on the other, with correct inter-stage connectivity to realize a full Benes network."
+    },
+    {
+      "id": "L4_09",
+      "level": 4,
+      "level_paper": 4,
+      "source": "TB087",
+      "prompt": "Design a 4×4 optical switching network using a crossbar architecture with mzi_2x2_pn_diode devices. Arrange 16 of these 2×2 switches in a grid such that each of the 4 input waveguides intersects with each of the 4 output waveguides exactly once."
+    },
+    {
+      "id": "L4_10",
+      "level": 4,
+      "level_paper": 4,
+      "source": "NEW_OPA16",
+      "prompt": "Design a 1×16 optical phased array: split one input into 16 waveguides through a four-stage tree of 1×2 MMI splitters, place an independent thermo-optic phase shifter on each of the 16 arms, and terminate each arm in a grating-coupler emitter."
+    },
+    {
+      "id": "L4_11",
+      "level": 4,
+      "level_paper": 4,
+      "source": "NEW_MZITREE32",
+      "prompt": "Design a 1×32 Mach-Zehnder tree using five stages of 1×2 MZIs (31 MZI blocks) to split one input equally across 32 outputs."
+    },
+    {
+      "id": "L4_12",
+      "level": 4,
+      "level_paper": 4,
+      "source": "TB037",
+      "prompt": "Design a 1×16 power splitter using 15 1×2 MMIs in a four-stage tree: the first stage has 1 MMI splitting into 2 outputs, the second stage has 2 MMIs splitting to 4 outputs, and so on, until 16 outputs. Each of the 16 outputs should feed a VOA (variable optical attenuator) and then a thermo-optic phase shifter, finally connecting to a grating coupler."
+    }
+  ]
+}

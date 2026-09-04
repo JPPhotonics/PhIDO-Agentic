@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>PhIDO — Triple Faithfulness Labeling</title>
+<style>
+  :root { --bg:#0f1216; --card:#1a1f27; --fg:#e8ecf1; --muted:#8b97a7;
+          --green:#2ea36b; --red:#c4503e; --skip:#5b6675; --accent:#4f8cff; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+         font:16px/1.5 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; }
+  header { display:flex; align-items:center; gap:16px; padding:12px 20px;
+           background:#11151b; border-bottom:1px solid #232a34; position:sticky; top:0; }
+  header .who { color:var(--muted); font-size:14px; }
+  header .spacer { flex:1; }
+  .bar { height:6px; background:#232a34; border-radius:3px; width:220px; overflow:hidden; }
+  .bar > div { height:100%; background:var(--accent); width:0%; transition:width .2s; }
+  button { font:inherit; cursor:pointer; border:0; border-radius:8px; padding:10px 16px; color:#fff; }
+  .btn-ghost { background:#2a313c; }
+  main { max-width:760px; margin:28px auto; padding:0 20px; }
+  .instr { background:#141a22; border:1px solid #232a34; border-radius:10px;
+           padding:14px 16px; color:var(--muted); font-size:14px; margin-bottom:20px; }
+  .card { background:var(--card); border:1px solid #283040; border-radius:14px; padding:24px; }
+  .stmt { font-size:22px; line-height:1.45; margin:4px 0 6px; }
+  .stmt b { color:#fff; }
+  .reltype { color:var(--muted); font-size:12px; letter-spacing:.04em; text-transform:uppercase; }
+  .q { margin:18px 0 6px; color:#cdd6e2; font-size:16px; }
+  .evlabel { margin:10px 0 4px; color:var(--muted); font-size:12px; }
+  .quotes { background:#0c1015; border-left:3px solid var(--accent); border-radius:6px;
+            padding:12px 14px; margin:8px 0 4px; }
+  .quote { margin:0 0 10px; } .quote:last-child { margin-bottom:0; }
+  .quote::before { content:"“"; color:var(--accent); } .quote::after { content:"”"; color:var(--accent); }
+  .actions { display:flex; gap:12px; margin-top:24px; }
+  .actions button { flex:1; font-size:16px; padding:14px; }
+  .b-sup { background:var(--green); } .b-not { background:var(--red); } .b-skip { background:var(--skip); }
+  .nav { display:flex; justify-content:space-between; margin-top:16px; color:var(--muted); font-size:14px; }
+  .nav a { color:var(--accent); cursor:pointer; }
+  .kbd { font-size:12px; color:var(--muted); margin-top:14px; text-align:center; }
+  .done { text-align:center; padding:40px 0; }
+  .done h2 { font-size:26px; }
+  .tag { display:inline-block; font-size:11px; padding:2px 7px; border-radius:5px;
+         background:#23303f; color:var(--accent); margin-left:8px; vertical-align:middle; }
+  .chosen { outline:3px solid #fff6; }
+  .reldef { color:var(--muted); font-size:12px; font-style:italic; margin:3px 0 10px; }
+  .entdefs { background:#0f141b; border:1px solid #232a34; border-radius:8px; padding:10px 14px;
+             margin:4px 0 2px; font-size:13px; color:var(--muted); line-height:1.4; }
+  .entdefs > div { margin:3px 0; } .entdefs .ent { color:#cdd6e2; font-weight:600; }
+  .entdefs .nodesc { color:var(--skip); font-style:italic; }
+  .glossary { margin-top:18px; font-size:12.5px; color:var(--muted); }
+  .glossary summary { cursor:pointer; color:var(--accent); }
+  .glossary > div { margin:6px 0 0 6px; } .glossary b { color:#cdd6e2; }
+  .reasoning { margin-top:14px; font-size:13px; }
+  .reasoning summary { cursor:pointer; color:var(--accent); }
+  .reasoning .rtext { margin:8px 0 0; padding:10px 14px; background:#0f141b; border:1px solid #232a34;
+                      border-radius:8px; color:var(--muted); line-height:1.45; }
+</style>
+</head>
+<body>
+<header>
+  <strong>Relationship review</strong>
+  <span class="who" id="who"></span>
+  <span class="spacer"></span>
+  <div class="bar"><div id="barfill"></div></div>
+  <span class="who" id="counter"></span>
+  <button class="btn-ghost" onclick="downloadLabels()">Download labels</button>
+</header>
+<main id="main"></main>
+
+<script>
+// The export script replaces the object between the markers with the annotator's bundle.
+// Leaving it as-is shows a 3-item DEMO so the page is previewable with no data.
+const BUNDLE = /*__BUNDLE_START__*/{
+  "annotator_id": "DEMO",
+  "schema_version": 2,
+  "task": "relationship_validity",
+  "instructions": "For each relationship the system extracted from your paper, decide whether it is CORRECT, using your expertise with this work — you generally won't need to re-read the paper. The entity descriptions and any supporting evidence are shown for context. Many relationships were INFERRED rather than stated in one sentence, so judge correctness, not whether a single sentence states it. Use 'Unsure' if you can't judge from what's shown.",
+  "relation_definitions": {
+    "BASED_ON_PRINCIPLE": "Links a Component, Architecture, or PDK_Cell to a Physical_Principle it is based on",
+    "PERFORMS_FUNCTION": "Links a Component, Architecture, or PDK_Cell to a Design_Function it performs",
+    "HAS_PROPERTY": "Links a Component, Architecture, or PDK_Cell to a Property it possesses"
+  },
+  "items": [
+    { "id":"demo-1", "head":"Mach-Zehnder interferometer", "head_type":"Component",
+      "head_description":"A two-arm interferometer that splits and recombines light to convert phase differences into intensity changes.",
+      "relation":"BASED_ON_PRINCIPLE", "tail":"two-beam interference", "tail_type":"Physical_Principle",
+      "tail_description":"Superposition of two coherent light waves producing an intensity that depends on their relative phase.",
+      "source_document":"DEMO", "shown_order":0,
+      "reasoning":"The MZI splits light into two arms and recombines them; its output depends on the relative phase between the arms, which is the defining mechanism of two-beam interference.",
+      "evidence_quotes":["The Mach-Zehnder interferometer splits light into two arms and recombines them, producing an output that depends on the relative phase via two-beam interference."] },
+    { "id":"demo-2", "head":"ring resonator", "head_type":"Component",
+      "head_description":"A looped waveguide that resonantly enhances specific wavelengths.",
+      "relation":"PERFORMS_FUNCTION", "tail":"wavelength filtering", "tail_type":"Design_Function",
+      "tail_description":"Selecting or rejecting particular optical wavelengths from a signal.",
+      "source_document":"DEMO", "shown_order":1,
+      "reasoning":"A ring resonator transmits only wavelengths matching its resonance condition, so it selects/rejects particular wavelengths — i.e. it performs wavelength filtering.",
+      "evidence_quotes":["We use the device as a high-speed electro-optic modulator."] },
+    { "id":"demo-3", "head":"grating coupler", "head_type":"Component",
+      "head_description":"A diffractive structure that couples light between an optical fiber and an on-chip waveguide.",
+      "relation":"HAS_PROPERTY", "tail":"insertion loss", "tail_type":"Property", "tail_description":"",
+      "source_document":"DEMO", "shown_order":2,
+      "reasoning":"The paper reports a measured insertion loss of 2.1 dB for the grating coupler, establishing insertion loss as a property of the device.",
+      "evidence_quotes":["The grating coupler exhibits an insertion loss of 2.1 dB at 1550 nm.",
+                         "Coupling efficiency was characterized across the C-band."] }
+  ]
+}/*__BUNDLE_END__*/;
+
+const REL_PHRASE = {
+  PERFORMS_FUNCTION:"performs the function of", BASED_ON_PRINCIPLE:"is based on the principle of",
+  HAS_PROPERTY:"has the property", USES_COMPONENT:"uses the component", IMPLEMENTS:"implements",
+  EXHIBITS:"exhibits", FABRICATED_WITH:"is fabricated with", COMPOSED_OF:"is composed of",
+  RELATED_TO:"is related to"
+};
+function phrase(rel){ return REL_PHRASE[rel] || rel.toLowerCase().replace(/_/g," "); }
+// Internal label values are kept (supported/not_supported/skip) for analysis compatibility;
+// these are how they read to the annotator under the relationship-validity task.
+const LABEL_DISPLAY = { supported:"correct", not_supported:"incorrect", skip:"unsure" };
+
+const KEY = "phido_labels_" + BUNDLE.annotator_id;
+const items = BUNDLE.items;
+let responses = {};            // id -> {label, time_ms}
+let idx = 0;
+let enterTs = 0;
+const startedAt = new Date().toISOString();
+
+// restore any in-progress session
+try { const s = JSON.parse(localStorage.getItem(KEY) || "{}"); responses = s.responses || {}; idx = s.idx || 0; } catch(e){}
+
+function save(){ localStorage.setItem(KEY, JSON.stringify({responses, idx, startedAt})); }
+function accrue(){ if(enterTs){ const it=items[idx]; if(it){ const r=responses[it.id]||(responses[it.id]={label:null,time_ms:0}); r.time_ms += Math.round(performance.now()-enterTs); } } }
+
+function setLabel(label){
+  accrue(); const it=items[idx];
+  (responses[it.id]||(responses[it.id]={time_ms:0})).label = label;
+  save();
+  if(idx < items.length-1){ idx++; render(); } else { render(); }
+}
+function go(d){ accrue(); idx = Math.max(0, Math.min(items.length-1, idx+d)); save(); render(); }
+
+function answeredCount(){ return Object.values(responses).filter(r=>r&&r.label).length; }
+
+function render(){
+  document.getElementById("who").textContent = "annotator: " + BUNDLE.annotator_id;
+  const done = answeredCount();
+  document.getElementById("counter").textContent = done + " / " + items.length;
+  document.getElementById("barfill").style.width = (100*done/items.length) + "%";
+
+  const main = document.getElementById("main");
+  if(idx >= items.length){ idx = items.length-1; }
+  const it = items[idx];
+  const cur = responses[it.id] && responses[it.id].label;
+  const quotes = (Array.isArray(it.evidence_quotes)?it.evidence_quotes:[it.evidence_quotes])
+                   .filter(Boolean).map(q=>`<p class="quote">${escapeHtml(q)}</p>`).join("");
+
+  main.innerHTML = `
+    <div class="instr">${escapeHtml(BUNDLE.instructions||"")}</div>
+    <div class="card">
+      <div class="reltype">${escapeHtml(it.head_type||"")} → ${escapeHtml(it.relation)} → ${escapeHtml(it.tail_type||"")}</div>
+      <div class="reldef">${escapeHtml((BUNDLE.relation_definitions||{})[it.relation]||"")}</div>
+      <div class="stmt"><b>${escapeHtml(it.head)}</b> ${escapeHtml(phrase(it.relation))} <b>${escapeHtml(it.tail)}</b>.</div>
+      <div class="entdefs">
+        <div><span class="ent">${escapeHtml(it.head)}</span>${it.head_description?" — "+escapeHtml(it.head_description):' <span class="nodesc">(no description in KG)</span>'}</div>
+        <div><span class="ent">${escapeHtml(it.tail)}</span>${it.tail_description?" — "+escapeHtml(it.tail_description):' <span class="nodesc">(no description in KG)</span>'}</div>
+      </div>
+      <div class="q">Is this relationship <b>correct</b>?</div>
+      <div class="evlabel">Supporting evidence the system found (context — the relationship may be inferred):</div>
+      <div class="quotes">${quotes || '<span style="color:var(--skip)">(no evidence provided)</span>'}</div>
+      <div class="actions">
+        <button class="b-sup ${cur==='supported'?'chosen':''}" onclick="setLabel('supported')">Correct &nbsp;<small>(f)</small></button>
+        <button class="b-not ${cur==='not_supported'?'chosen':''}" onclick="setLabel('not_supported')">Incorrect &nbsp;<small>(j)</small></button>
+        <button class="b-skip ${cur==='skip'?'chosen':''}" onclick="setLabel('skip')">Unsure &nbsp;<small>(s)</small></button>
+      </div>
+      <details class="reasoning" ontoggle="onReasoning('${it.id}', this)">
+        <summary>Show the system's reasoning for this relationship (optional)</summary>
+        <div class="rtext">${it.reasoning ? escapeHtml(it.reasoning) : '(no reasoning recorded)'}</div>
+      </details>
+      <div class="nav">
+        <span><a onclick="go(-1)">‹ Prev</a></span>
+        <span>item ${idx+1} of ${items.length}${cur?` · <span style="color:var(--accent)">${LABEL_DISPLAY[cur]||cur}</span>`:""}</span>
+        <span><a onclick="go(1)">Next ›</a></span>
+      </div>
+      <div class="kbd">keys: <b>f</b> correct · <b>j</b> incorrect · <b>s</b> unsure · ←/→ navigate</div>
+      <details class="glossary"><summary>What do the relationship types mean?</summary>
+        ${Object.entries(BUNDLE.relation_definitions||{}).map(([k,v])=>`<div><b>${escapeHtml(k)}</b> — ${escapeHtml(v)}</div>`).join("")}
+      </details>
+    </div>
+    ${done===items.length ? `<div class="done"><h2>All ${items.length} done — thank you!</h2>
+        <p style="color:var(--muted)">Click below and email the file back. You can re-download anytime.</p>
+        <button class="b-sup" onclick="downloadLabels()">Download labels</button></div>` : ""}
+  `;
+  enterTs = performance.now();
+}
+
+function escapeHtml(s){ return String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+
+// Record (once) that the annotator opened the system-reasoning panel for an item, and whether
+// they had already answered. Lets the analysis report agreement on the UN-VIEWED subset (clean,
+// un-anchored) separately from items where the reasoning was consulted.
+function onReasoning(id, el){
+  if(!el || !el.open) return;
+  const r = responses[id] || (responses[id] = {time_ms:0});
+  if(!r.reasoning_viewed){ r.reasoning_viewed = true; r.viewed_with_prior_label = !!r.label; save(); }
+}
+
+function downloadLabels(){
+  accrue();
+  const out = {
+    annotator_id: BUNDLE.annotator_id, schema_version: BUNDLE.schema_version||1,
+    task: BUNDLE.task || "relationship_validity",
+    started_at: startedAt, submitted_at: new Date().toISOString(),
+    labels: items.map((it,i)=>({
+      id: it.id, source_document: it.source_document, shown_order: it.shown_order??i,
+      label: (responses[it.id]&&responses[it.id].label) || null,
+      time_ms: (responses[it.id]&&responses[it.id].time_ms) || 0,
+      reasoning_viewed: !!(responses[it.id]&&responses[it.id].reasoning_viewed),
+      reasoning_viewed_with_prior_label: !!(responses[it.id]&&responses[it.id].viewed_with_prior_label)
+    }))
+  };
+  const blob = new Blob([JSON.stringify(out,null,2)], {type:"application/json"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "labels_" + BUNDLE.annotator_id + ".json";
+  document.body.appendChild(a); a.click(); a.remove();
+}
+
+document.addEventListener("keydown", e=>{
+  if(e.key==="f") setLabel("supported");
+  else if(e.key==="j") setLabel("not_supported");
+  else if(e.key==="s") setLabel("skip");
+  else if(e.key==="ArrowLeft") go(-1);
+  else if(e.key==="ArrowRight") go(1);
+});
+
+render();
+</script>
+</body>
+</html>

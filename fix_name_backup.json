@@ -1,0 +1,56 @@
+[
+  {
+    "eid": "4:fe564c09-334e-4362-a136-e4fd9087c2f3:316",
+    "label": "Property",
+    "old": "mode field area (mode field area)",
+    "new": "mode field area"
+  },
+  {
+    "eid": "4:fe564c09-334e-4362-a136-e4fd9087c2f3:987",
+    "label": "Property",
+    "old": "free spectral range (free spectral range)",
+    "new": "free spectral range"
+  },
+  {
+    "eid": "4:fe564c09-334e-4362-a136-e4fd9087c2f3:1005",
+    "label": "Component",
+    "old": "micro-electromechanical systems (micro-electro-mechanical systems)",
+    "new": "micro-electromechanical systems"
+  },
+  {
+    "eid": "4:fe564c09-334e-4362-a136-e4fd9087c2f3:1099",
+    "label": "Component",
+    "old": "broadband superluminescent iii-v semiconductor-V-on-silicon light-emitting diode (light emitting diode)",
+    "new": "broadband superluminescent iii-v semiconductor-V-on-silicon light-emitting diode"
+  },
+  {
+    "eid": "4:fe564c09-334e-4362-a136-e4fd9087c2f3:1245",
+    "label": "Component",
+    "old": "passive quenching circuit (passive quenching circuit)",
+    "new": "passive quenching circuit"
+  },
+  {
+    "eid": "4:fe564c09-334e-4362-a136-e4fd9087c2f3:1353",
+    "label": "Architecture",
+    "old": "all-pass filter (all-pass filter)",
+    "new": "all-pass filter"
+  },
+  {
+    "eid": "4:fe564c09-334e-4362-a136-e4fd9087c2f3:1356",
+    "label": "Design_Function",
+    "old": "wavelength division multiplexing (wavelength division multiplexing)",
+    "new": "wavelength division multiplexing"
+  },
+  {
+    "eid": "4:fe564c09-334e-4362-a136-e4fd9087c2f3:1446",
+    "label": "Component",
+    "old": "free-propagation region (free propagation region)",
+    "new": "free-propagation region"
+  },
+  {
+    "eid": "4:fe564c09-334e-4362-a136-e4fd9087c2f3:1831",
+    "label": "Physical_Principle",
+    "old": "quantum-confined Stark effect (quantum-confined stark effect)",
+    "new": "quantum-confined Stark effect"
+  }
+]

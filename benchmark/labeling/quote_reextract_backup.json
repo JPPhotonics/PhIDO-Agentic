@@ -1,0 +1,985 @@
+{
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1661": [
+    "The ratio between the power emitted from the probe tip and the grating closest to the tip was < -16 dB for both LD and LS probes when averaged over the TE and TM polarizations.",
+    "The output power of the other grating emitters had ratios of < -20 dB for the LD probe and < -17 dB for the LS probe relative to the tip emission."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1575": [
+    "The probe thickness could be reduced to 40 - 60\u03bcm through the foundry wafer backgrinding process followed by post-processing polishing...",
+    "In this work, we have reported nanophotonic neural probes with capabilities for electrophysiological recording and photostimulation...",
+    "The output power of the other grating emitters had ratios of < -20 dB for the LD probe and < -17 dB for the LS probe relative to the tip emission.",
+    "To illustrate the flexibility of the platform, we report the results of two probe designs: ... (2) a four-shank probe with 56 electrodes and 5 light sheet emitters for widespread planar stimulation.",
+    "Titanium nitride (TiN) was used to form biocompatible surface microelectrodes.",
+    "The probe comprised a single layer of silicon nitride (SiN) for optical waveguides and 3 aluminum (Al) metal routing layers.",
+    "The probes emit engineered beam profiles with sufficiently high powers to excite neural activity ranging from cellular spikes to network-wide responses.",
+    "Regarding the optical properties of the probes, the insertion loss before and after the MCF-to-chip attachment process is discussed in Supplementary Note 4.",
+    "...capabilities for electrophysiological recording and photostimulation using flexibly designed light emission patterns with sufficiently high optical powers to stimulate network-wide effects.",
+    "To illustrate the flexibility of the platform, we report the results of two probe designs: (1) a single-shank probe with 18 electrodes and 16 low-divergence emitters for localized stimulation...",
+    "Moreover, our external laser scanner, with stable optical power coupling to a custom MCF, enables spatial addressing of light to individual chip inputs...",
+    "In general, the light sheet was about 11 times wider than the low-divergence beam in tissue.",
+    "Here, we overcome this challenge with foundry-fabricated implantable silicon neural probes with microelectrodes and nanophotonic circuits.",
+    "Each LS probe had four 4 mm long shanks and 5 light sheet emitters.",
+    "The ratio between the power emitted from the probe tip and the grating closest to the tip was < -16 dB for both LD and LS probes when averaged over the TE and TM polarizations.",
+    "Compared to other nanophotonic neural probes with SiN waveguides and microelectrodes, our probes integrate 16 low-divergence optical emitters or 5 light sheet emitters for stimulation of different tissue volumes.",
+    "The nanophotonic neural probes were fabricated on 200mm diameter Si wafers using deep ultraviolet (DUV) lithography at Advanced Micro Foundry.",
+    "The second probe type, hereafter referred to as the \"LS probe\", emitted light sheets for depth-specific, network-wide photostimulation...",
+    "A laser treatment was applied locally to the electrodes to reduce their impedance for low-noise recording.",
+    "An optical power output of 153\u03bcW (120mW / mm^2 of output intensity) led to a sustained after-discharge lasting approximately 40 s..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1580": [
+    "Regarding the optical properties of the probes, the insertion loss before and after the MCF-to-chip attachment process is discussed in Supplementary Note 4."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1588": [
+    "The probes emit engineered beam profiles with sufficiently high powers to excite neural activity ranging from cellular spikes to network-wide responses.",
+    "Our in vivo experiments evaluated probes emitting low-divergence beams or planar sheets, both of which could selectively stimulate neurons at different depths."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1621": [
+    "Also, we designed an improved laser scanning system with compact size, power-monitoring feedback, and polarization-insensitive features to enable stable power delivery during animal experiments."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1627": [
+    "To illustrate the flexibility of the platform, we report the results of two probe designs: (1) a single-shank probe with 18 electrodes and 16 low-divergence emitters for localized stimulation..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1566": [
+    "To illustrate the flexibility of the platform, we report the results of two probe designs: (1) a single-shank probe with 18 electrodes and 16 low-divergence emitters for localized stimulation..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1605": [
+    "Here, we overcome this challenge with foundry-fabricated implantable silicon neural probes with microelectrodes and nanophotonic circuits.",
+    "Our in vivo experiments evaluated probes emitting low-divergence beams or planar sheets, both of which could selectively stimulate neurons at different depths."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1635": [
+    "...a single-shank probe with 18 electrodes and 16 low-divergence emitters for localized stimulation...",
+    "Compared to other nanophotonic neural probes with SiN waveguides and microelectrodes, our probes integrate 16 low-divergence optical emitters or 5 light sheet emitters for stimulation of different tissue volumes.",
+    "Direct use of low-divergence emitters is suboptimal for generating uniform beam illumination across the shanks."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1616": [
+    "Also, we designed an improved laser scanning system with compact size, power-monitoring feedback, and polarization-insensitive features to enable stable power delivery during animal experiments.",
+    "Moreover, our external laser scanner, with stable optical power coupling to a custom MCF, enables spatial addressing of light to individual chip inputs..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1646": [
+    "...a four-shank probe with 56 electrodes and 5 light sheet emitters for widespread planar stimulation.",
+    "Each LS probe had four 4 mm long shanks and 5 light sheet emitters.",
+    "The light sheets were formed by overlapping emissions from an array of 8 grating emitters on the 4 shanks...",
+    "...each light sheet grating emitter had dimensions of 0.8 \u00d7 27.7 \u03bcm^2, featuring a narrower emitter width compared to the low-divergence emitters."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1657": [
+    "The ratio between the power emitted from the probe tip and the grating closest to the tip was < -16 dB for both LD and LS probes when averaged over the TE and TM polarizations.",
+    "The output power of the other grating emitters had ratios of < -20 dB for the LD probe and < -17 dB for the LS probe relative to the tip emission."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1599": [
+    "...capabilities for electrophysiological recording and photostimulation using flexibly designed light emission patterns with sufficiently high optical powers to stimulate network-wide effects.",
+    "The second probe type, hereafter referred to as the \"LS probe\", emitted light sheets for depth-specific, network-wide photostimulation...",
+    "The inter-emitter crosstalk for our probe was < -26 dB...",
+    "An optical power output of 153\u03bcW (120mW / mm^2 of output intensity) led to a sustained after-discharge lasting approximately 40 s..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1594": [
+    "...capabilities for electrophysiological recording and photostimulation using flexibly designed light emission patterns with sufficiently high optical powers to stimulate network-wide effects.",
+    "The second probe type, hereafter referred to as the \"LS probe\", emitted light sheets for depth-specific, network-wide photostimulation...",
+    "The inter-emitter crosstalk for our probe was < -26 dB...",
+    "An optical power output of 153\u03bcW (120mW / mm^2 of output intensity) led to a sustained after-discharge lasting approximately 40 s..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1578": [
+    "Regarding the optical properties of the probes, the insertion loss before and after the MCF-to-chip attachment process is discussed in Supplementary Note 4."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1652": [
+    "The second probe type, hereafter referred to as the \"LS probe\", emitted light sheets for depth-specific, network-wide photostimulation...",
+    "The light sheets were formed by overlapping emissions from an array of 8 grating emitters on the 4 shanks...",
+    "In general, the light sheet was about 11 times wider than the low-divergence beam in tissue."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1585": [
+    "The probes emit engineered beam profiles with sufficiently high powers to excite neural activity ranging from cellular spikes to network-wide responses.",
+    "Our in vivo experiments evaluated probes emitting low-divergence beams or planar sheets, both of which could selectively stimulate neurons at different depths."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1577": [
+    "...monolithically integrating nanophotonic waveguides and microelectrodes using common PIC fabrication methods.",
+    "A laser treatment was applied locally to the electrodes to reduce their impedance for low-noise recording."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1598": [
+    "...capabilities for electrophysiological recording and photostimulation using flexibly designed light emission patterns with sufficiently high optical powers to stimulate network-wide effects.",
+    "The second probe type, hereafter referred to as the \"LS probe\", emitted light sheets for depth-specific, network-wide photostimulation...",
+    "The inter-emitter crosstalk for our probe was < -26 dB...",
+    "An optical power output of 153\u03bcW (120mW / mm^2 of output intensity) led to a sustained after-discharge lasting approximately 40 s..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1576": [
+    "...monolithically integrating nanophotonic waveguides and microelectrodes using common PIC fabrication methods.",
+    "A laser treatment was applied locally to the electrodes to reduce their impedance for low-noise recording."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1581": [
+    "Regarding the optical properties of the probes, the insertion loss before and after the MCF-to-chip attachment process is discussed in Supplementary Note 4."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1590": [
+    "The probes emit engineered beam profiles with sufficiently high powers to excite neural activity ranging from cellular spikes to network-wide responses.",
+    "Our in vivo experiments evaluated probes emitting low-divergence beams or planar sheets, both of which could selectively stimulate neurons at different depths."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1619": [
+    "Also, we designed an improved laser scanning system with compact size, power-monitoring feedback, and polarization-insensitive features to enable stable power delivery during animal experiments."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1629": [
+    "To illustrate the flexibility of the platform, we report the results of two probe designs: (1) a single-shank probe with 18 electrodes and 16 low-divergence emitters for localized stimulation..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1643": [
+    "...a four-shank probe with 56 electrodes and 5 light sheet emitters for widespread planar stimulation.",
+    "Each LS probe had four 4 mm long shanks and 5 light sheet emitters.",
+    "The light sheets were formed by overlapping emissions from an array of 8 grating emitters on the 4 shanks...",
+    "...each light sheet grating emitter had dimensions of 0.8 \u00d7 27.7 \u03bcm^2, featuring a narrower emitter width compared to the low-divergence emitters."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1665": [
+    "The ratio between the power emitted from the probe tip and the grating closest to the tip was < -16 dB for both LD and LS probes when averaged over the TE and TM polarizations.",
+    "The output power of the other grating emitters had ratios of < -20 dB for the LD probe and < -17 dB for the LS probe relative to the tip emission."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1642": [
+    "...a four-shank probe with 56 electrodes and 5 light sheet emitters for widespread planar stimulation.",
+    "Each LS probe had four 4 mm long shanks and 5 light sheet emitters.",
+    "The light sheets were formed by overlapping emissions from an array of 8 grating emitters on the 4 shanks...",
+    "...each light sheet grating emitter had dimensions of 0.8 \u00d7 27.7 \u03bcm^2, featuring a narrower emitter width compared to the low-divergence emitters."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1568": [
+    "To illustrate the flexibility of the platform, we report the results of two probe designs: ... (2) a four-shank probe with 56 electrodes and 5 light sheet emitters for widespread planar stimulation."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1615": [
+    "Also, we designed an improved laser scanning system with compact size, power-monitoring feedback, and polarization-insensitive features to enable stable power delivery during animal experiments.",
+    "Moreover, our external laser scanner, with stable optical power coupling to a custom MCF, enables spatial addressing of light to individual chip inputs..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1614": [
+    "Also, we designed an improved laser scanning system with compact size, power-monitoring feedback, and polarization-insensitive features to enable stable power delivery during animal experiments.",
+    "Moreover, our external laser scanner, with stable optical power coupling to a custom MCF, enables spatial addressing of light to individual chip inputs..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1611": [
+    "The nanophotonic neural probes were fabricated on 200mm diameter Si wafers using deep ultraviolet (DUV) lithography at Advanced Micro Foundry.",
+    "The probe comprised a single layer of silicon nitride (SiN) for optical waveguides and 3 aluminum (Al) metal routing layers.",
+    "Titanium nitride (TiN) was used to form biocompatible surface microelectrodes.",
+    "In this work, we have reported nanophotonic neural probes with capabilities for electrophysiological recording and photostimulation...",
+    "The probe thickness could be reduced to 40 - 60\u03bcm through the foundry wafer backgrinding process followed by post-processing polishing..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1612": [
+    "The nanophotonic neural probes were fabricated on 200mm diameter Si wafers using deep ultraviolet (DUV) lithography at Advanced Micro Foundry.",
+    "The probe comprised a single layer of silicon nitride (SiN) for optical waveguides and 3 aluminum (Al) metal routing layers.",
+    "Titanium nitride (TiN) was used to form biocompatible surface microelectrodes.",
+    "In this work, we have reported nanophotonic neural probes with capabilities for electrophysiological recording and photostimulation...",
+    "The probe thickness could be reduced to 40 - 60\u03bcm through the foundry wafer backgrinding process followed by post-processing polishing..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1651": [
+    "The second probe type, hereafter referred to as the \"LS probe\", emitted light sheets for depth-specific, network-wide photostimulation...",
+    "The light sheets were formed by overlapping emissions from an array of 8 grating emitters on the 4 shanks...",
+    "In general, the light sheet was about 11 times wider than the low-divergence beam in tissue."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1569": [
+    "The probe thickness could be reduced to 40 - 60\u03bcm through the foundry wafer backgrinding process followed by post-processing polishing...",
+    "In this work, we have reported nanophotonic neural probes with capabilities for electrophysiological recording and photostimulation...",
+    "The output power of the other grating emitters had ratios of < -20 dB for the LD probe and < -17 dB for the LS probe relative to the tip emission.",
+    "To illustrate the flexibility of the platform, we report the results of two probe designs: ... (2) a four-shank probe with 56 electrodes and 5 light sheet emitters for widespread planar stimulation.",
+    "Titanium nitride (TiN) was used to form biocompatible surface microelectrodes.",
+    "The probe comprised a single layer of silicon nitride (SiN) for optical waveguides and 3 aluminum (Al) metal routing layers.",
+    "The probes emit engineered beam profiles with sufficiently high powers to excite neural activity ranging from cellular spikes to network-wide responses.",
+    "Regarding the optical properties of the probes, the insertion loss before and after the MCF-to-chip attachment process is discussed in Supplementary Note 4.",
+    "...capabilities for electrophysiological recording and photostimulation using flexibly designed light emission patterns with sufficiently high optical powers to stimulate network-wide effects.",
+    "To illustrate the flexibility of the platform, we report the results of two probe designs: (1) a single-shank probe with 18 electrodes and 16 low-divergence emitters for localized stimulation...",
+    "Moreover, our external laser scanner, with stable optical power coupling to a custom MCF, enables spatial addressing of light to individual chip inputs...",
+    "In general, the light sheet was about 11 times wider than the low-divergence beam in tissue.",
+    "Here, we overcome this challenge with foundry-fabricated implantable silicon neural probes with microelectrodes and nanophotonic circuits.",
+    "Each LS probe had four 4 mm long shanks and 5 light sheet emitters.",
+    "The ratio between the power emitted from the probe tip and the grating closest to the tip was < -16 dB for both LD and LS probes when averaged over the TE and TM polarizations.",
+    "Compared to other nanophotonic neural probes with SiN waveguides and microelectrodes, our probes integrate 16 low-divergence optical emitters or 5 light sheet emitters for stimulation of different tissue volumes.",
+    "The nanophotonic neural probes were fabricated on 200mm diameter Si wafers using deep ultraviolet (DUV) lithography at Advanced Micro Foundry.",
+    "The second probe type, hereafter referred to as the \"LS probe\", emitted light sheets for depth-specific, network-wide photostimulation...",
+    "A laser treatment was applied locally to the electrodes to reduce their impedance for low-noise recording.",
+    "An optical power output of 153\u03bcW (120mW / mm^2 of output intensity) led to a sustained after-discharge lasting approximately 40 s..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1655": [
+    "The second probe type, hereafter referred to as the \"LS probe\", emitted light sheets for depth-specific, network-wide photostimulation...",
+    "The light sheets were formed by overlapping emissions from an array of 8 grating emitters on the 4 shanks...",
+    "In general, the light sheet was about 11 times wider than the low-divergence beam in tissue."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:100": [
+    "Regarding the optical properties of the probes, the insertion loss before and after the MCF-to-chip attachment process is discussed in Supplementary Note 4."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1620": [
+    "Also, we designed an improved laser scanning system with compact size, power-monitoring feedback, and polarization-insensitive features to enable stable power delivery during animal experiments."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1583": [
+    "Regarding the optical properties of the probes, the insertion loss before and after the MCF-to-chip attachment process is discussed in Supplementary Note 4."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1650": [
+    "To illustrate the flexibility of the platform, we report the results of two probe designs: ... (2) a four-shank probe with 56 electrodes and 5 light sheet emitters for widespread planar stimulation."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1613": [
+    "The nanophotonic neural probes were fabricated on 200mm diameter Si wafers using deep ultraviolet (DUV) lithography at Advanced Micro Foundry.",
+    "The probe comprised a single layer of silicon nitride (SiN) for optical waveguides and 3 aluminum (Al) metal routing layers.",
+    "Titanium nitride (TiN) was used to form biocompatible surface microelectrodes.",
+    "In this work, we have reported nanophotonic neural probes with capabilities for electrophysiological recording and photostimulation...",
+    "The probe thickness could be reduced to 40 - 60\u03bcm through the foundry wafer backgrinding process followed by post-processing polishing..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1687": [
+    "The platform integrates silicon nitride (SiN) nanophotonic waveguides, TO optical switches, waveguide-coupled Si photodetectors, and MEMS devices."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:198": [
+    "The LD is further integrated into an active photonic circuit with a thermo-optic switch and monolithically-integrated Si photodetector."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1684": [
+    "The platform integrates silicon nitride (SiN) nanophotonic waveguides, TO optical switches, waveguide-coupled Si photodetectors, and MEMS devices."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1708": [
+    "With lithographically-defined alignment structures and mechanical stoppers on both the Si photonic chips and LDs, we achieve continuous-wave on-chip optical powers up to 9.6 mW..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:999": [
+    "The platform integrates silicon nitride (SiN) nanophotonic waveguides, TO optical switches, waveguide-coupled Si photodetectors, and MEMS devices."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1743": [
+    "The phase shifter used a 3-pass folded waveguide structure, a titanium nitride heater, and thermal isolation trenches [1]."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1677": [
+    "The platform integrates silicon nitride (SiN) nanophotonic waveguides, TO optical switches, waveguide-coupled Si photodetectors, and MEMS devices.",
+    "The LD is further integrated into an active photonic circuit with a thermo-optic switch and monolithically-integrated Si photodetector.",
+    "The lasers featured top-side P and N contacts - enabling electrical connectivity to the Si photonic chips via the solder bumps and UBM wires/pads.",
+    "An active PIC with a bonded laser, power monitor, and optical switch was realized.",
+    "With lithographically-defined alignment structures and mechanical stoppers on both the Si photonic chips and LDs, we achieve continuous-wave on-chip optical powers up to 9.6 mW - an order of magnitude beyond previous reports [10, 11] and comparable to actively-aligned LD demonstrations [7, 8].",
+    "Mechanical stoppers and alignment marks matched to those of the Si photonic chips were formed by trench etching.",
+    "The phase shifter used a 3-pass folded waveguide structure, a titanium nitride heater, and thermal isolation trenches [1].",
+    "We report hybrid integration of blue InGaN laser diodes in a visible-light silicon photonics platform using passive-alignment flip-chip bonding.",
+    "We demonstrate continuous-wave on-chip optical powers of 9.6 mW and integration with optical switches and photodetectors.",
+    "Output 1(2) exhibited an ER of 19.8(22.0) dB and P\u03c0 of 12.8(12.0) mW.",
+    "The power monitor consisted of an evanescent directional coupler power tap, which directed tapped light to a 200-\u00b5m long, waveguide-coupled, PIN, Si photodetector [6].",
+    "SiN inverse taper edge couplers (150-nm nominal tip width, designed for mode matching to the LD) at the socket facets enabled optical coupling between the Si photonic chips and bonded LDs.",
+    "Optical mode simulations indicate an optimally-aligned coupling loss (due to modal mismatch) of 2.7 dB, and hence, \u2248 2.1 dB of excess loss due to misalignment after bonding.",
+    "With lithographically-defined alignment structures and mechanical stoppers on both the Si photonic chips and LDs, we achieve continuous-wave on-chip optical powers up to 9.6 mW...",
+    "In this work, we demonstrate passive-alignment flip-chip bonding of 450-nm wavelength indium gallium nitride (InGaN) lasers in a foundry-fabricated visible-light Si photonics platform.",
+    "With 50 mA of drive current, the peak wavelength was 451.4 nm and the linewidth was < 0.05 nm (limited by the OSA resolution)."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1726": [
+    "Optical mode simulations indicate an optimally-aligned coupling loss (due to modal mismatch) of 2.7 dB, and hence, \u2248 2.1 dB of excess loss due to misalignment after bonding."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1690": [
+    "The LD is further integrated into an active photonic circuit with a thermo-optic switch and monolithically-integrated Si photodetector."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1676": [
+    "The platform integrates silicon nitride (SiN) nanophotonic waveguides, TO optical switches, waveguide-coupled Si photodetectors, and MEMS devices.",
+    "The LD is further integrated into an active photonic circuit with a thermo-optic switch and monolithically-integrated Si photodetector.",
+    "The lasers featured top-side P and N contacts - enabling electrical connectivity to the Si photonic chips via the solder bumps and UBM wires/pads.",
+    "An active PIC with a bonded laser, power monitor, and optical switch was realized.",
+    "With lithographically-defined alignment structures and mechanical stoppers on both the Si photonic chips and LDs, we achieve continuous-wave on-chip optical powers up to 9.6 mW - an order of magnitude beyond previous reports [10, 11] and comparable to actively-aligned LD demonstrations [7, 8].",
+    "Mechanical stoppers and alignment marks matched to those of the Si photonic chips were formed by trench etching.",
+    "The phase shifter used a 3-pass folded waveguide structure, a titanium nitride heater, and thermal isolation trenches [1].",
+    "We report hybrid integration of blue InGaN laser diodes in a visible-light silicon photonics platform using passive-alignment flip-chip bonding.",
+    "We demonstrate continuous-wave on-chip optical powers of 9.6 mW and integration with optical switches and photodetectors.",
+    "Output 1(2) exhibited an ER of 19.8(22.0) dB and P\u03c0 of 12.8(12.0) mW.",
+    "The power monitor consisted of an evanescent directional coupler power tap, which directed tapped light to a 200-\u00b5m long, waveguide-coupled, PIN, Si photodetector [6].",
+    "SiN inverse taper edge couplers (150-nm nominal tip width, designed for mode matching to the LD) at the socket facets enabled optical coupling between the Si photonic chips and bonded LDs.",
+    "Optical mode simulations indicate an optimally-aligned coupling loss (due to modal mismatch) of 2.7 dB, and hence, \u2248 2.1 dB of excess loss due to misalignment after bonding.",
+    "With lithographically-defined alignment structures and mechanical stoppers on both the Si photonic chips and LDs, we achieve continuous-wave on-chip optical powers up to 9.6 mW...",
+    "In this work, we demonstrate passive-alignment flip-chip bonding of 450-nm wavelength indium gallium nitride (InGaN) lasers in a foundry-fabricated visible-light Si photonics platform.",
+    "With 50 mA of drive current, the peak wavelength was 451.4 nm and the linewidth was < 0.05 nm (limited by the OSA resolution)."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1747": [
+    "The phase shifter used a 3-pass folded waveguide structure, a titanium nitride heater, and thermal isolation trenches [1]."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1754": [
+    "Output 1(2) exhibited an ER of 19.8(22.0) dB and P\u03c0 of 12.8(12.0) mW."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1709": [
+    "With lithographically-defined alignment structures and mechanical stoppers on both the Si photonic chips and LDs, we achieve continuous-wave on-chip optical powers up to 9.6 mW..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1727": [
+    "Optical mode simulations indicate an optimally-aligned coupling loss (due to modal mismatch) of 2.7 dB, and hence, \u2248 2.1 dB of excess loss due to misalignment after bonding."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1757": [
+    "Output 1(2) exhibited an ER of 19.8(22.0) dB and P\u03c0 of 12.8(12.0) mW."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1733": [
+    "The power monitor consisted of an evanescent directional coupler power tap, which directed tapped light to a 200-\u00b5m long, waveguide-coupled, PIN, Si photodetector [6].",
+    "An active PIC with a bonded laser, power monitor, and optical switch was realized."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1722": [
+    "The lasers featured top-side P and N contacts - enabling electrical connectivity to the Si photonic chips via the solder bumps and UBM wires/pads."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1683": [
+    "The platform integrates silicon nitride (SiN) nanophotonic waveguides, TO optical switches, waveguide-coupled Si photodetectors, and MEMS devices.",
+    "The LD is further integrated into an active photonic circuit with a thermo-optic switch and monolithically-integrated Si photodetector.",
+    "The lasers featured top-side P and N contacts - enabling electrical connectivity to the Si photonic chips via the solder bumps and UBM wires/pads.",
+    "An active PIC with a bonded laser, power monitor, and optical switch was realized.",
+    "With lithographically-defined alignment structures and mechanical stoppers on both the Si photonic chips and LDs, we achieve continuous-wave on-chip optical powers up to 9.6 mW - an order of magnitude beyond previous reports [10, 11] and comparable to actively-aligned LD demonstrations [7, 8].",
+    "Mechanical stoppers and alignment marks matched to those of the Si photonic chips were formed by trench etching.",
+    "The phase shifter used a 3-pass folded waveguide structure, a titanium nitride heater, and thermal isolation trenches [1].",
+    "We report hybrid integration of blue InGaN laser diodes in a visible-light silicon photonics platform using passive-alignment flip-chip bonding.",
+    "We demonstrate continuous-wave on-chip optical powers of 9.6 mW and integration with optical switches and photodetectors.",
+    "Output 1(2) exhibited an ER of 19.8(22.0) dB and P\u03c0 of 12.8(12.0) mW.",
+    "The power monitor consisted of an evanescent directional coupler power tap, which directed tapped light to a 200-\u00b5m long, waveguide-coupled, PIN, Si photodetector [6].",
+    "SiN inverse taper edge couplers (150-nm nominal tip width, designed for mode matching to the LD) at the socket facets enabled optical coupling between the Si photonic chips and bonded LDs.",
+    "Optical mode simulations indicate an optimally-aligned coupling loss (due to modal mismatch) of 2.7 dB, and hence, \u2248 2.1 dB of excess loss due to misalignment after bonding.",
+    "With lithographically-defined alignment structures and mechanical stoppers on both the Si photonic chips and LDs, we achieve continuous-wave on-chip optical powers up to 9.6 mW...",
+    "In this work, we demonstrate passive-alignment flip-chip bonding of 450-nm wavelength indium gallium nitride (InGaN) lasers in a foundry-fabricated visible-light Si photonics platform.",
+    "With 50 mA of drive current, the peak wavelength was 451.4 nm and the linewidth was < 0.05 nm (limited by the OSA resolution)."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1682": [
+    "The platform integrates silicon nitride (SiN) nanophotonic waveguides, TO optical switches, waveguide-coupled Si photodetectors, and MEMS devices.",
+    "The LD is further integrated into an active photonic circuit with a thermo-optic switch and monolithically-integrated Si photodetector.",
+    "The lasers featured top-side P and N contacts - enabling electrical connectivity to the Si photonic chips via the solder bumps and UBM wires/pads.",
+    "An active PIC with a bonded laser, power monitor, and optical switch was realized.",
+    "With lithographically-defined alignment structures and mechanical stoppers on both the Si photonic chips and LDs, we achieve continuous-wave on-chip optical powers up to 9.6 mW - an order of magnitude beyond previous reports [10, 11] and comparable to actively-aligned LD demonstrations [7, 8].",
+    "Mechanical stoppers and alignment marks matched to those of the Si photonic chips were formed by trench etching.",
+    "The phase shifter used a 3-pass folded waveguide structure, a titanium nitride heater, and thermal isolation trenches [1].",
+    "We report hybrid integration of blue InGaN laser diodes in a visible-light silicon photonics platform using passive-alignment flip-chip bonding.",
+    "We demonstrate continuous-wave on-chip optical powers of 9.6 mW and integration with optical switches and photodetectors.",
+    "Output 1(2) exhibited an ER of 19.8(22.0) dB and P\u03c0 of 12.8(12.0) mW.",
+    "The power monitor consisted of an evanescent directional coupler power tap, which directed tapped light to a 200-\u00b5m long, waveguide-coupled, PIN, Si photodetector [6].",
+    "SiN inverse taper edge couplers (150-nm nominal tip width, designed for mode matching to the LD) at the socket facets enabled optical coupling between the Si photonic chips and bonded LDs.",
+    "Optical mode simulations indicate an optimally-aligned coupling loss (due to modal mismatch) of 2.7 dB, and hence, \u2248 2.1 dB of excess loss due to misalignment after bonding.",
+    "With lithographically-defined alignment structures and mechanical stoppers on both the Si photonic chips and LDs, we achieve continuous-wave on-chip optical powers up to 9.6 mW...",
+    "In this work, we demonstrate passive-alignment flip-chip bonding of 450-nm wavelength indium gallium nitride (InGaN) lasers in a foundry-fabricated visible-light Si photonics platform.",
+    "With 50 mA of drive current, the peak wavelength was 451.4 nm and the linewidth was < 0.05 nm (limited by the OSA resolution)."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1681": [
+    "The platform integrates silicon nitride (SiN) nanophotonic waveguides, TO optical switches, waveguide-coupled Si photodetectors, and MEMS devices.",
+    "The LD is further integrated into an active photonic circuit with a thermo-optic switch and monolithically-integrated Si photodetector.",
+    "The lasers featured top-side P and N contacts - enabling electrical connectivity to the Si photonic chips via the solder bumps and UBM wires/pads.",
+    "An active PIC with a bonded laser, power monitor, and optical switch was realized.",
+    "With lithographically-defined alignment structures and mechanical stoppers on both the Si photonic chips and LDs, we achieve continuous-wave on-chip optical powers up to 9.6 mW - an order of magnitude beyond previous reports [10, 11] and comparable to actively-aligned LD demonstrations [7, 8].",
+    "Mechanical stoppers and alignment marks matched to those of the Si photonic chips were formed by trench etching.",
+    "The phase shifter used a 3-pass folded waveguide structure, a titanium nitride heater, and thermal isolation trenches [1].",
+    "We report hybrid integration of blue InGaN laser diodes in a visible-light silicon photonics platform using passive-alignment flip-chip bonding.",
+    "We demonstrate continuous-wave on-chip optical powers of 9.6 mW and integration with optical switches and photodetectors.",
+    "Output 1(2) exhibited an ER of 19.8(22.0) dB and P\u03c0 of 12.8(12.0) mW.",
+    "The power monitor consisted of an evanescent directional coupler power tap, which directed tapped light to a 200-\u00b5m long, waveguide-coupled, PIN, Si photodetector [6].",
+    "SiN inverse taper edge couplers (150-nm nominal tip width, designed for mode matching to the LD) at the socket facets enabled optical coupling between the Si photonic chips and bonded LDs.",
+    "Optical mode simulations indicate an optimally-aligned coupling loss (due to modal mismatch) of 2.7 dB, and hence, \u2248 2.1 dB of excess loss due to misalignment after bonding.",
+    "With lithographically-defined alignment structures and mechanical stoppers on both the Si photonic chips and LDs, we achieve continuous-wave on-chip optical powers up to 9.6 mW...",
+    "In this work, we demonstrate passive-alignment flip-chip bonding of 450-nm wavelength indium gallium nitride (InGaN) lasers in a foundry-fabricated visible-light Si photonics platform.",
+    "With 50 mA of drive current, the peak wavelength was 451.4 nm and the linewidth was < 0.05 nm (limited by the OSA resolution)."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1721": [
+    "Mechanical stoppers and alignment marks matched to those of the Si photonic chips were formed by trench etching."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1711": [
+    "The LD is further integrated into an active photonic circuit with a thermo-optic switch and monolithically-integrated Si photodetector.",
+    "An active PIC with a bonded laser, power monitor, and optical switch was realized."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1742": [
+    "The phase shifter used a 3-pass folded waveguide structure, a titanium nitride heater, and thermal isolation trenches [1]."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:991": [
+    "The platform integrates silicon nitride (SiN) nanophotonic waveguides, TO optical switches, waveguide-coupled Si photodetectors, and MEMS devices."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1680": [
+    "The platform integrates silicon nitride (SiN) nanophotonic waveguides, TO optical switches, waveguide-coupled Si photodetectors, and MEMS devices.",
+    "The LD is further integrated into an active photonic circuit with a thermo-optic switch and monolithically-integrated Si photodetector.",
+    "The lasers featured top-side P and N contacts - enabling electrical connectivity to the Si photonic chips via the solder bumps and UBM wires/pads.",
+    "An active PIC with a bonded laser, power monitor, and optical switch was realized.",
+    "With lithographically-defined alignment structures and mechanical stoppers on both the Si photonic chips and LDs, we achieve continuous-wave on-chip optical powers up to 9.6 mW - an order of magnitude beyond previous reports [10, 11] and comparable to actively-aligned LD demonstrations [7, 8].",
+    "Mechanical stoppers and alignment marks matched to those of the Si photonic chips were formed by trench etching.",
+    "The phase shifter used a 3-pass folded waveguide structure, a titanium nitride heater, and thermal isolation trenches [1].",
+    "We report hybrid integration of blue InGaN laser diodes in a visible-light silicon photonics platform using passive-alignment flip-chip bonding.",
+    "We demonstrate continuous-wave on-chip optical powers of 9.6 mW and integration with optical switches and photodetectors.",
+    "Output 1(2) exhibited an ER of 19.8(22.0) dB and P\u03c0 of 12.8(12.0) mW.",
+    "The power monitor consisted of an evanescent directional coupler power tap, which directed tapped light to a 200-\u00b5m long, waveguide-coupled, PIN, Si photodetector [6].",
+    "SiN inverse taper edge couplers (150-nm nominal tip width, designed for mode matching to the LD) at the socket facets enabled optical coupling between the Si photonic chips and bonded LDs.",
+    "Optical mode simulations indicate an optimally-aligned coupling loss (due to modal mismatch) of 2.7 dB, and hence, \u2248 2.1 dB of excess loss due to misalignment after bonding.",
+    "With lithographically-defined alignment structures and mechanical stoppers on both the Si photonic chips and LDs, we achieve continuous-wave on-chip optical powers up to 9.6 mW...",
+    "In this work, we demonstrate passive-alignment flip-chip bonding of 450-nm wavelength indium gallium nitride (InGaN) lasers in a foundry-fabricated visible-light Si photonics platform.",
+    "With 50 mA of drive current, the peak wavelength was 451.4 nm and the linewidth was < 0.05 nm (limited by the OSA resolution)."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1725": [
+    "Optical mode simulations indicate an optimally-aligned coupling loss (due to modal mismatch) of 2.7 dB, and hence, \u2248 2.1 dB of excess loss due to misalignment after bonding."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1730": [
+    "The power monitor consisted of an evanescent directional coupler power tap, which directed tapped light to a 200-\u00b5m long, waveguide-coupled, PIN, Si photodetector [6].",
+    "An active PIC with a bonded laser, power monitor, and optical switch was realized."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1732": [
+    "The power monitor consisted of an evanescent directional coupler power tap, which directed tapped light to a 200-\u00b5m long, waveguide-coupled, PIN, Si photodetector [6].",
+    "An active PIC with a bonded laser, power monitor, and optical switch was realized."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1702": [
+    "We report hybrid integration of blue InGaN laser diodes in a visible-light silicon photonics platform using passive-alignment flip-chip bonding.",
+    "In this work, we demonstrate passive-alignment flip-chip bonding of 450-nm wavelength indium gallium nitride (InGaN) lasers in a foundry-fabricated visible-light Si photonics platform.",
+    "With lithographically-defined alignment structures and mechanical stoppers on both the Si photonic chips and LDs, we achieve continuous-wave on-chip optical powers up to 9.6 mW...",
+    "An active PIC with a bonded laser, power monitor, and optical switch was realized."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1691": [
+    "The LD is further integrated into an active photonic circuit with a thermo-optic switch and monolithically-integrated Si photodetector."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1675": [
+    "The platform integrates silicon nitride (SiN) nanophotonic waveguides, TO optical switches, waveguide-coupled Si photodetectors, and MEMS devices.",
+    "The LD is further integrated into an active photonic circuit with a thermo-optic switch and monolithically-integrated Si photodetector.",
+    "The lasers featured top-side P and N contacts - enabling electrical connectivity to the Si photonic chips via the solder bumps and UBM wires/pads.",
+    "An active PIC with a bonded laser, power monitor, and optical switch was realized.",
+    "With lithographically-defined alignment structures and mechanical stoppers on both the Si photonic chips and LDs, we achieve continuous-wave on-chip optical powers up to 9.6 mW - an order of magnitude beyond previous reports [10, 11] and comparable to actively-aligned LD demonstrations [7, 8].",
+    "Mechanical stoppers and alignment marks matched to those of the Si photonic chips were formed by trench etching.",
+    "The phase shifter used a 3-pass folded waveguide structure, a titanium nitride heater, and thermal isolation trenches [1].",
+    "We report hybrid integration of blue InGaN laser diodes in a visible-light silicon photonics platform using passive-alignment flip-chip bonding.",
+    "We demonstrate continuous-wave on-chip optical powers of 9.6 mW and integration with optical switches and photodetectors.",
+    "Output 1(2) exhibited an ER of 19.8(22.0) dB and P\u03c0 of 12.8(12.0) mW.",
+    "The power monitor consisted of an evanescent directional coupler power tap, which directed tapped light to a 200-\u00b5m long, waveguide-coupled, PIN, Si photodetector [6].",
+    "SiN inverse taper edge couplers (150-nm nominal tip width, designed for mode matching to the LD) at the socket facets enabled optical coupling between the Si photonic chips and bonded LDs.",
+    "Optical mode simulations indicate an optimally-aligned coupling loss (due to modal mismatch) of 2.7 dB, and hence, \u2248 2.1 dB of excess loss due to misalignment after bonding.",
+    "With lithographically-defined alignment structures and mechanical stoppers on both the Si photonic chips and LDs, we achieve continuous-wave on-chip optical powers up to 9.6 mW...",
+    "In this work, we demonstrate passive-alignment flip-chip bonding of 450-nm wavelength indium gallium nitride (InGaN) lasers in a foundry-fabricated visible-light Si photonics platform.",
+    "With 50 mA of drive current, the peak wavelength was 451.4 nm and the linewidth was < 0.05 nm (limited by the OSA resolution)."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:185": [
+    "The LD is further integrated into an active photonic circuit with a thermo-optic switch and monolithically-integrated Si photodetector."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1685": [
+    "The platform integrates silicon nitride (SiN) nanophotonic waveguides, TO optical switches, waveguide-coupled Si photodetectors, and MEMS devices."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1728": [
+    "Optical mode simulations indicate an optimally-aligned coupling loss (due to modal mismatch) of 2.7 dB, and hence, \u2248 2.1 dB of excess loss due to misalignment after bonding."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1704": [
+    "We demonstrate continuous-wave on-chip optical powers of 9.6 mW and integration with optical switches and photodetectors.",
+    "With lithographically-defined alignment structures and mechanical stoppers on both the Si photonic chips and LDs, we achieve continuous-wave on-chip optical powers up to 9.6 mW - an order of magnitude beyond previous reports [10, 11] and comparable to actively-aligned LD demonstrations [7, 8]."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1724": [
+    "Optical mode simulations indicate an optimally-aligned coupling loss (due to modal mismatch) of 2.7 dB, and hence, \u2248 2.1 dB of excess loss due to misalignment after bonding."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1672": [
+    "The LD is further integrated into an active photonic circuit with a thermo-optic switch and monolithically-integrated Si photodetector.",
+    "An active PIC with a bonded laser, power monitor, and optical switch was realized."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1710": [
+    "With lithographically-defined alignment structures and mechanical stoppers on both the Si photonic chips and LDs, we achieve continuous-wave on-chip optical powers up to 9.6 mW..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1753": [
+    "Output 1(2) exhibited an ER of 19.8(22.0) dB and P\u03c0 of 12.8(12.0) mW."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1735": [
+    "The power monitor consisted of an evanescent directional coupler power tap, which directed tapped light to a 200-\u00b5m long, waveguide-coupled, PIN, Si photodetector [6].",
+    "An active PIC with a bonded laser, power monitor, and optical switch was realized."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:573": [
+    "In [34], SiN grating couplers with fully etched teeth and a metallic back reflector were demonstrated.",
+    "The back reflector increased the coupling efficiency from $-4.2$ to $-2.3$ dB."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:576": [
+    "In [34], SiN grating couplers with fully etched teeth and a metallic back reflector were demonstrated.",
+    "The back reflector increased the coupling efficiency from $-4.2$ to $-2.3$ dB."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:509": [
+    "The key challenges are low-loss waveguides, efficient input/output coupling, sensitive detectors, and heterogeneous integration of lasers and modulators...",
+    "These elements, already developed for telecommunications, require further development for  $\\lambda < 1100\\mathrm{nm}$ .",
+    "...the key challenges of realizing the VIS spectrum Si photonics include... the integration of active functionalities, such as lasers, modulators, and detectors."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:520": [
+    "The red light grating design achieved... a full width at half maximum (FWHM) bandwidth of $\\sim$ 30 nm...",
+    "The maximum gain bandwidth product (GBP) was 234 GHz with a bandwi"
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:512": [
+    "The key challenges are low-loss waveguides, efficient input/output coupling, sensitive detectors, and heterogeneous integration of lasers and modulators...",
+    "These elements, already developed for telecommunications, require further development for  $\\lambda < 1100\\mathrm{nm}$ .",
+    "...the key challenges of realizing the VIS spectrum Si photonics include... the integration of active functionalities, such as lasers, modulators, and detectors."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:551": [
+    "Al_{2}O_{3} has a refractive index of 1.65--1.72 over the VIS and near-ultraviolet (near-UV) spectrum with a bandgap around 5--7 eV [15,17].",
+    "Si, with a bandgap corresponding to a wavelength of 1.1 \u00b5m, is a convenient material to form integrated PDs for VIS and NIR photonic platforms."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:531": [
+    "The rectilinear cantilevers achieved beam scanning ranges ($\\Delta\\theta$) between 11\u00b0 and 30.1\u00b0 with an applied electrical power of less than 30 mW, depending on the length of the cantilevers (300--1000 \u00b5m).",
+    "The scan range was limited by the depth of the undercut region below the cantilever."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:529": [
+    "PDs are essential components in PICs for receiving light and to serve as monitors of PIC operation."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:587": [
+    "The light is then adiabatically coupled to the SiN1 routing layer using an interlayer adiabatic tapered transition (Fig. 3(b)).",
+    "The SiN2-SiN1 interlayer transition was low loss with $&lt; 0.5$ dB loss across the VISspectrum."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:539": [
+    "The key challenges are low-loss waveguides, efficient input/output coupling, sensitive detectors, and heterogeneous integration of lasers and modulators, particularly those using lithium niobate and other electro-optic materials.",
+    "These elements, already developed for telecommunications, require further development for  $\\lambda &lt; 1100\\mathrm{nm}$ .",
+    "Because of the shorter wavelength, the key challenges of realizing the VIS spectrum Si photonics include... the integration of active functionalities, such as lasers, modulators, and detectors."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:549": [
+    "Al_{2}O_{3} has a refractive index of 1.65--1.72 over the VIS and near-ultraviolet (near-UV) spectrum with a bandgap around 5--7 eV [15,17].",
+    "Si, with a bandgap corresponding to a wavelength of 1.1 \u00b5m, is a convenient material to form integrated PDs for VIS and NIR photonic platforms."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:360": [
+    "SiN has a refractive index around 2...",
+    "Al_{2}O_{3} has a refractive index of 1.65--1.72 over the VIS and near-ultraviolet (near-UV) spectrum...",
+    "For a refractive index near 2, which is the case for the aforementioned materials, high-confinement single-mode waveguides have a height in the 100--200 nm range with a width around 250--500 nm (Fig. 1(a)) [13].",
+    "TO phase shifters operate by creating a local temperature change in the device, $\\Delta T$, to induce a refractive index change."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:536": [
+    "The key challenges are low-loss waveguides, efficient input/output coupling, sensitive detectors, and heterogeneous integration of lasers and modulators, particularly those using lithium niobate and other electro-optic materials.",
+    "These elements, already developed for telecommunications, require further development for  $\\lambda &lt; 1100\\mathrm{nm}$ .",
+    "Because of the shorter wavelength, the key challenges of realizing the VIS spectrum Si photonics include... the integration of active functionalities, such as lasers, modulators, and detectors."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:566": [
+    "The platform contains two layers of SiN waveguides, a Si mesa, doped PN junctions, two layers of routing metals (aluminum), and a resistive layer of titanium nitride (TiN) [14]."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:597": [
+    "...the temperature change is achieved with an integrated heater, which is a resistive metal layer."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:547": [
+    "Al_{2}O_{3} has a refractive index of 1.65--1.72 over the VIS and near-ultraviolet (near-UV) spectrum with a bandgap around 5--7 eV [15,17].",
+    "Si, with a bandgap corresponding to a wavelength of 1.1 \u00b5m, is a convenient material to form integrated PDs for VIS and NIR photonic platforms."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:583": [
+    "To realize a foundry-compatible efficient edge coupler with optical fibers while retaining a light-routing layer with high-confinement waveguides, an approach is to use two layers of SiN waveguides...",
+    "The top layer (SiN2) is thin, with a thickness of about  $75\\mathrm{nm}$ , and the lower layer (SiN1) has a thickness of  $150\\mathrm{nm}$  and is the main routing waveguide layer.",
+    "The light is then adiabatically coupled to the SiN1 routing layer using an interlayer adiabatic tapered transition (Fig. 3(b)).",
+    "Lin et al. [50] reported bilayer edge couplers with fiber-to-chip coupling loss of  $&gt;4.0$  dB per facet over a broad spectrum of  $\\lambda = 445 - 640\\mathrm{nm}$..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:508": [
+    "The key challenges are low-loss waveguides, efficient input/output coupling, sensitive detectors, and heterogeneous integration of lasers and modulators...",
+    "These elements, already developed for telecommunications, require further development for  $\\lambda < 1100\\mathrm{nm}$ .",
+    "...the key challenges of realizing the VIS spectrum Si photonics include... the integration of active functionalities, such as lasers, modulators, and detectors."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:521": [
+    "The red light grating design achieved... a full width at half maximum (FWHM) bandwidth of $\\sim$ 30 nm...",
+    "The maximum gain bandwidth product (GBP) was 234 GHz with a bandwi"
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:352": [
+    "The key challenges are low-loss waveguides, efficient input/output coupling, sensitive detectors, and heterogeneous integration of lasers and modulators...",
+    "These elements, already developed for telecommunications, require further development for  $\\lambda < 1100\\mathrm{nm}$ .",
+    "...the key challenges of realizing the VIS spectrum Si photonics include... the integration of active functionalities, such as lasers, modulators, and detectors."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:499": [
+    "Because of the shorter wavelength, the key challenges of realizing the VIS spectrum Si photonics include... the integration of active functionalities, such as lasers, modulators, and detectors.",
+    "The light is then adiabatically coupled to the SiN1 routing layer using an interlayer adiabatic tapered transition (Fig. 3(b)).",
+    "The undercut is optional and is only applied to regions that should be isolated from the substrate.",
+    "However, the low  $P_{\\pi}$  is at the cost of long  $10 - 90\\%$  rise/fall times of  $570 / 590 \\mu \\mathrm{s}$  in the MZI switches.",
+    "SiN has a refractive index around 2...",
+    "To realize a foundry-compatible efficient edge coupler with optical fibers while retaining a light-routing layer with high-confinement waveguides, an approach is to use two layers of SiN waveguides...",
+    "...the temperature change is achieved with an integrated heater, which is a resistive metal layer.",
+    "However, at low power levels ($-$63.7 $\\pm$ 0.7 dBm) with $V_{B}=-20$ V, the APDs had $R_{p}$ of 0.83 $\\pm$ 0.05 A/W with an $M$ of 12.3 $\\pm$ 8.",
+    "The back reflector increased the coupling efficiency from $-4.2$ to $-2.3$ dB.",
+    "Using a thermally assisted electric field poling process, where an external electric field is applied while the  $\\mathrm{Si}_3\\mathrm{N}_4$  is heated, mobile ions in the material can redistribute to form a space charge region, i.e., a permanent electric field,  $E_{DC}$ , confined to the  $\\mathrm{Si}_3\\mathrm{N}_4$  waveguide core.",
+    "The platform contains two layers of SiN waveguides, a Si mesa, doped PN junctions, two layers of routing metals (aluminum), and a resistive layer of titanium nitride (TiN) [14].",
+    "The scan range was limited by the depth of the undercut region below the cantilever.",
+    "By applying power to the TiN heater, due to the difference in the coefficients of thermal expansion of Al and SiO_{2}, the cantilever would deflect downward.",
+    "The key challenges are low-loss waveguides, efficient input/output coupling, sensitive detectors, and heterogeneous integration of lasers and modulators, particularly those using lithium niobate and other electro-optic materials.",
+    "The red light grating design achieved... a full width at half maximum (FWHM) bandwidth of $\\sim$ 30 nm...",
+    "Thin-film lithium niobate (LiNbO_{3}) has also gained interest in VIS-PICs in recent years [27], but it is generally not compatible with front-end Si photonics or CMOS processing.",
+    "The maximum gain bandwidth product (GBP) was 234 GHz with a bandwi",
+    "In [48], we demonstrated electrothermally actuated one-dimensional (1D) and two-dimensional (2D) beam scanners in a VIS-PIC platform (Fig. 2).",
+    "The high-displacement (low-displacement) versions of these cantilever phase shifters achieved  $V_{\\pi}$  of  $15.2\\mathrm{V}$  (18 V) at  $\\lambda = 737~\\mathrm{nm}$ , with a peak mechanical resonance frequency of  $6.8\\mathrm{MHz}$  (23 MHz) [36].",
+    "Al_{2}O_{3} has a refractive index of 1.65--1.72 over the VIS and near-ultraviolet (near-UV) spectrum..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:500": [
+    "Because of the shorter wavelength, the key challenges of realizing the VIS spectrum Si photonics include... the integration of active functionalities, such as lasers, modulators, and detectors.",
+    "The light is then adiabatically coupled to the SiN1 routing layer using an interlayer adiabatic tapered transition (Fig. 3(b)).",
+    "The undercut is optional and is only applied to regions that should be isolated from the substrate.",
+    "However, the low  $P_{\\pi}$  is at the cost of long  $10 - 90\\%$  rise/fall times of  $570 / 590 \\mu \\mathrm{s}$  in the MZI switches.",
+    "SiN has a refractive index around 2...",
+    "To realize a foundry-compatible efficient edge coupler with optical fibers while retaining a light-routing layer with high-confinement waveguides, an approach is to use two layers of SiN waveguides...",
+    "...the temperature change is achieved with an integrated heater, which is a resistive metal layer.",
+    "However, at low power levels ($-$63.7 $\\pm$ 0.7 dBm) with $V_{B}=-20$ V, the APDs had $R_{p}$ of 0.83 $\\pm$ 0.05 A/W with an $M$ of 12.3 $\\pm$ 8.",
+    "The back reflector increased the coupling efficiency from $-4.2$ to $-2.3$ dB.",
+    "Using a thermally assisted electric field poling process, where an external electric field is applied while the  $\\mathrm{Si}_3\\mathrm{N}_4$  is heated, mobile ions in the material can redistribute to form a space charge region, i.e., a permanent electric field,  $E_{DC}$ , confined to the  $\\mathrm{Si}_3\\mathrm{N}_4$  waveguide core.",
+    "The platform contains two layers of SiN waveguides, a Si mesa, doped PN junctions, two layers of routing metals (aluminum), and a resistive layer of titanium nitride (TiN) [14].",
+    "The scan range was limited by the depth of the undercut region below the cantilever.",
+    "By applying power to the TiN heater, due to the difference in the coefficients of thermal expansion of Al and SiO_{2}, the cantilever would deflect downward.",
+    "The key challenges are low-loss waveguides, efficient input/output coupling, sensitive detectors, and heterogeneous integration of lasers and modulators, particularly those using lithium niobate and other electro-optic materials.",
+    "The red light grating design achieved... a full width at half maximum (FWHM) bandwidth of $\\sim$ 30 nm...",
+    "Thin-film lithium niobate (LiNbO_{3}) has also gained interest in VIS-PICs in recent years [27], but it is generally not compatible with front-end Si photonics or CMOS processing.",
+    "The maximum gain bandwidth product (GBP) was 234 GHz with a bandwi",
+    "In [48], we demonstrated electrothermally actuated one-dimensional (1D) and two-dimensional (2D) beam scanners in a VIS-PIC platform (Fig. 2).",
+    "The high-displacement (low-displacement) versions of these cantilever phase shifters achieved  $V_{\\pi}$  of  $15.2\\mathrm{V}$  (18 V) at  $\\lambda = 737~\\mathrm{nm}$ , with a peak mechanical resonance frequency of  $6.8\\mathrm{MHz}$  (23 MHz) [36].",
+    "Al_{2}O_{3} has a refractive index of 1.65--1.72 over the VIS and near-ultraviolet (near-UV) spectrum..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:527": [
+    "The red light grating design achieved... a full width at half maximum (FWHM) bandwidth of $\\sim$ 30 nm...",
+    "The maximum gain bandwidth product (GBP) was 234 GHz with a bandwi"
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:497": [
+    "Because of the shorter wavelength, the key challenges of realizing the VIS spectrum Si photonics include... the integration of active functionalities, such as lasers, modulators, and detectors.",
+    "The light is then adiabatically coupled to the SiN1 routing layer using an interlayer adiabatic tapered transition (Fig. 3(b)).",
+    "The undercut is optional and is only applied to regions that should be isolated from the substrate.",
+    "However, the low  $P_{\\pi}$  is at the cost of long  $10 - 90\\%$  rise/fall times of  $570 / 590 \\mu \\mathrm{s}$  in the MZI switches.",
+    "SiN has a refractive index around 2...",
+    "To realize a foundry-compatible efficient edge coupler with optical fibers while retaining a light-routing layer with high-confinement waveguides, an approach is to use two layers of SiN waveguides...",
+    "...the temperature change is achieved with an integrated heater, which is a resistive metal layer.",
+    "However, at low power levels ($-$63.7 $\\pm$ 0.7 dBm) with $V_{B}=-20$ V, the APDs had $R_{p}$ of 0.83 $\\pm$ 0.05 A/W with an $M$ of 12.3 $\\pm$ 8.",
+    "The back reflector increased the coupling efficiency from $-4.2$ to $-2.3$ dB.",
+    "Using a thermally assisted electric field poling process, where an external electric field is applied while the  $\\mathrm{Si}_3\\mathrm{N}_4$  is heated, mobile ions in the material can redistribute to form a space charge region, i.e., a permanent electric field,  $E_{DC}$ , confined to the  $\\mathrm{Si}_3\\mathrm{N}_4$  waveguide core.",
+    "The platform contains two layers of SiN waveguides, a Si mesa, doped PN junctions, two layers of routing metals (aluminum), and a resistive layer of titanium nitride (TiN) [14].",
+    "The scan range was limited by the depth of the undercut region below the cantilever.",
+    "By applying power to the TiN heater, due to the difference in the coefficients of thermal expansion of Al and SiO_{2}, the cantilever would deflect downward.",
+    "The key challenges are low-loss waveguides, efficient input/output coupling, sensitive detectors, and heterogeneous integration of lasers and modulators, particularly those using lithium niobate and other electro-optic materials.",
+    "The red light grating design achieved... a full width at half maximum (FWHM) bandwidth of $\\sim$ 30 nm...",
+    "Thin-film lithium niobate (LiNbO_{3}) has also gained interest in VIS-PICs in recent years [27], but it is generally not compatible with front-end Si photonics or CMOS processing.",
+    "The maximum gain bandwidth product (GBP) was 234 GHz with a bandwi",
+    "In [48], we demonstrated electrothermally actuated one-dimensional (1D) and two-dimensional (2D) beam scanners in a VIS-PIC platform (Fig. 2).",
+    "The high-displacement (low-displacement) versions of these cantilever phase shifters achieved  $V_{\\pi}$  of  $15.2\\mathrm{V}$  (18 V) at  $\\lambda = 737~\\mathrm{nm}$ , with a peak mechanical resonance frequency of  $6.8\\mathrm{MHz}$  (23 MHz) [36].",
+    "Al_{2}O_{3} has a refractive index of 1.65--1.72 over the VIS and near-ultraviolet (near-UV) spectrum..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:601": [
+    "To realize an efficient phase shifter, we have demonstrated a design using SiN waveguides and titanium nitride (TiN) heaters in a suspended structure with multiple waveguide passes in [49] as shown in Fig. 4."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:595": [
+    "...the temperature change is achieved with an integrated heater, which is a resistive metal layer."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:550": [
+    "Al_{2}O_{3} has a refractive index of 1.65--1.72 over the VIS and near-ultraviolet (near-UV) spectrum with a bandgap around 5--7 eV [15,17].",
+    "Si, with a bandgap corresponding to a wavelength of 1.1 \u00b5m, is a convenient material to form integrated PDs for VIS and NIR photonic platforms."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:572": [
+    "There is also a deep trench etch for forming edge couplers and thermal isolation, as well as an undercut etch in the Si substrate.",
+    "The undercut is optional and is only applied to regions that should be isolated from the substrate."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:544": [
+    "The key challenges are low-loss waveguides, efficient input/output coupling, sensitive detectors, and heterogeneous integration of lasers and modulators, particularly those using lithium niobate and other electro-optic materials.",
+    "Thin-film lithium niobate (LiNbO_{3}) has also gained interest in VIS-PICs in recent years [27], but it is generally not compatible with front-end Si photonics or CMOS processing."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:546": [
+    "Al_{2}O_{3} has a refractive index of 1.65--1.72 over the VIS and near-ultraviolet (near-UV) spectrum with a bandgap around 5--7 eV [15,17].",
+    "Si, with a bandgap corresponding to a wavelength of 1.1 \u00b5m, is a convenient material to form integrated PDs for VIS and NIR photonic platforms."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:565": [
+    "The platform contains two layers of SiN waveguides, a Si mesa, doped PN junctions, two layers of routing metals (aluminum), and a resistive layer of titanium nitride (TiN) [14]."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:570": [
+    "There is also a deep trench etch for forming edge couplers and thermal isolation, as well as an undercut etch in the Si substrate.",
+    "The undercut is optional and is only applied to regions that should be isolated from the substrate."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:511": [
+    "The key challenges are low-loss waveguides, efficient input/output coupling, sensitive detectors, and heterogeneous integration of lasers and modulators...",
+    "These elements, already developed for telecommunications, require further development for  $\\lambda < 1100\\mathrm{nm}$ .",
+    "...the key challenges of realizing the VIS spectrum Si photonics include... the integration of active functionalities, such as lasers, modulators, and detectors."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:603": [
+    "To realize an efficient phase shifter, we have demonstrated a design using SiN waveguides and titanium nitride (TiN) heaters in a suspended structure with multiple waveguide passes in [49] as shown in Fig. 4."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:538": [
+    "The key challenges are low-loss waveguides, efficient input/output coupling, sensitive detectors, and heterogeneous integration of lasers and modulators, particularly those using lithium niobate and other electro-optic materials.",
+    "These elements, already developed for telecommunications, require further development for  $\\lambda &lt; 1100\\mathrm{nm}$ .",
+    "Because of the shorter wavelength, the key challenges of realizing the VIS spectrum Si photonics include... the integration of active functionalities, such as lasers, modulators, and detectors."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:548": [
+    "Al_{2}O_{3} has a refractive index of 1.65--1.72 over the VIS and near-ultraviolet (near-UV) spectrum with a bandgap around 5--7 eV [15,17].",
+    "Si, with a bandgap corresponding to a wavelength of 1.1 \u00b5m, is a convenient material to form integrated PDs for VIS and NIR photonic platforms."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:507": [
+    "The key challenges are low-loss waveguides, efficient input/output coupling, sensitive detectors, and heterogeneous integration of lasers and modulators...",
+    "These elements, already developed for telecommunications, require further development for  $\\lambda < 1100\\mathrm{nm}$ .",
+    "...the key challenges of realizing the VIS spectrum Si photonics include... the integration of active functionalities, such as lasers, modulators, and detectors."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:496": [
+    "Because of the shorter wavelength, the key challenges of realizing the VIS spectrum Si photonics include... the integration of active functionalities, such as lasers, modulators, and detectors.",
+    "The light is then adiabatically coupled to the SiN1 routing layer using an interlayer adiabatic tapered transition (Fig. 3(b)).",
+    "The undercut is optional and is only applied to regions that should be isolated from the substrate.",
+    "However, the low  $P_{\\pi}$  is at the cost of long  $10 - 90\\%$  rise/fall times of  $570 / 590 \\mu \\mathrm{s}$  in the MZI switches.",
+    "SiN has a refractive index around 2...",
+    "To realize a foundry-compatible efficient edge coupler with optical fibers while retaining a light-routing layer with high-confinement waveguides, an approach is to use two layers of SiN waveguides...",
+    "...the temperature change is achieved with an integrated heater, which is a resistive metal layer.",
+    "However, at low power levels ($-$63.7 $\\pm$ 0.7 dBm) with $V_{B}=-20$ V, the APDs had $R_{p}$ of 0.83 $\\pm$ 0.05 A/W with an $M$ of 12.3 $\\pm$ 8.",
+    "The back reflector increased the coupling efficiency from $-4.2$ to $-2.3$ dB.",
+    "Using a thermally assisted electric field poling process, where an external electric field is applied while the  $\\mathrm{Si}_3\\mathrm{N}_4$  is heated, mobile ions in the material can redistribute to form a space charge region, i.e., a permanent electric field,  $E_{DC}$ , confined to the  $\\mathrm{Si}_3\\mathrm{N}_4$  waveguide core.",
+    "The platform contains two layers of SiN waveguides, a Si mesa, doped PN junctions, two layers of routing metals (aluminum), and a resistive layer of titanium nitride (TiN) [14].",
+    "The scan range was limited by the depth of the undercut region below the cantilever.",
+    "By applying power to the TiN heater, due to the difference in the coefficients of thermal expansion of Al and SiO_{2}, the cantilever would deflect downward.",
+    "The key challenges are low-loss waveguides, efficient input/output coupling, sensitive detectors, and heterogeneous integration of lasers and modulators, particularly those using lithium niobate and other electro-optic materials.",
+    "The red light grating design achieved... a full width at half maximum (FWHM) bandwidth of $\\sim$ 30 nm...",
+    "Thin-film lithium niobate (LiNbO_{3}) has also gained interest in VIS-PICs in recent years [27], but it is generally not compatible with front-end Si photonics or CMOS processing.",
+    "The maximum gain bandwidth product (GBP) was 234 GHz with a bandwi",
+    "In [48], we demonstrated electrothermally actuated one-dimensional (1D) and two-dimensional (2D) beam scanners in a VIS-PIC platform (Fig. 2).",
+    "The high-displacement (low-displacement) versions of these cantilever phase shifters achieved  $V_{\\pi}$  of  $15.2\\mathrm{V}$  (18 V) at  $\\lambda = 737~\\mathrm{nm}$ , with a peak mechanical resonance frequency of  $6.8\\mathrm{MHz}$  (23 MHz) [36].",
+    "Al_{2}O_{3} has a refractive index of 1.65--1.72 over the VIS and near-ultraviolet (near-UV) spectrum..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:526": [
+    "The red light grating design achieved... a full width at half maximum (FWHM) bandwidth of $\\sim$ 30 nm...",
+    "The maximum gain bandwidth product (GBP) was 234 GHz with a bandwi"
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:590": [
+    "...the temperature change is achieved with an integrated heater, which is a resistive metal layer."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1441": [
+    "The light emitters, optimized for blue or amber light, combine end-fire optical phased arrays with slab gratings to suppress higher-order sidelobes.",
+    "In vivo experiments in mice demonstrated that the optical phased array provided sufficient power for optogenetic stimulation."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1429": [
+    "However, due to optical scattering in brain tissue, light-emitting implants are needed to bring patterned illumination to deep brain regions.",
+    "While beam steering performance in tissue reveals challenges, including beam broadening from scattering and the need for a wider steering range..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1432": [
+    "However, due to optical scattering in brain tissue, light-emitting implants are needed to bring patterned illumination to deep brain regions.",
+    "While beam steering performance in tissue reveals challenges, including beam broadening from scattering and the need for a wider steering range..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1430": [
+    "However, due to optical scattering in brain tissue, light-emitting implants are needed to bring patterned illumination to deep brain regions.",
+    "While beam steering performance in tissue reveals challenges, including beam broadening from scattering and the need for a wider steering range..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1433": [
+    "However, due to optical scattering in brain tissue, light-emitting implants are needed to bring patterned illumination to deep brain regions.",
+    "While beam steering performance in tissue reveals challenges, including beam broadening from scattering and the need for a wider steering range..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1480": [
+    "While beam steering performance in tissue reveals challenges, including beam broadening from scattering...",
+    "This design choice reduces the ratio of our supercontinuum laser source linewidth (~1 - 2nm) to the FSR of the OPA, thereby minimizing beam broadening caused by the linewidth of the laser source."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1439": [
+    "The light emitters, optimized for blue or amber light, combine end-fire optical phased arrays with slab gratings to suppress higher-order sidelobes.",
+    "In vivo experiments in mice demonstrated that the optical phased array provided sufficient power for optogenetic stimulation."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1547": [
+    "where $\\beta$ is the propagation constant of the in-plane emission... and $k$ is the propagation constant of the output beam as depicted in Fig. 2a."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1526": [
+    "The FPR was introduced to transition between the end-fire phased array and the curved grating.",
+    "the dependence of the out-of-plane emission angle on the incident angle of the FPR beam on the curved grating."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1535": [
+    "In this case, the relationship between the in-plane propagation angle, $\\phi_{in}$ , and out-of-plane emission angles, $(\\theta, \\varphi)$ , follows the phase-matching condition..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1517": [
+    "Table 1 | Specifications of design parameters for different OPA types... | Slab Curvature | ... Concave ... Straight ... Convex"
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1416": [
+    "The delay lines had a differential path length of  5 - 6\u03bcm  to realize OPAs with a wide free spectral range (FSR) of  ~20nm .",
+    "This design choice reduces the ratio of our supercontinuum laser source linewidth  (~1 - 2nm)  to the FSR of the OPA, thereby minimizing beam broadening caused by the linewidth of the laser source."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1476": [
+    "Each OPA consisted of a star coupler, which divided the light from an input waveguide into 16 delay line waveguides.",
+    "The delay lines converged to form an end-fire phased array, which emitted light in the plane of the probe.",
+    "The interference of the phased array emission to steer the beam primarily occurred within the chip, and the formed beam was radiated out of the plane by a slab grating.",
+    "In vivo experiments in mice demonstrated that the optical phased array provided sufficient power for optogenetic stimulation."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1491": [
+    "Each OPA consisted of a star coupler, which divided the light from an input waveguide into 16 delay line waveguides."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1561": [
+    "Table 2 | Comparison of the OPA designs in fluorescein solution ... | Device Size (mm2) | ... 0.018 ... 0.007* ... 0.011 ... 0.006"
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1095": [
+    "In brain activity mapping with optogenetics, patterned illumination is crucial for targeted neural stimulation.",
+    "However, due to optical scattering in brain tissue, light-emitting implants are needed to bring patterned illumination to deep brain regions."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1444": [
+    "The light emitters, optimized for blue or amber light, combine end-fire optical phased arrays with slab gratings to suppress higher-order sidelobes.",
+    "In vivo experiments in mice demonstrated that the optical phased array provided sufficient power for optogenetic stimulation."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1443": [
+    "The light emitters, optimized for blue or amber light, combine end-fire optical phased arrays with slab gratings to suppress higher-order sidelobes.",
+    "In vivo experiments in mice demonstrated that the optical phased array provided sufficient power for optogenetic stimulation."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1407": [
+    "A unique photonic circuit architecture that combines an in-plane phased array with a light-emitting grating-enabled single-lobe beam steering in a compact footprint without meeting the half-wavelength pitch criterion.",
+    "the OPA designs with the FPR achieved beam steering through two mechanisms illustrated in Fig. 2a: (1) the lateral translation of the beam that first formed in the FPR, and (2) the dependence of the out-of-plane emission angle on the incident angle of the FPR beam on the curved grating."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1465": [
+    "Each OPA consisted of a star coupler, which divided the light from an input waveguide into 16 delay line waveguides.",
+    "The delay lines converged to form an end-fire phased array, which emitted light in the plane of the probe.",
+    "The interference of the phased array emission to steer the beam primarily occurred within the chip, and the formed beam was radiated out of the plane by a slab grating.",
+    "In vivo experiments in mice demonstrated that the optical phased array provided sufficient power for optogenetic stimulation."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1405": [
+    "A unique photonic circuit architecture that combines an in-plane phased array with a light-emitting grating-enabled single-lobe beam steering in a compact footprint without meeting the half-wavelength pitch criterion.",
+    "the OPA designs with the FPR achieved beam steering through two mechanisms illustrated in Fig. 2a: (1) the lateral translation of the beam that first formed in the FPR, and (2) the dependence of the out-of-plane emission angle on the incident angle of the FPR beam on the curved grating."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1544": [
+    "where $\\beta$ is the propagation constant of the in-plane emission... and $k$ is the propagation constant of the output beam as depicted in Fig. 2a."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1541": [
+    "where $\\beta$ is the propagation constant of the in-plane emission... and $k$ is the propagation constant of the output beam as depicted in Fig. 2a."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1490": [
+    "Each OPA consisted of a star coupler, which divided the light from an input waveguide into 16 delay line waveguides."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1437": [
+    "However, due to optical scattering in brain tissue, light-emitting implants are needed to bring patterned illumination to deep brain regions.",
+    "While beam steering performance in tissue reveals challenges, including beam broadening from scattering and the need for a wider steering range..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1532": [
+    "For OPA II, with the aim of a reduced device footprint, the end-fired phased array was coupled directly to a straight one-dimensional slab grating."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1401": [
+    "In this case, the relationship between the in-plane propagation angle, $\\phi_{in}$ , and out-of-plane emission angles, $(\\theta, \\varphi)$ , follows the phase-matching condition...",
+    "The input wavelength to the device tuned the in-plane emission angle, which also steered the out-of-plane beam.",
+    "However, due to optical scattering in brain tissue, light-emitting implants are needed to bring patterned illumination to deep brain regions.",
+    "The delay lines converged to form an end-fire phased array, which emitted light in the plane of the probe.",
+    "While beam steering performance in tissue reveals challenges, including beam broadening from scattering and the need for a wider steering range...",
+    "Here we propose neural probes with grating-based light emitters that generate a single steerable beam.",
+    "Each OPA consisted of a star coupler, which divided the light from an input waveguide into 16 delay line waveguides.",
+    "This design choice reduces the ratio of our supercontinuum laser source linewidth (~1 - 2nm) to the FSR of the OPA, thereby minimizing beam broadening caused by the linewidth of the laser source.",
+    "the dependence of the out-of-plane emission angle on the incident angle of the FPR beam on the curved grating.",
+    "The FPR was introduced to transition between the end-fire phased array and the curved grating.",
+    "In vivo experiments in mice demonstrated that the optical phased array provided sufficient power for optogenetic stimulation.",
+    "A unique photonic circuit architecture that combines an in-plane phased array with a light-emitting grating-enabled single-lobe beam steering in a compact footprint without meeting the half-wavelength pitch criterion.",
+    "The nanophotonic circuits for blue light-emitting probes were defined in a 150 nm thick PECVD SiN waveguide layer (refractive index between 1.82 and 1.9 at 488~\\mathrm{nm}^{39} ) or 120 nm thick LPCVD SiN waveguide layer (refractive index of 2.04 at 488~\\mathrm{nm}^{39} ).",
+    "For OPA II, with the aim of a reduced device footprint, the end-fired phased array was coupled directly to a straight one-dimensional slab grating.",
+    "While beam steering performance in tissue reveals challenges, including beam broadening from scattering...",
+    "The delay lines had a differential path length of  5 - 6\u03bcm  to realize OPAs with a wide free spectral range (FSR) of  ~20nm .",
+    "Neural probes for the amber wavelengths used a 200 nm thick LPCVD SiN layer.",
+    "Table 2 | Comparison of the OPA designs in fluorescein solution ... | Device Size (mm2) | ... 0.018 ... 0.007* ... 0.011 ... 0.006",
+    "The light emitters, optimized for blue or amber light, combine end-fire optical phased arrays with slab gratings to suppress higher-order sidelobes.",
+    "In brain activity mapping with optogenetics, patterned illumination is crucial for targeted neural stimulation."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1482": [
+    "While beam steering performance in tissue reveals challenges, including beam broadening from scattering...",
+    "This design choice reduces the ratio of our supercontinuum laser source linewidth (~1 - 2nm) to the FSR of the OPA, thereby minimizing beam broadening caused by the linewidth of the laser source."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1396": [
+    "In this case, the relationship between the in-plane propagation angle, $\\phi_{in}$ , and out-of-plane emission angles, $(\\theta, \\varphi)$ , follows the phase-matching condition...",
+    "The input wavelength to the device tuned the in-plane emission angle, which also steered the out-of-plane beam.",
+    "However, due to optical scattering in brain tissue, light-emitting implants are needed to bring patterned illumination to deep brain regions.",
+    "The delay lines converged to form an end-fire phased array, which emitted light in the plane of the probe.",
+    "While beam steering performance in tissue reveals challenges, including beam broadening from scattering and the need for a wider steering range...",
+    "Here we propose neural probes with grating-based light emitters that generate a single steerable beam.",
+    "Each OPA consisted of a star coupler, which divided the light from an input waveguide into 16 delay line waveguides.",
+    "This design choice reduces the ratio of our supercontinuum laser source linewidth (~1 - 2nm) to the FSR of the OPA, thereby minimizing beam broadening caused by the linewidth of the laser source.",
+    "the dependence of the out-of-plane emission angle on the incident angle of the FPR beam on the curved grating.",
+    "The FPR was introduced to transition between the end-fire phased array and the curved grating.",
+    "In vivo experiments in mice demonstrated that the optical phased array provided sufficient power for optogenetic stimulation.",
+    "A unique photonic circuit architecture that combines an in-plane phased array with a light-emitting grating-enabled single-lobe beam steering in a compact footprint without meeting the half-wavelength pitch criterion.",
+    "The nanophotonic circuits for blue light-emitting probes were defined in a 150 nm thick PECVD SiN waveguide layer (refractive index between 1.82 and 1.9 at 488~\\mathrm{nm}^{39} ) or 120 nm thick LPCVD SiN waveguide layer (refractive index of 2.04 at 488~\\mathrm{nm}^{39} ).",
+    "For OPA II, with the aim of a reduced device footprint, the end-fired phased array was coupled directly to a straight one-dimensional slab grating.",
+    "While beam steering performance in tissue reveals challenges, including beam broadening from scattering...",
+    "The delay lines had a differential path length of  5 - 6\u03bcm  to realize OPAs with a wide free spectral range (FSR) of  ~20nm .",
+    "Neural probes for the amber wavelengths used a 200 nm thick LPCVD SiN layer.",
+    "Table 2 | Comparison of the OPA designs in fluorescein solution ... | Device Size (mm2) | ... 0.018 ... 0.007* ... 0.011 ... 0.006",
+    "The light emitters, optimized for blue or amber light, combine end-fire optical phased arrays with slab gratings to suppress higher-order sidelobes.",
+    "In brain activity mapping with optogenetics, patterned illumination is crucial for targeted neural stimulation."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1436": [
+    "However, due to optical scattering in brain tissue, light-emitting implants are needed to bring patterned illumination to deep brain regions.",
+    "While beam steering performance in tissue reveals challenges, including beam broadening from scattering and the need for a wider steering range..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1449": [
+    "Here we propose neural probes with grating-based light emitters that generate a single steerable beam.",
+    "The light emitters, optimized for blue or amber light, combine end-fire optical phased arrays with slab gratings to suppress higher-order sidelobes."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1515": [
+    "Table 1 | Specifications of design parameters for different OPA types... | Slab Curvature | ... Concave ... Straight ... Convex"
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1435": [
+    "However, due to optical scattering in brain tissue, light-emitting implants are needed to bring patterned illumination to deep brain regions.",
+    "While beam steering performance in tissue reveals challenges, including beam broadening from scattering and the need for a wider steering range..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1413": [
+    "The delay lines had a differential path length of  5 - 6\u03bcm  to realize OPAs with a wide free spectral range (FSR) of  ~20nm .",
+    "This design choice reduces the ratio of our supercontinuum laser source linewidth  (~1 - 2nm)  to the FSR of the OPA, thereby minimizing beam broadening caused by the linewidth of the laser source."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1399": [
+    "In this case, the relationship between the in-plane propagation angle, $\\phi_{in}$ , and out-of-plane emission angles, $(\\theta, \\varphi)$ , follows the phase-matching condition...",
+    "The input wavelength to the device tuned the in-plane emission angle, which also steered the out-of-plane beam.",
+    "However, due to optical scattering in brain tissue, light-emitting implants are needed to bring patterned illumination to deep brain regions.",
+    "The delay lines converged to form an end-fire phased array, which emitted light in the plane of the probe.",
+    "While beam steering performance in tissue reveals challenges, including beam broadening from scattering and the need for a wider steering range...",
+    "Here we propose neural probes with grating-based light emitters that generate a single steerable beam.",
+    "Each OPA consisted of a star coupler, which divided the light from an input waveguide into 16 delay line waveguides.",
+    "This design choice reduces the ratio of our supercontinuum laser source linewidth (~1 - 2nm) to the FSR of the OPA, thereby minimizing beam broadening caused by the linewidth of the laser source.",
+    "the dependence of the out-of-plane emission angle on the incident angle of the FPR beam on the curved grating.",
+    "The FPR was introduced to transition between the end-fire phased array and the curved grating.",
+    "In vivo experiments in mice demonstrated that the optical phased array provided sufficient power for optogenetic stimulation.",
+    "A unique photonic circuit architecture that combines an in-plane phased array with a light-emitting grating-enabled single-lobe beam steering in a compact footprint without meeting the half-wavelength pitch criterion.",
+    "The nanophotonic circuits for blue light-emitting probes were defined in a 150 nm thick PECVD SiN waveguide layer (refractive index between 1.82 and 1.9 at 488~\\mathrm{nm}^{39} ) or 120 nm thick LPCVD SiN waveguide layer (refractive index of 2.04 at 488~\\mathrm{nm}^{39} ).",
+    "For OPA II, with the aim of a reduced device footprint, the end-fired phased array was coupled directly to a straight one-dimensional slab grating.",
+    "While beam steering performance in tissue reveals challenges, including beam broadening from scattering...",
+    "The delay lines had a differential path length of  5 - 6\u03bcm  to realize OPAs with a wide free spectral range (FSR) of  ~20nm .",
+    "Neural probes for the amber wavelengths used a 200 nm thick LPCVD SiN layer.",
+    "Table 2 | Comparison of the OPA designs in fluorescein solution ... | Device Size (mm2) | ... 0.018 ... 0.007* ... 0.011 ... 0.006",
+    "The light emitters, optimized for blue or amber light, combine end-fire optical phased arrays with slab gratings to suppress higher-order sidelobes.",
+    "In brain activity mapping with optogenetics, patterned illumination is crucial for targeted neural stimulation."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1489": [
+    "To facilitate electrophysiological recordings, the neural probe platform included biocompatible titanium nitride (TiN) deposited on the surface for microelectrodes and three aluminum metal layers for routing."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1527": [
+    "For OPA II, with the aim of a reduced device footprint, the end-fired phased array was coupled directly to a straight one-dimensional slab grating."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1460": [
+    "Here we propose neural probes with grating-based light emitters that generate a single steerable beam.",
+    "The light emitters, optimized for blue or amber light, combine end-fire optical phased arrays with slab gratings to suppress higher-order sidelobes."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1521": [
+    "The FPR was introduced to transition between the end-fire phased array and the curved grating.",
+    "the dependence of the out-of-plane emission angle on the incident angle of the FPR beam on the curved grating."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1431": [
+    "However, due to optical scattering in brain tissue, light-emitting implants are needed to bring patterned illumination to deep brain regions.",
+    "While beam steering performance in tissue reveals challenges, including beam broadening from scattering and the need for a wider steering range..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:494": [
+    "Implantable silicon (Si) neural probes leverage the dense integration of photonic and electronic circuits on Si to enable concurrent electrophysiology recording and optogenetic stimulation..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:490": [
+    "In this work, we have designed out-of-plane focusing grating emitters that focus the emitted light at a point above the surface of the neural probe for spatially precise targeting of neurons at a distance.",
+    "The focusing of light emission has the additional benefit of reaching the required intensities for optogenetic actuation of \u223c 1 mW/mm^{2} [2] at lower input powers compared to other emitters."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:477": [
+    "...focus the emitted light at a specified distance above the surface of the probe for spatially precise optogenetic targeting of neurons.",
+    "Using the holographic principle, we designed gratings for wavelengths of 488 and 594 nm, targeting the excitation spectra of the optogenetic actuators Channelrhodopsin-2 and Chrimson, respectively.",
+    "Although live tissue experiments were not performed, the probes delivered sufficient intensities for optogenetic stimulation.",
+    "The measured optical emission pattern of these emitters in non-scattering medium and tissue matched well with simulations.",
+    "In this work, we have designed out-of-plane focusing grating emitters that focus the emitted light at a point above the surface of the neural probe for spatially precise targeting of neurons at a distance.",
+    "The focusing of light emission has the additional benefit of reaching the required intensities for optogenetic actuation of \u223c 1 mW/mm^{2} [2] at lower input powers compared to other emitters.",
+    "Implantable silicon (Si) neural probes leverage the dense integration of photonic and electronic circuits on Si to enable concurrent electrophysiology recording and optogenetic stimulation...",
+    "We have designed, fabricated, and characterized implantable silicon neural probes with nanophotonic grating emitters that focus the emitted light at a specified distance above the surface of the probe for spatially precise optogenetic targeting of neurons."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:486": [
+    "...focus the emitted light at a specified distance above the surface of the probe for spatially precise optogenetic targeting of neurons.",
+    "In this work, we have designed out-of-plane focusing grating emitters that focus the emitted light at a point above the surface of the neural probe for spatially precise targeting of neurons at a distance.",
+    "The focusing of light emission has the additional benefit of reaching the required intensities for optogenetic actuation of \u223c 1 mW/mm^{2} [2] at lower input powers compared to other emitters."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:480": [
+    "We have designed, fabricated, and characterized implantable silicon neural probes with nanophotonic grating emitters that focus the emitted light at a specified distance above the surface of the probe for spatially precise optogenetic targeting of neurons.",
+    "Using the holographic principle, we designed gratings for wavelengths of 488 and 594 nm, targeting the excitation spectra of the optogenetic actuators Channelrhodopsin-2 and Chrimson, respectively.",
+    "The measured optical emission pattern of these emitters in non-scattering medium and tissue matched well with simulations."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:495": [
+    "Implantable silicon (Si) neural probes leverage the dense integration of photonic and electronic circuits on Si to enable concurrent electrophysiology recording and optogenetic stimulation..."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:487": [
+    "In this work, we have designed out-of-plane focusing grating emitters that focus the emitted light at a point above the surface of the neural probe for spatially precise targeting of neurons at a distance.",
+    "The focusing of light emission has the additional benefit of reaching the required intensities for optogenetic actuation of \u223c 1 mW/mm^{2} [2] at lower input powers compared to other emitters."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:474": [
+    "...focus the emitted light at a specified distance above the surface of the probe for spatially precise optogenetic targeting of neurons.",
+    "Using the holographic principle, we designed gratings for wavelengths of 488 and 594 nm, targeting the excitation spectra of the optogenetic actuators Channelrhodopsin-2 and Chrimson, respectively.",
+    "Although live tissue experiments were not performed, the probes delivered sufficient intensities for optogenetic stimulation.",
+    "The measured optical emission pattern of these emitters in non-scattering medium and tissue matched well with simulations.",
+    "In this work, we have designed out-of-plane focusing grating emitters that focus the emitted light at a point above the surface of the neural probe for spatially precise targeting of neurons at a distance.",
+    "The focusing of light emission has the additional benefit of reaching the required intensities for optogenetic actuation of \u223c 1 mW/mm^{2} [2] at lower input powers compared to other emitters.",
+    "Implantable silicon (Si) neural probes leverage the dense integration of photonic and electronic circuits on Si to enable concurrent electrophysiology recording and optogenetic stimulation...",
+    "We have designed, fabricated, and characterized implantable silicon neural probes with nanophotonic grating emitters that focus the emitted light at a specified distance above the surface of the probe for spatially precise optogenetic targeting of neurons."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:481": [
+    "We have designed, fabricated, and characterized implantable silicon neural probes with nanophotonic grating emitters that focus the emitted light at a specified distance above the surface of the probe for spatially precise optogenetic targeting of neurons.",
+    "Using the holographic principle, we designed gratings for wavelengths of 488 and 594 nm, targeting the excitation spectra of the optogenetic actuators Channelrhodopsin-2 and Chrimson, respectively.",
+    "The measured optical emission pattern of these emitters in non-scattering medium and tissue matched well with simulations."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:482": [
+    "We have designed, fabricated, and characterized implantable silicon neural probes with nanophotonic grating emitters that focus the emitted light at a specified distance above the surface of the probe for spatially precise optogenetic targeting of neurons.",
+    "Using the holographic principle, we designed gratings for wavelengths of 488 and 594 nm, targeting the excitation spectra of the optogenetic actuators Channelrhodopsin-2 and Chrimson, respectively.",
+    "The measured optical emission pattern of these emitters in non-scattering medium and tissue matched well with simulations."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:479": [
+    "We have designed, fabricated, and characterized implantable silicon neural probes with nanophotonic grating emitters that focus the emitted light at a specified distance above the surface of the probe for spatially precise optogenetic targeting of neurons.",
+    "Using the holographic principle, we designed gratings for wavelengths of 488 and 594 nm, targeting the excitation spectra of the optogenetic actuators Channelrhodopsin-2 and Chrimson, respectively.",
+    "The measured optical emission pattern of these emitters in non-scattering medium and tissue matched well with simulations."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:478": [
+    "We have designed, fabricated, and characterized implantable silicon neural probes with nanophotonic grating emitters that focus the emitted light at a specified distance above the surface of the probe for spatially precise optogenetic targeting of neurons.",
+    "Using the holographic principle, we designed gratings for wavelengths of 488 and 594 nm, targeting the excitation spectra of the optogenetic actuators Channelrhodopsin-2 and Chrimson, respectively.",
+    "The measured optical emission pattern of these emitters in non-scattering medium and tissue matched well with simulations."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:473": [
+    "...focus the emitted light at a specified distance above the surface of the probe for spatially precise optogenetic targeting of neurons.",
+    "Using the holographic principle, we designed gratings for wavelengths of 488 and 594 nm, targeting the excitation spectra of the optogenetic actuators Channelrhodopsin-2 and Chrimson, respectively.",
+    "Although live tissue experiments were not performed, the probes delivered sufficient intensities for optogenetic stimulation.",
+    "The measured optical emission pattern of these emitters in non-scattering medium and tissue matched well with simulations.",
+    "In this work, we have designed out-of-plane focusing grating emitters that focus the emitted light at a point above the surface of the neural probe for spatially precise targeting of neurons at a distance.",
+    "The focusing of light emission has the additional benefit of reaching the required intensities for optogenetic actuation of \u223c 1 mW/mm^{2} [2] at lower input powers compared to other emitters.",
+    "Implantable silicon (Si) neural probes leverage the dense integration of photonic and electronic circuits on Si to enable concurrent electrophysiology recording and optogenetic stimulation...",
+    "We have designed, fabricated, and characterized implantable silicon neural probes with nanophotonic grating emitters that focus the emitted light at a specified distance above the surface of the probe for spatially precise optogenetic targeting of neurons."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:489": [
+    "In this work, we have designed out-of-plane focusing grating emitters that focus the emitted light at a point above the surface of the neural probe for spatially precise targeting of neurons at a distance.",
+    "The focusing of light emission has the additional benefit of reaching the required intensities for optogenetic actuation of \u223c 1 mW/mm^{2} [2] at lower input powers compared to other emitters."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:483": [
+    "...focus the emitted light at a specified distance above the surface of the probe for spatially precise optogenetic targeting of neurons.",
+    "In this work, we have designed out-of-plane focusing grating emitters that focus the emitted light at a point above the surface of the neural probe for spatially precise targeting of neurons at a distance.",
+    "The focusing of light emission has the additional benefit of reaching the required intensities for optogenetic actuation of \u223c 1 mW/mm^{2} [2] at lower input powers compared to other emitters."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:488": [
+    "In this work, we have designed out-of-plane focusing grating emitters that focus the emitted light at a point above the surface of the neural probe for spatially precise targeting of neurons at a distance.",
+    "The focusing of light emission has the additional benefit of reaching the required intensities for optogenetic actuation of \u223c 1 mW/mm^{2} [2] at lower input powers compared to other emitters."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:485": [
+    "...focus the emitted light at a specified distance above the surface of the probe for spatially precise optogenetic targeting of neurons.",
+    "In this work, we have designed out-of-plane focusing grating emitters that focus the emitted light at a point above the surface of the neural probe for spatially precise targeting of neurons at a distance.",
+    "The focusing of light emission has the additional benefit of reaching the required intensities for optogenetic actuation of \u223c 1 mW/mm^{2} [2] at lower input powers compared to other emitters."
+  ],
+  "5:fe564c09-334e-4362-a136-e4fd9087c2f3:484": [
+    "...focus the emitted light at a specified distance above the surface of the probe for spatially precise optogenetic targeting of neurons.",
+    "In this work, we have designed out-of-plane focusing grating emitters that focus the emitted light at a point above the surface of the neural probe for spatially precise targeting of neurons at a distance.",
+    "The focusing of light emission has the additional benefit of reaching the required intensities for optogenetic actuation of \u223c 1 mW/mm^{2} [2] at lower input powers compared to other emitters."
+  ]
+}

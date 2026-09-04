@@ -1,0 +1,23 @@
+{
+  "_about": "E1 retrieval query set — leak-resistant 'design-intent' queries (user language, NOT restatements of the PDK docstrings). gold = domain-correct PDK module(s) for the intent, ARM-INDEPENDENT (not the pipeline's own selection). Sourced from the 4 GETTING_STARTED worked examples (gold confirmed by their 2_CS.txt) plus unambiguous single-type intents over the 34-cell DemoPDK. DRAFT — gold sets need Poon-group sign-off before any number is treated as final; some (VOA->pindiode, phase-shifter->heaters) are judgment calls flagged in 'note'.",
+  "queries": [
+    {"id": "dc_split", "kind": "intent", "query": "split an optical signal evenly between two waveguides using evanescent coupling between adjacent waveguides", "gold": ["_directional_coupler", "_directional_coupler_adiabatic"], "note": "L1 worked example -> _directional_coupler"},
+    {"id": "mmi1x2", "kind": "intent", "query": "a compact multimode-interference power splitter with one input and two outputs", "gold": ["_mmi1x2"], "note": "L4 -> _mmi1x2"},
+    {"id": "mmi2x2", "kind": "intent", "query": "a two-by-two multimode-interference coupler", "gold": ["_mmi2x2"]},
+    {"id": "mzi2x2_hs", "kind": "intent", "query": "a high-speed two-by-two Mach-Zehnder modulator operating around 10 GHz", "gold": ["mzi_2x2_pn_diode", "mzi_2x2_pindiode_cband"], "note": "L2 -> mzi_2x2_pn_diode; thermo-optic 2x2 MZI would be wrong for 10 GHz"},
+    {"id": "mzi1x2", "kind": "intent", "query": "a one-by-two Mach-Zehnder splitter with electro-optic tuning", "gold": ["mzi_1x2_pindiode_cband"], "note": "L3"},
+    {"id": "phase_shifter", "kind": "intent", "query": "thermally tune the optical phase of light on-chip", "gold": ["heater_tin_cband", "heater_doped_si_cband"], "note": "L4 used heater_tin_cband; doped-Si heater also thermo-optic"},
+    {"id": "grating_coupler", "kind": "intent", "query": "couple light between an optical fiber and the chip through a vertical surface grating", "gold": ["_gc"], "note": "L4"},
+    {"id": "edge_coupler", "kind": "intent", "query": "couple light from a fiber into the chip at the cleaved edge facet", "gold": ["edge_coupler"]},
+    {"id": "voa", "kind": "intent", "query": "a variable optical attenuator to electrically control signal power", "gold": ["pindiode_cband"], "note": "L4 used pindiode_cband as the VOA — JUDGMENT CALL, confirm"},
+    {"id": "wdm", "kind": "intent", "query": "a wavelength-division multiplexer that combines four wavelength channels onto one waveguide", "gold": ["wdm_mzi1x4"], "note": "from Testbench prompt"},
+    {"id": "microring", "kind": "intent", "query": "a resonant ring filter that selects a narrow wavelength band", "gold": ["mrr_1x1", "mrr_1x1_heater_tin", "mrr_2x2"]},
+    {"id": "ring_modulator", "kind": "intent", "query": "a resonant micro-ring modulator for compact high-speed modulation", "gold": ["mrm_1x1_pndiode"]},
+    {"id": "tw_modulator", "kind": "intent", "query": "a traveling-wave electro-optic modulator for high-bandwidth modulation", "gold": ["tw_mzm"]},
+    {"id": "crossing", "kind": "intent", "query": "route two optical signals across each other on the same layer with low crosstalk", "gold": ["crossing"]},
+    {"id": "photodetector", "kind": "intent", "query": "convert on-chip optical power into an electrical photocurrent", "gold": ["photodetector"]},
+    {"id": "laser", "kind": "intent", "query": "an integrated on-chip source that generates laser light", "gold": ["laser"]},
+    {"id": "psr", "kind": "intent", "query": "separate and rotate the two polarizations of incoming light", "gold": ["polarization_splitter_rotator"]},
+    {"id": "waveguide_bend", "kind": "intent", "query": "route a waveguide around a ninety-degree turn with low bending loss", "gold": ["bend_euler", "_bend_s"]}
+  ]
+}

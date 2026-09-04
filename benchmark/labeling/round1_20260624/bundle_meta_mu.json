@@ -1,0 +1,249 @@
+{
+  "annotator_id": "mu",
+  "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025",
+  "n_available": 92,
+  "n_shown": 40,
+  "n_no_evidence_excluded": 0,
+  "items": {
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1687": {
+      "confidence": 0.8061250060796737,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:198": {
+      "confidence": 0.7976197332143784,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1684": {
+      "confidence": 0.6631129026412964,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1708": {
+      "confidence": 0.6383525669574738,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:999": {
+      "confidence": 0.8026835441589356,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1743": {
+      "confidence": 0.8134630918502808,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1677": {
+      "confidence": 1.0,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1726": {
+      "confidence": 0.6353368788957596,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1690": {
+      "confidence": 0.6561260640621186,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1676": {
+      "confidence": 1.0,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1747": {
+      "confidence": 0.8349764823913575,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1754": {
+      "confidence": 0.798741802573204,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1709": {
+      "confidence": 0.7947729647159576,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1727": {
+      "confidence": 0.33440653142200105,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1757": {
+      "confidence": 0.4769772763681708,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1733": {
+      "confidence": 0.7608024418354035,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1722": {
+      "confidence": 0.6339781254529954,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1683": {
+      "confidence": 1.0,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1682": {
+      "confidence": 1.0,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1681": {
+      "confidence": 0.9,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1721": {
+      "confidence": 0.6137991487979889,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1711": {
+      "confidence": 0.9277335911989212,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1742": {
+      "confidence": 0.8272395551204681,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:991": {
+      "confidence": 0.8365827023983001,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1680": {
+      "confidence": 0.9,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1725": {
+      "confidence": 0.6664777159690858,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1730": {
+      "confidence": 0.8896120905876159,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1732": {
+      "confidence": 0.8994059294462204,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1702": {
+      "confidence": 0.8778472661972047,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1691": {
+      "confidence": 0.6681416302919387,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1675": {
+      "confidence": 0.9,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:185": {
+      "confidence": 0.8531069874763488,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1685": {
+      "confidence": 0.6786278009414672,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1728": {
+      "confidence": 0.34652710968796213,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1704": {
+      "confidence": 0.8915815234184266,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1724": {
+      "confidence": 0.6784328043460846,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1672": {
+      "confidence": 0.9139469027519226,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1710": {
+      "confidence": 0.6439576536417008,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1753": {
+      "confidence": 0.6853383660316468,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:1735": {
+      "confidence": 0.8944556981325149,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "05_Mu_Flip-Chip_Bonded_Laser_Diodes_OFC2025"
+    }
+  }
+}

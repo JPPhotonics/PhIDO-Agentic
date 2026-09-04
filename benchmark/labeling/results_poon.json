@@ -1,0 +1,44 @@
+{
+  "per_document": {
+    "01_Silicon_photonics_for_visible_and_near_ir_spectrum": {
+      "n": 40,
+      "rate": 0.675
+    }
+  },
+  "total_judged": 40,
+  "total_skipped": 0,
+  "pooled_naive_wilson": {
+    "rate": 0.675,
+    "ci95": [
+      0.52017458088898,
+      0.7991568303733828
+    ],
+    "note": "ignores clustering -> too narrow; reference only"
+  },
+  "pooled_cluster_t": {
+    "note": "only 1 cluster(s); no clustered CI possible"
+  },
+  "judge_validation": {
+    "overall": {
+      "n": 40,
+      "agreement": 0.675,
+      "cohen_kappa": 0.0
+    },
+    "out_of_ontology": {
+      "n": 24,
+      "agreement": 0.5416666666666666,
+      "cohen_kappa": 0.0,
+      "note": "primary: validates judge where the ontology cannot"
+    }
+  },
+  "overlap_agreement": {
+    "note": "no overlap items labelled by >=2 annotators"
+  },
+  "timing": {
+    "poon": {
+      "n": 40,
+      "median_s": 8.7,
+      "rushed": false
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "annotator_id": "xue",
+  "source_document": "12_Xue_grating_emitter_neuralprobe_arXiv2401.04525",
+  "n_available": 18,
+  "n_shown": 18,
+  "n_no_evidence_excluded": 0,
+  "items": {
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:494": {
+      "confidence": 0.8877728700637818,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "12_Xue_grating_emitter_neuralprobe_arXiv2401.04525"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:490": {
+      "confidence": 0.8633373737335205,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "12_Xue_grating_emitter_neuralprobe_arXiv2401.04525"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:477": {
+      "confidence": 0.95,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "12_Xue_grating_emitter_neuralprobe_arXiv2401.04525"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:486": {
+      "confidence": 0.858225417137146,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "12_Xue_grating_emitter_neuralprobe_arXiv2401.04525"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:480": {
+      "confidence": 0.8660603046417237,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "12_Xue_grating_emitter_neuralprobe_arXiv2401.04525"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:495": {
+      "confidence": 0.8373535364866257,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "12_Xue_grating_emitter_neuralprobe_arXiv2401.04525"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:487": {
+      "confidence": 0.9017063796520233,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "12_Xue_grating_emitter_neuralprobe_arXiv2401.04525"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:474": {
+      "confidence": 1.0,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "12_Xue_grating_emitter_neuralprobe_arXiv2401.04525"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:481": {
+      "confidence": 0.8743424773216247,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "12_Xue_grating_emitter_neuralprobe_arXiv2401.04525"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:482": {
+      "confidence": 0.8403939843177796,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "12_Xue_grating_emitter_neuralprobe_arXiv2401.04525"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:479": {
+      "confidence": 0.7553803026676178,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "12_Xue_grating_emitter_neuralprobe_arXiv2401.04525"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:478": {
+      "confidence": 0.7756358623504639,
+      "is_out_of_ontology": true,
+      "is_overlap": false,
+      "source_document": "12_Xue_grating_emitter_neuralprobe_arXiv2401.04525"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:473": {
+      "confidence": 1.0,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "12_Xue_grating_emitter_neuralprobe_arXiv2401.04525"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:489": {
+      "confidence": 0.8711577028036118,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "12_Xue_grating_emitter_neuralprobe_arXiv2401.04525"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:483": {
+      "confidence": 0.9092382907867431,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "12_Xue_grating_emitter_neuralprobe_arXiv2401.04525"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:488": {
+      "confidence": 0.9135551124811173,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "12_Xue_grating_emitter_neuralprobe_arXiv2401.04525"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:485": {
+      "confidence": 0.8771388202905654,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "12_Xue_grating_emitter_neuralprobe_arXiv2401.04525"
+    },
+    "5:fe564c09-334e-4362-a136-e4fd9087c2f3:484": {
+      "confidence": 0.9194335758686066,
+      "is_out_of_ontology": false,
+      "is_overlap": false,
+      "source_document": "12_Xue_grating_emitter_neuralprobe_arXiv2401.04525"
+    }
+  }
+}

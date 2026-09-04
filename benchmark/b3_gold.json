@@ -1,0 +1,262 @@
+{
+  "_meta": {
+    "title": "B3 independent gold-topology set",
+    "status": "DRAFT — pending Poon-group domain sign-off",
+    "purpose": "Ground-truth circuit topologies for scoring schematic-generation (p300) output, INDEPENDENT of the pipeline. Replaces topology_eval.py's default gold, which is the pipeline's own 4_SG.txt tutorial output on the same 4 prompts (scoring pipeline-vs-self = contamination).",
+    "independence": "Every topology below was authored from the prompt's circuit semantics + photonics domain knowledge, NOT copied from any pipeline run. No 4_SG.txt / DSL / CS artifact was consulted for the WIRING. Only the shared PDK vocabulary (component classes + port conventions) is reused — that is the common ontology both arms target, not a pipeline decision.",
+    "what_it_measures": "TOPOLOGY correctness only: 'did the schematic wire the right KINDS of components together, with the right connectivity?' Scored node-id-agnostic (typed-edge multiset F1 + component-class F1 + approx_ged, via topology_eval.score_topology). Component SELECTION (which exact cell, e.g. mzi_2x2_pn_diode vs mzi_2x2_heater_tin_cband) is deliberately NOT penalized here — that is A5/B2's job. Both gold and prediction are normalized to component CLASSES (function+arity) via class_map before comparison.",
+    "ambiguity_policy": "Each entry carries topology_certain. Prompts that fix the wiring uniquely are true. Prompts that leave the inter-component connection COUNT open (e.g. 'a DC connected to a 2x2 MMI' — one link or a full 2-link cascade?) are false, given a documented canonical reading in 'ambiguity'; these need explicit domain sign-off and may be excluded from the headline F1 or scored with an acceptance band.",
+    "accept": "Where more than one component class is functionally correct for a node (e.g. a passive 1x2 power splitter may be an MMI_1x2 or a directional-coupler split), the node lists alternates in 'accept'; the scorer treats any listed class as a typed match for that node.",
+    "port_conventions": {
+      "1x1 (STRAIGHT, BEND, RING_1bus, HEATER, MZI_1x1, MOD_1x1, PD)": "o1 = left/input, o2 = right/output",
+      "GC (grating coupler, 1x0)": "o1 = the single on-chip optical port (the other face couples to fiber/free-space)",
+      "1x2 (MMI_1x2, MZI_1x2, PSR, splitters)": "o1 = single/common side (input), o2 & o3 = split side (outputs)",
+      "2x2 (DC_2x2, MMI_2x2, MZI_2x2, coupler_ring)": "o1,o2 = left/input side, o3,o4 = right/output side",
+      "RING_2bus (add-drop microring, 2x2)": "o1 = in (top bus), o2 = through (top bus), o3 = drop (bottom bus), o4 = add (bottom bus)",
+      "WDM (wdm_mzi1x4, 1x4)": "o1 = common/single side, o2..o5 = the four wavelength channels"
+    },
+    "class_map": {
+      "straight": "STRAIGHT",
+      "bend_euler": "BEND", "_bend_s": "BEND", "_bezier_curve": "BEND",
+      "_gc": "GC", "edge_coupler": "GC",
+      "_directional_coupler": "DC_2x2", "_directional_coupler_adiabatic": "DC_2x2", "coupler_ring": "DC_2x2",
+      "_mmi1x2": "MMI_1x2",
+      "_mmi2x2": "MMI_2x2",
+      "mrr_1x1": "RING_1bus", "mrr_1x1_heater_tin": "RING_1bus",
+      "mrr_2x2": "RING_2bus",
+      "mrm_1x1_pndiode": "MOD_1x1", "tw_mzm": "MOD_1x1",
+      "mzi1": "MZI_1x1", "mzi_1x1_heater_doped_si_cband": "MZI_1x1", "mzi_1x1_pindiode_cband": "MZI_1x1", "mzi_arm": "MZI_1x1",
+      "mzi_1x2_pindiode_cband": "MZI_1x2",
+      "mzi_2x2_pn_diode": "MZI_2x2", "mzi_2x2_pindiode_cband": "MZI_2x2", "mzi_2x2_heater_tin_cband": "MZI_2x2",
+      "heater_tin_cband": "HEATER", "heater_doped_si_cband": "HEATER",
+      "photodetector": "PD", "laser": "LASER",
+      "wdm_mzi1x4": "WDM", "polarization_splitter_rotator": "PSR",
+      "mode_converter": "MODE_CONV", "crossing": "CROSSING",
+      "pindiode_cband": "_ELECTRICAL", "pndiode": "_ELECTRICAL"
+    }
+  },
+
+  "gold": [
+    {
+      "id": "L1_1", "level": 1, "topology_certain": true,
+      "prompt": "A 90 degree waveguide bend",
+      "nodes": {"N1": "BEND"}, "edges": [], "external": {"o1": "N1.o1", "o2": "N1.o2"},
+      "rationale": "Single primitive; no internal connectivity. Sanity / component-class check."
+    },
+    {
+      "id": "L1_2", "level": 1, "topology_certain": true,
+      "prompt": "A straight waveguide with a length of 253 um",
+      "nodes": {"N1": "STRAIGHT"}, "edges": [], "external": {"o1": "N1.o1", "o2": "N1.o2"},
+      "rationale": "Single primitive."
+    },
+    {
+      "id": "L1_3", "level": 1, "topology_certain": true,
+      "prompt": "A ring resonator, single bus, with a radius of 10 microns and a gap of 0.2 microns.",
+      "nodes": {"N1": "RING_1bus"}, "edges": [], "external": {"o1": "N1.o1", "o2": "N1.o2"},
+      "rationale": "Single-bus (all-pass) ring is one cell: in + through on one bus."
+    },
+    {
+      "id": "L1_4", "level": 1, "topology_certain": true,
+      "prompt": "A directional coupler, with two inputs and two outputs and 50:50 split ratio",
+      "nodes": {"N1": "DC_2x2"}, "edges": [], "external": {"o1": "N1.o1", "o2": "N1.o2", "o3": "N1.o3", "o4": "N1.o4"},
+      "rationale": "Single 2x2 coupler."
+    },
+    {
+      "id": "L1_5", "level": 1, "topology_certain": true,
+      "prompt": "A power splitter, with one input and two outputs and 50:50 split ratio",
+      "nodes": {"N1": "MMI_1x2"}, "accept": {"N1": ["MMI_1x2", "DC_2x2"]},
+      "edges": [], "external": {"o1": "N1.o1", "o2": "N1.o2", "o3": "N1.o3"},
+      "rationale": "1x2 passive 50:50 splitter; canonical is a 1x2 MMI, a 1x2 directional-coupler split is also functionally correct."
+    },
+    {
+      "id": "L1_6", "level": 1, "topology_certain": true,
+      "prompt": "Give me a 2x2 MMI with a gap of 500 nm between the inputs/outputs.",
+      "nodes": {"N1": "MMI_2x2"}, "edges": [], "external": {"o1": "N1.o1", "o2": "N1.o2", "o3": "N1.o3", "o4": "N1.o4"},
+      "rationale": "Single 2x2 MMI."
+    },
+
+    {
+      "id": "L2_1", "level": 2, "topology_certain": false,
+      "prompt": "A directional coupler connected to a 2x2 MMI.",
+      "nodes": {"N1": "DC_2x2", "N2": "MMI_2x2"},
+      "edges": [["N1.o3", "N2.o1"], ["N1.o4", "N2.o2"]],
+      "external": {"o1": "N1.o1", "o2": "N1.o2", "o3": "N2.o3", "o4": "N2.o4"},
+      "ambiguity": "Canonical reading = full 2-waveguide cascade (both DC outputs into both MMI inputs). A single-link reading (one DC output to one MMI input) is also defensible. Needs sign-off.",
+      "rationale": "Two 2x2 blocks in series; both right ports of the DC feed the two left ports of the MMI."
+    },
+    {
+      "id": "L2_2", "level": 2, "topology_certain": true,
+      "prompt": "2 grating couplers connected by a straight waveguide",
+      "nodes": {"N1": "GC", "N2": "STRAIGHT", "N3": "GC"},
+      "edges": [["N1.o1", "N2.o1"], ["N2.o2", "N3.o1"]],
+      "external": {},
+      "rationale": "GC -- straight -- GC; the two GCs are the fiber I/O, so no on-chip external ports."
+    },
+    {
+      "id": "L2_3", "level": 2, "topology_certain": true,
+      "prompt": "A grating coupler followed by a 1x2 MMI.",
+      "nodes": {"N1": "GC", "N2": "MMI_1x2"},
+      "edges": [["N1.o1", "N2.o1"]],
+      "external": {"o1": "N2.o2", "o2": "N2.o3"},
+      "rationale": "GC into the single (input) port of the 1x2 MMI; two MMI outputs left external."
+    },
+    {
+      "id": "L2_4", "level": 2, "topology_certain": false,
+      "prompt": "A mmi 1x2 followed by a mmi 2x2.",
+      "nodes": {"N1": "MMI_1x2", "N2": "MMI_2x2"},
+      "edges": [["N1.o2", "N2.o1"], ["N1.o3", "N2.o2"]],
+      "external": {"o1": "N1.o1", "o2": "N2.o3", "o3": "N2.o4"},
+      "ambiguity": "Canonical = both 1x2 outputs into the two 2x2 inputs (2 links). A single-link reading is defensible. Needs sign-off.",
+      "rationale": "Cascade the 1x2's two outputs into the 2x2's two inputs."
+    },
+    {
+      "id": "L2_5", "level": 2, "topology_certain": true,
+      "prompt": "Connect one output port of a 1x2 MMI to an input of another 1x2 MMI",
+      "nodes": {"N1": "MMI_1x2", "N2": "MMI_1x2"},
+      "edges": [["N1.o2", "N2.o1"]],
+      "external": {"o1": "N1.o1", "o2": "N1.o3", "o3": "N2.o2", "o4": "N2.o3"},
+      "rationale": "Prompt is explicit: exactly one output of MMI-1 to the input of MMI-2 (single link)."
+    },
+    {
+      "id": "L2_6", "level": 2, "topology_certain": true,
+      "prompt": "The output ports of an adiabatic directional coupler connected to two straight waveguides",
+      "nodes": {"N1": "DC_2x2", "N2": "STRAIGHT", "N3": "STRAIGHT"},
+      "edges": [["N1.o3", "N2.o1"], ["N1.o4", "N3.o1"]],
+      "external": {"o1": "N1.o1", "o2": "N1.o2", "o3": "N2.o2", "o4": "N3.o2"},
+      "rationale": "Both DC output ports each drive one straight waveguide."
+    },
+
+    {
+      "id": "L3_1", "level": 3, "topology_certain": true,
+      "prompt": "A 2x2 MZI with a phase shifter in each arm for 1 GHz modulation.",
+      "nodes": {"N1": "MZI_2x2"}, "edges": [],
+      "external": {"o1": "N1.o1", "o2": "N1.o2", "o3": "N1.o3", "o4": "N1.o4"},
+      "rationale": "The phase shifters are intra-cell arm elements of an active 2x2 MZI, not separate schematic nodes -> one node."
+    },
+    {
+      "id": "L3_2", "level": 3, "topology_certain": true,
+      "prompt": "Design a 2x2 MZI with two 2 mm long PIN-diodes, one in each arm, for phase modulation.",
+      "nodes": {"N1": "MZI_2x2"}, "edges": [],
+      "external": {"o1": "N1.o1", "o2": "N1.o2", "o3": "N1.o3", "o4": "N1.o4"},
+      "rationale": "Active 2x2 MZI; diodes are intra-cell."
+    },
+    {
+      "id": "L3_3", "level": 3, "topology_certain": true,
+      "prompt": "2x2 MZI with integrated heaters. the length of the MZI is 500um and the path length difference is 40um",
+      "nodes": {"N1": "MZI_2x2"}, "edges": [],
+      "external": {"o1": "N1.o1", "o2": "N1.o2", "o3": "N1.o3", "o4": "N1.o4"},
+      "rationale": "Thermo-optic 2x2 MZI; heaters intra-cell."
+    },
+    {
+      "id": "L3_4", "level": 3, "topology_certain": true,
+      "prompt": "Create a passive asymmetric Mach-Zehnder Interferometer at 1550 nm with a 300 um path-length difference between arms. The MZI has one input and one output port both terminated in grating couplers.",
+      "nodes": {"N1": "GC", "N2": "MZI_1x1", "N3": "GC"},
+      "edges": [["N1.o1", "N2.o1"], ["N2.o2", "N3.o1"]],
+      "external": {},
+      "rationale": "1-in/1-out passive asymmetric MZI, both ports terminated by grating couplers (fiber I/O), so no on-chip external ports."
+    },
+    {
+      "id": "L3_5", "level": 3, "topology_certain": true,
+      "prompt": "Design a single-bus ring resonator (with a radius of 28) connected to two grating couplers for input/output coupling.",
+      "nodes": {"N1": "GC", "N2": "RING_1bus", "N3": "GC"},
+      "edges": [["N1.o1", "N2.o1"], ["N2.o2", "N3.o1"]],
+      "external": {},
+      "rationale": "GC -- single-bus ring (in/through) -- GC."
+    },
+    {
+      "id": "L3_6", "level": 3, "topology_certain": false,
+      "prompt": "Connect a 2x2 MZI with integrated thermal heaters to a directional coupler with a length of 125 um, dy of 100 um, and dx of 100 um",
+      "nodes": {"N1": "MZI_2x2", "N2": "DC_2x2"},
+      "edges": [["N1.o3", "N2.o1"], ["N1.o4", "N2.o2"]],
+      "external": {"o1": "N1.o1", "o2": "N1.o2", "o3": "N2.o3", "o4": "N2.o4"},
+      "ambiguity": "Canonical = both MZI outputs into both DC inputs (2 links). Single-link reading defensible. Needs sign-off.",
+      "rationale": "Two 2x2 blocks in series."
+    },
+
+    {
+      "id": "L4_1", "level": 4, "topology_certain": true,
+      "prompt": "Design a 1x16 power splitter using 4 stages of 1x2 MMI couplers such that each output port receives an equal share of the input power.",
+      "nodes": {
+        "N1": "MMI_1x2",
+        "N2": "MMI_1x2", "N3": "MMI_1x2",
+        "N4": "MMI_1x2", "N5": "MMI_1x2", "N6": "MMI_1x2", "N7": "MMI_1x2",
+        "N8": "MMI_1x2", "N9": "MMI_1x2", "N10": "MMI_1x2", "N11": "MMI_1x2",
+        "N12": "MMI_1x2", "N13": "MMI_1x2", "N14": "MMI_1x2", "N15": "MMI_1x2"
+      },
+      "edges": [
+        ["N1.o2", "N2.o1"], ["N1.o3", "N3.o1"],
+        ["N2.o2", "N4.o1"], ["N2.o3", "N5.o1"], ["N3.o2", "N6.o1"], ["N3.o3", "N7.o1"],
+        ["N4.o2", "N8.o1"], ["N4.o3", "N9.o1"], ["N5.o2", "N10.o1"], ["N5.o3", "N11.o1"],
+        ["N6.o2", "N12.o1"], ["N6.o3", "N13.o1"], ["N7.o2", "N14.o1"], ["N7.o3", "N15.o1"]
+      ],
+      "external": {
+        "o1": "N1.o1",
+        "o2": "N8.o2", "o3": "N8.o3", "o4": "N9.o2", "o5": "N9.o3",
+        "o6": "N10.o2", "o7": "N10.o3", "o8": "N11.o2", "o9": "N11.o3",
+        "o10": "N12.o2", "o11": "N12.o3", "o12": "N13.o2", "o13": "N13.o3",
+        "o14": "N14.o2", "o15": "N14.o3", "o16": "N15.o2", "o17": "N15.o3"
+      },
+      "rationale": "Balanced binary tree, 4 stages (1+2+4+8 = 15 splitters), 14 inter-stage links, 16 leaf outputs. Fully determined."
+    },
+    {
+      "id": "L4_2", "level": 4, "topology_certain": true,
+      "prompt": "Layout a 1x4 power splitter using three 1x2MMIs. Add 4 thermo-optic phase shifters, one on each output arm, for independent tuning.",
+      "nodes": {
+        "N1": "MMI_1x2", "N2": "MMI_1x2", "N3": "MMI_1x2",
+        "N4": "HEATER", "N5": "HEATER", "N6": "HEATER", "N7": "HEATER"
+      },
+      "edges": [
+        ["N1.o2", "N2.o1"], ["N1.o3", "N3.o1"],
+        ["N2.o2", "N4.o1"], ["N2.o3", "N5.o1"], ["N3.o2", "N6.o1"], ["N3.o3", "N7.o1"]
+      ],
+      "external": {"o1": "N1.o1", "o2": "N4.o2", "o3": "N5.o2", "o4": "N6.o2", "o5": "N7.o2"},
+      "rationale": "Two-stage 1x4 tree (1+2 MMIs -> 4 outputs); a thermo-optic heater on each of the 4 output arms."
+    },
+    {
+      "id": "L4_3", "level": 4, "topology_certain": false,
+      "prompt": "Cascaded 2x2 MZIs to create a switch tree network with 8 outputs.",
+      "nodes": {
+        "N1": "MZI_2x2",
+        "N2": "MZI_2x2", "N3": "MZI_2x2",
+        "N4": "MZI_2x2", "N5": "MZI_2x2", "N6": "MZI_2x2", "N7": "MZI_2x2"
+      },
+      "edges": [
+        ["N1.o3", "N2.o1"], ["N1.o4", "N3.o1"],
+        ["N2.o3", "N4.o1"], ["N2.o4", "N5.o1"], ["N3.o3", "N6.o1"], ["N3.o4", "N7.o1"]
+      ],
+      "external": {
+        "o1": "N1.o1",
+        "o2": "N4.o3", "o3": "N4.o4", "o4": "N5.o3", "o5": "N5.o4",
+        "o6": "N6.o3", "o7": "N6.o4", "o8": "N7.o3", "o9": "N7.o4"
+      },
+      "ambiguity": "1x8 switch tree = 7 2x2-MZIs (1+2+4), 6 inter-stage links, 8 leaf outputs. Each 2x2 MZI has 2 inputs; the tree uses one input per node (the other is an unused/monitor port) — which input/output indices are used is a layout choice, but the node/edge MULTISET (the scored quantity) is invariant. Marked uncertain only for the unused-port convention.",
+      "rationale": "Binary switch tree of 2x2 MZIs to 8 outputs."
+    },
+    {
+      "id": "L4_4", "level": 4, "topology_certain": true,
+      "prompt": "Design a 4-channel wavelength demultiplexer using four ring resonators cascaded along a common bus waveguide. Each ring should have a radius of ~10 um, and a 200 nm coupling gap. Provide drop ports for each ring to route the separated channels.",
+      "nodes": {"N1": "RING_2bus", "N2": "RING_2bus", "N3": "RING_2bus", "N4": "RING_2bus"},
+      "edges": [["N1.o2", "N2.o1"], ["N2.o2", "N3.o1"], ["N3.o2", "N4.o1"]],
+      "external": {"in": "N1.o1", "through": "N4.o2", "drop1": "N1.o3", "drop2": "N2.o3", "drop3": "N3.o3", "drop4": "N4.o3"},
+      "rationale": "Add-drop rings serially coupled along one bus: through-port of ring i -> in-port of ring i+1; each ring's drop port is an external channel."
+    },
+    {
+      "id": "L4_5", "level": 4, "topology_certain": false,
+      "prompt": "Connect four amplitude modulators (each 1 in/1 out, >10 GHz electro-optic bandwidth) to a 4x1 wavelength-division multiplexer.",
+      "nodes": {"N1": "MOD_1x1", "N2": "MOD_1x1", "N3": "MOD_1x1", "N4": "MOD_1x1", "N5": "WDM"},
+      "edges": [["N1.o2", "N5.o2"], ["N2.o2", "N5.o3"], ["N3.o2", "N5.o4"], ["N4.o2", "N5.o5"]],
+      "external": {"o1": "N1.o1", "o2": "N2.o1", "o3": "N3.o1", "o4": "N4.o1", "out": "N5.o1"},
+      "ambiguity": "Modulator class: '1-in/1-out >10 GHz amplitude modulator' maps to MOD_1x1 (microring modulator or TW-MZM); acceptable alternates in 'accept'. The 4x1 WDM mux is the wdm_mzi1x4 cell used in reverse (4 channel ports -> 1 common).",
+      "accept": {"N1": ["MOD_1x1", "MZI_2x2"], "N2": ["MOD_1x1", "MZI_2x2"], "N3": ["MOD_1x1", "MZI_2x2"], "N4": ["MOD_1x1", "MZI_2x2"]},
+      "rationale": "Four 1x1 modulators each feed one channel port of the 4-channel WDM mux."
+    },
+    {
+      "id": "L4_6", "level": 4, "topology_certain": true,
+      "prompt": "Design two cascaded double-bus silicon ring resonators, each with a 10 um radius. In each ring, the top bus is for input/output and the bottom bus is for drop/through ports. The second ring's input bus is connected to the drop port of the first ring, forming a serial filter chain. Each bus-to-ring gap is 200 nm.",
+      "nodes": {"N1": "RING_2bus", "N2": "RING_2bus"},
+      "edges": [["N1.o3", "N2.o1"]],
+      "external": {"in": "N1.o1", "through": "N1.o2", "ring2_through": "N2.o2", "ring2_drop": "N2.o3", "add1": "N1.o4", "add2": "N2.o4"},
+      "rationale": "Prompt is explicit: a single link from ring-1's drop port (o3) to ring-2's input (o1)."
+    }
+  ]
+}
