@@ -16,7 +16,7 @@ pandas>=1.5.0
 # Machine learning and optimization
 optax>=0.1.0
 chex>=0.1.0
-flax>=0.7.0
+flax>=0.12.8
 scikit-optimize>=0.9.0
 bayesian-optimization>=1.4.0
 
